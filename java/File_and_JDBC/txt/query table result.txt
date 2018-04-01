@@ -1,0 +1,40 @@
+Row 1:
+Ma chuyen bay: VN276
+Ga di: DAD
+Ga den: CXR
+Do dai: 1283
+Gio di: 09:00:00.0000000
+Gio den: 12:00:00.0000000
+Chi phi: 203
+Ma nhan vien: 011564812
+==========================
+Row 2:
+Ma chuyen bay: VN320
+Ga di: SGN
+Ga den: DAD
+Do dai: 2798
+Gio di: 06:00:00.0000000
+Gio den: 07:10:00.0000000
+Chi phi: 221
+Ma nhan vien: 242518965
+==========================
+Row 3:
+Ma chuyen bay: VN431
+Ga di: SGN
+Ga den: CAH
+Do dai: 3693
+Gio di: 05:55:00.0000000
+Gio den: 06:55:00.0000000
+Chi phi: 236
+Ma nhan vien: 567354612
+==========================
+Row 4:
+Ma chuyen bay: VN651
+Ga di: DAD
+Ga den: SGN
+Do dai: 2798
+Gio di: 19:30:00.0000000
+Gio den: 08:00:00.0000000
+Chi phi: 221
+Ma nhan vien: 011564812
+==========================

@@ -1,0 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package test;
+
+/**
+ *
+ * @author nguyenducthao
+ */
+public class Download {
+
+    private CapNhat capNhat;
+
+    /**
+     * @param capNhat lang nghe su kien download
+     */
+    public void addDownloadListener(CapNhat capNhat) {
+        this.capNhat = capNhat;
+    }
+
+    public void download() {
+        for (int i = 0; i < 100; i++) {
+            System.out.println("Dang download...");
+
+            /**
+             * Khi goi capNhat.capNhatGiaoDien(i); thi phuong thuc nay se tu
+             * dong duoc goi trong giao dien
+             *
+             */
+            capNhat.capNhatGiaoDien(i);
+        }
+        System.out.println("Ket thuc download");
+    }
+}

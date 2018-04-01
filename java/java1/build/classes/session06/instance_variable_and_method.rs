@@ -1,0 +1,2 @@
+session06.instance_variable_and_method
+session06.batch

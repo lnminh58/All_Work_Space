@@ -1,0 +1,2 @@
+session07.myThreadExtendsThreadClass
+session07.create_thread_by_extends_thread_class

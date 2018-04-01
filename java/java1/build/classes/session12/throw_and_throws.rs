@@ -1,0 +1,2 @@
+session12.throw_and_throws
+session12.MyException

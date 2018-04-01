@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Học HTML5 từ đầu</title>
+    <link rel="stylesheet" href="css/reset.css" media="screen" \>
+    <link rel="stylesheet" href="css/style.css" media="screen" \>
+    <link href="https://fonts.googleapis.com/css?family=Baumans|Open+Sans" rel="stylesheet">
+    <script src="js/vendor/prefixfree.min.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <!-- Begin: Title-->
+        <h1>Learning HTML5</h1>
+        <p>A responsive website tutorial</p>
+        <!-- End: Title-->
+    </header>
+    <nav>
+        <input type="checkbox" id="nav"/>
+        <label for="nav"></label>
+        <!--   Begin: Horizonatal navigation bar    -->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <!--   End: Horizonatal navigation bar    -->
+
+    </nav>
+    <section class="container">
+        <!--   Begin: Slider    -->
+
+        <article id="slider_content">
+            <h3>Lorem</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, deserunt, necessitatibus? Adipisci reprehenderit soluta quisquam iure deserunt ea corrupti illo. <a href="javascript:void(0)" class="responsive_button">More...</a></p>
+            <a class="button" href="javascript:void(0)">More</a>
+        </article>
+        <div id="slider">
+            <figure>
+                <img src="img/slide1.jpg" alt="">
+                <img src="img/slide2.jpg" alt="">
+                <img src="img/slide3.jpg" alt="">
+                <img src="img/slide4.jpg" alt="">
+                <img src="img/slide5.jpg" alt="">
+            </figure>
+        </div>
+        <!--   End: Slider    -->
+    </section>
+    <!--  Begin: Search bar    -->
+    <section id="spacer">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit?</p>
+        <div class="search">
+            <form action="#">
+                <input type="text" name="sitesearch" value="Enter a word...">
+                <input type="submit" class="button" value="Search">
+            </form>
+        </div>
+        <!--   End: Search bar    -->
+    </section>
+    <section id="three_columns">
+        <!--  Begin: Column 1    -->
+        <article><img src="img/icon1.png" alt="Some all text">
+            <h3>Lorem ipsum.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quo, iste.</p>
+        </article>
+        <!--  End: Column 1    -->
+        <!--  Begin: Column 2   -->
+        <article><img src="img/icon2.png" alt="Some all text">
+            <h3>Consectetur</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quo, iste.</p>
+        </article>
+        <!--  End: Column 2    -->
+        <!--  Begin: Column 3    -->
+        <article><img src="img/icon3.png" alt="Some all text">
+            <h3>Dolor sit amet.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quo, iste.</p>
+        </article>
+        <!--  End: Column 3   -->
+        <div class="clear"></div>
+    </section>
+    <section id="four_columns">
+        <h2>
+            Lorem ipsum
+        </h2>
+        <!-- Begin: Column 1-->
+        <article class="img-item">
+            <figure>
+                <a href="#img1" title="Some title">
+                    <div class="zoomin"></div>
+                    <img src="img/lightbox-1sml.jpg" alt="Some alt text" />
+                </a>
+                <figcaption>
+                    <strong>
+                    Photo by: Lorem
+                </strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </figcaption>
+            </figure>
+        </article>
+        <!-- End: Column 1-->
+        <!-- Begin: Column 2-->
+        <article class="img-item">
+            <figure>
+                <a href="#img2" title="Some title">
+                    <div class="zoomin"></div>
+                    <img src="img/lightbox-2sml.jpg" alt="Some alt text" />
+                </a>
+                <figcaption>
+                    <strong>
+                    Photo by: Ipsum
+                </strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </figcaption>
+            </figure>
+        </article>
+        <!-- End: Column 2-->
+        <!-- Begin: Column 3-->
+        <article class="img-item">
+            <figure>
+                <a href="#img3" title="Some title">
+                    <div class="zoomin"></div>
+                    <img src="img/lightbox-3sml.jpg" alt="Some alt text" />
+                </a>
+                <figcaption>
+                    <strong>
+                    Photo by: Dolor
+                </strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </figcaption>
+            </figure>
+        </article>
+        <!-- End: Column 3-->
+        <!-- Begin: Column 4-->
+        <article class="img-item">
+            <figure>
+                <a href="#img4" title="Some title">
+                    <div class="zoomin"></div>
+                    <img src="img/lightbox-4sml.jpg" alt="Some alt text" />
+                </a>
+                <figcaption>
+                    <strong>
+                    Photo by: Amet
+                </strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </figcaption>
+            </figure>
+        </article>
+        <!-- End: Column 4-->
+        <div class="clear"></div>
+    </section>
+    <section id="lightbox">
+        <!-- Begin: Lightbox - Column 1-->
+        <a href="#_" class="lightbox" id="img1">
+      <img src="img/lightbox-1.jpg">
+        </a>
+        <!-- End: Lightbox - Column 1-->
+        <!-- Begin: Lightbox - Column 2-->
+        <a href="#_" class="lightbox" id="img2">
+      <img src="img/lightbox-2.jpg">
+        </a>
+        <!-- End: Lightbox - Column 2-->
+        <!-- Begin: Lightbox - Column 3-->
+        <a href="#_" class="lightbox" id="img3">
+      <img src="img/lightbox-3.jpg">
+        </a>
+        <!-- End: Lightbox - Column 3-->
+        <!-- Begin: Lightbox - Column 4-->
+        <a href="#_" class="lightbox" id="img4">
+      <img src="img/lightbox-4.jpg">
+        </a>
+        <!-- End: Lightbox - Column 4-->
+    </section>
+    <section id="multiple_columns">
+        <!-- Begin: Column 1 -->
+        <section class="column1">
+            <article>
+                <h3>Dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati aperiam optio eius nesciunt ipsa velit culpa assumenda perspiciatis dicta. Maiores, eum saepe, accusantium voluptatum est officiis deserunt nesciunt voluptas aut?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem labore, iste ratione suscipit quidem vero aliquam ducimus doloremque voluptate veritatis sapiente sequi impedit deserunt totam aperiam illo similique quia dolor.</p>
+            </article>
+        </section>
+        <!-- End: Column 1 -->
+        <!-- Begin: Column 2 -->
+        <section class="column2">
+            <!-- Begin: Row 1 -->
+            <article class="row">
+                <img src="img/icon4.png" class="rocket" alt="Some alt text" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </article>
+            <!-- End: Row 1 -->
+            <!-- Begin: Row 2 -->
+            <article class="row">
+                <img src="img/icon5.png" class="clock" alt="Some alt text" />
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ad quis nulla eum saepe.</p>
+            </article>
+            <!-- End: Row 2 -->
+        </section>
+        <!-- End: Column 2 -->
+
+    </section>
+    <footer>
+        <section id="extra_content">
+            <!-- Begin: Column 1 -->
+            <article class="column">
+                <h4>Lorem ipsum</h4>
+                Eram consequat si anim aute, voluptate nisi culpa fabulas culpa. Ea ab nulla commodo, dolore est excepteur ut fugiat, probant cohaerescant id doctrina, de noster quorum qui commodo, eram nam expetendis do est quid fugiat ex laboris ex de nam fugiat laboris, nulla offendit iis expetendis.
+            </article>
+            <!-- End: Column 1 -->
+            <!-- Begin: Column 2 -->
+            <article class="column midlist">
+                <h4>Consectetuer</h4>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)">Lorem ipsum dolor sit amet.</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Lorem ipsum dolor sit amet.</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Lorem ipsum dolor sit amet.</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Lorem ipsum dolor sit amet.</a>
+                    </li>
+                </ul>
+            </article>
+            <!-- End: Column 2 -->
+            <!-- Begin: Column 3 -->
+            <article class="column rightlist">
+                <h4>Dolor sit amet</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <img alt="Some alt text" src="img/lightbox-1sml.jpg"/>
+                        <span>Eram consequat si anim aute, voluptate nisi.</span>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                        <img alt="Some alt text" src="img/lightbox-2sml.jpg"/>
+                        <span>Eram consequat si anim aute, voluptate nisi.</span>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                        <img alt="Some alt text" src="img/lightbox-3sml.jpg"/>
+                        <span>Eram consequat si anim aute, voluptate nisi.</span>
+                    </a>
+                    </li>
+                </ul>
+                <div class="clear" />
+            </article>
+            <!-- End: Column 3 -->
+        </section>
+        <section id="page_owner_info">
+            <div class="wrapper">
+                <!-- Begin: Copyright -->
+                <div class="copyright">© Copyright 2016 by <a href="http://www.example.com">Example</a>. All Rights Reserved.
+                </div>
+                <!-- End: Copyright -->
+                <!-- Begin: Social network items -->
+                <div class="social">
+                    <a href="javascript:void(0)">
+                    <img src="img/icon6.png" alt="Some alt text" width="25"/>
+                </a>
+                    <a href="javascript:void(0)">
+                    <img src="img/icon7.png" alt="Some alt text" width="25"/>
+                </a>
+                    <a href="javascript:void(0)">
+                    <img src="img/icon8.png" alt="Some alt text" width="25"/>
+                </a>
+                    <a href="javascript:void(0)">
+                    <img src="img/icon9.png" alt="Some alt text" width="25"/>
+                </a>
+                    <a href="javascript:void(0)">
+                    <img src="img/icon10.png" alt="Some alt text" width="25"/>
+                </a>
+                </div>
+                <!-- End: Social network items -->
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+session07.myThreadImplementsRunableInterface
+session07.create_thread_by_implements_runable_interface

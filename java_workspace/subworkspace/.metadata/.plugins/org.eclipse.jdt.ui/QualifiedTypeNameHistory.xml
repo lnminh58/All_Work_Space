@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.print.DocFlavor.INPUT_STREAM"/>
+<fullyQualifiedTypeName name="lnminh.vn.NhanVien"/>
+<fullyQualifiedTypeName name="lnminh.vn.Section3"/>
+<fullyQualifiedTypeName name="lnminh.vn.NhapSo"/>
+<fullyQualifiedTypeName name="lnminh.vn.HaiSo"/>
+<fullyQualifiedTypeName name="lnminh.vn.TestStudent"/>
+<fullyQualifiedTypeName name="lnminh.vn.Student"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="java.lang.StrictMath"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
+<fullyQualifiedTypeName name="lnminh.vn.Chuoi"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="lnminh.vn.test.TestStudent"/>
+<fullyQualifiedTypeName name="lnminh.vn.model.Student"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="model.Student"/>
+<fullyQualifiedTypeName name="org.apache.commons.lang3.StringUtils"/>
+</qualifiedTypeNameHistroy>
