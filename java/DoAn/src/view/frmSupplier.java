@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.Confirm;
 import controller.ConnectDatabase;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -27,6 +28,7 @@ public class frmSupplier extends javax.swing.JFrame {
 public frmSupplier() {
         initComponents();
         loadData();
+        addWindowListener(Confirm.disposeListener(this));
     }
 private void loadData() {
         loadTableTitle();
@@ -102,7 +104,7 @@ private void loadTableTitle() {
         btnAdd = new javax.swing.JButton();
         lblIcon = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         pnSupplier.setBackground(new java.awt.Color(27, 112, 218));
 

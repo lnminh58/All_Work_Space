@@ -367,7 +367,7 @@ public class frmEmployee extends javax.swing.JFrame {
                 || txtName.getText().trim().equalsIgnoreCase("")
                 || txtAddress.getText().trim().equalsIgnoreCase("")
                 || txtPhoneNum.getText().trim().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Điền vào đầy đủ");
+            JOptionPane.showMessageDialog(this, "Hãy điền vào đầy đủ thông tin");
             return;
         }
         try (Connection conn = ConnectDatabase.getConnectDatabase()) {

@@ -12,18 +12,19 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.Config;
 
 /**
  *
  * @author lnminh
  */
 public class ConnectDatabase {
-
+ 
     static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static final String DB_URL = "jdbc:sqlserver://localhost;";
-    static final String DATABASENAME = "databaseName=QuanLyBanHang;";
-    static final String USER = "user=sa;";
-    static final String PASS = "password=ngocminh58";
+    static  String DB_URL="" ;
+    static  String DATABASENAME="" ;
+    static  String USER="" ;
+    static  String PASS="";
 
     public static Connection getConnectDatabase() {
         Connection conn = null;

@@ -43,7 +43,6 @@ public class frmPayroll extends javax.swing.JFrame {
     public frmPayroll() {
         initComponents();
         loadData();
-        addWindowListener(Confirm.disposeListener(this));
 
     }
 
@@ -179,7 +178,7 @@ public class frmPayroll extends javax.swing.JFrame {
         bnNewRefresh = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 500));
         setResizable(false);
 

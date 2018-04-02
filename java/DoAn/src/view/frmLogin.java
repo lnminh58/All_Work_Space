@@ -175,12 +175,10 @@ public class frmLogin extends javax.swing.JDialog {
             String sql="{call sp_getGroupFuntions(?)}";
             try (CallableStatement cstmt = conn.prepareCall(sql)) {
                 cstmt.setString(1, groupIDLogin);
-               
                 try (ResultSet rs = cstmt.executeQuery()) {
                     while(rs.next()){
                         String buttonName = rs.getString("tenCN");
                         frmMain.groupfuntions.add(buttonName.replace("frmMain", ""));
-                        
                     }
                 }
             }

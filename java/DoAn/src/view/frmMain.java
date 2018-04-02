@@ -7,6 +7,7 @@ package view;
 
 import controller.Confirm;
 import controller.ConnectDatabase;
+import controller.FileFactory;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Toolkit;
@@ -22,6 +23,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.IconUIResource;
+import model.frmInfo;
 
 /**
  *
@@ -43,8 +45,11 @@ public class frmMain extends javax.swing.JFrame {
         setNameComponets();
         disableComponents();
         listComponents = getListComponents(this);
-        createFirstAdminAccount();
-
+        FileFactory.loadFile();
+        try {
+               createFirstAdminAccount();
+            } catch (Exception e) {
+        }
         addWindowListener(Confirm.exitListener);
     }
 
@@ -63,6 +68,8 @@ public class frmMain extends javax.swing.JFrame {
         btnOrderList.setName("btnOrderList");
         btnCustomer.setName("btnCustomer");
         btnSalary.setName("btnSalary");
+        btnSetting.setName("btnSetting");
+        btnInfo.setName("btninfo");
     }
 
     private void disableComponents() {
@@ -162,6 +169,8 @@ public class frmMain extends javax.swing.JFrame {
         btnWareHouse = new javax.swing.JButton();
         btnCustomer = new javax.swing.JButton();
         btnGRList = new javax.swing.JButton();
+        btnSetting = new javax.swing.JButton();
+        btnInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -316,6 +325,32 @@ public class frmMain extends javax.swing.JFrame {
             }
         });
 
+        btnSetting.setBackground(new java.awt.Color(173, 173, 173));
+        btnSetting.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnSetting.setForeground(new java.awt.Color(255, 255, 255));
+        btnSetting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/settings.png"))); // NOI18N
+        btnSetting.setText("CÀI ĐẶT");
+        btnSetting.setContentAreaFilled(false);
+        btnSetting.setOpaque(true);
+        btnSetting.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSettingActionPerformed(evt);
+            }
+        });
+
+        btnInfo.setBackground(new java.awt.Color(173, 173, 173));
+        btnInfo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnInfo.setForeground(new java.awt.Color(255, 255, 255));
+        btnInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/info.png"))); // NOI18N
+        btnInfo.setText("THÔNG TIN");
+        btnInfo.setContentAreaFilled(false);
+        btnInfo.setOpaque(true);
+        btnInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInfoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnMainLayout = new javax.swing.GroupLayout(pnMain);
         pnMain.setLayout(pnMainLayout);
         pnMainLayout.setHorizontalGroup(
@@ -330,16 +365,23 @@ public class frmMain extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(btnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnMainLayout.createSequentialGroup()
-                        .addComponent(btnWareHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnWareHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(5, 5, 5)
                         .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGRList, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnOrderList, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(5, 5, 5)
-                        .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 1015, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnMainLayout.createSequentialGroup()
+                                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnGRList, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnOrderList, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(5, 5, 5)
+                                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnMainLayout.createSequentialGroup()
+                                .addComponent(btnSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         pnMainLayout.setVerticalGroup(
@@ -363,7 +405,11 @@ public class frmMain extends javax.swing.JFrame {
                         .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnWareHouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnSetting, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                        .addComponent(btnInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                    .addComponent(btnSalary, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -453,6 +499,22 @@ public class frmMain extends javax.swing.JFrame {
         fp.setVisible(true);
     }//GEN-LAST:event_btnSalaryActionPerformed
 
+    private void btnSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingActionPerformed
+        requestConfig();
+    }//GEN-LAST:event_btnSettingActionPerformed
+    
+    private void requestConfig() {
+        frmConfig fc = new frmConfig();
+        fc.setLocationRelativeTo(this);
+        fc.setVisible(true);
+    }
+    
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
+        frmInfo fi = new frmInfo(this, true);
+        fi.setLocationRelativeTo(this);
+        fi.setVisible(true);
+    }//GEN-LAST:event_btnInfoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -492,9 +554,11 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnEmp;
     private javax.swing.JButton btnGRList;
+    private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnOrderList;
     private javax.swing.JButton btnSalary;
+    private javax.swing.JButton btnSetting;
     private javax.swing.JButton btnSignUp;
     private javax.swing.JButton btnSupplier;
     private javax.swing.JButton btnWareHouse;
@@ -502,5 +566,6 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JPanel pnMain;
     private javax.swing.JPanel pnTitle;
     // End of variables declaration//GEN-END:variables
+
 
 }

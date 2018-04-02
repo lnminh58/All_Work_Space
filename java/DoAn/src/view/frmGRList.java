@@ -43,7 +43,6 @@ public class frmGRList extends javax.swing.JFrame {
     public frmGRList() {
         initComponents();
         loadData();
-        addWindowListener(Confirm.disposeListener(this));
     }
 
     private void loadData() {
@@ -187,7 +186,7 @@ public class frmGRList extends javax.swing.JFrame {
         lblIcon = new javax.swing.JLabel();
         bnNewRefresh = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         pnGRList.setBackground(new java.awt.Color(232, 134, 96));
 

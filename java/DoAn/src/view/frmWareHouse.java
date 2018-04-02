@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.Confirm;
 import controller.ConnectDatabase;
 import java.awt.Toolkit;
 import java.sql.CallableStatement;
@@ -34,6 +35,7 @@ public class frmWareHouse extends javax.swing.JFrame {
     public frmWareHouse() {
         initComponents();
         loadData();
+        addWindowListener(Confirm.disposeListener(this));
     }
 
     private void loadData() {
@@ -104,7 +106,7 @@ public class frmWareHouse extends javax.swing.JFrame {
         btnDel = new javax.swing.JButton();
         lblIcon = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         pnWareHouse.setBackground(new java.awt.Color(23, 187, 146));
         pnWareHouse.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
