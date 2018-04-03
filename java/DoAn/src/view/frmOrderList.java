@@ -220,6 +220,7 @@ public class frmOrderList extends javax.swing.JFrame {
         spOrderList.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
         spOrderList.setOneTouchExpandable(true);
 
+        pnList.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(27, 157, 221), 2), "Danh Sách Phiếu Xuất", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(27, 157, 221))); // NOI18N
         pnList.setMinimumSize(new java.awt.Dimension(0, 200));
 
         tblOrderList.setModel(new javax.swing.table.DefaultTableModel(
@@ -244,15 +245,18 @@ public class frmOrderList extends javax.swing.JFrame {
         pnList.setLayout(pnListLayout);
         pnListLayout.setHorizontalGroup(
             pnListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
+            .addComponent(scList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
         );
         pnListLayout.setVerticalGroup(
             pnListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(scList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
         );
 
         spOrderList.setTopComponent(pnList);
 
+        pnDetail.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(27, 157, 221), 2), "Chi Tiết Phiếu Xuất", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(27, 157, 221))); // NOI18N
+
+        tblListDetail.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14))); // NOI18N
         tblListDetail.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -270,11 +274,11 @@ public class frmOrderList extends javax.swing.JFrame {
         pnDetail.setLayout(pnDetailLayout);
         pnDetailLayout.setHorizontalGroup(
             pnDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
+            .addComponent(scDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
         );
         pnDetailLayout.setVerticalGroup(
             pnDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+            .addComponent(scDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
         );
 
         spOrderList.setRightComponent(pnDetail);
@@ -349,7 +353,9 @@ public class frmOrderList extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNewActionPerformed
-        // TODO add your handling code here:
+        frmCreateOrder fc = new frmCreateOrder();
+        fc.setLocationRelativeTo(this);
+        fc.setVisible(true);
     }//GEN-LAST:event_btnCreateNewActionPerformed
 
     private void tblOrderListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrderListMouseClicked

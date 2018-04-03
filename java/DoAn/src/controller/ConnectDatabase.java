@@ -20,11 +20,11 @@ import model.Config;
  */
 public class ConnectDatabase {
  
-    static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static  String DB_URL="" ;
-    static  String DATABASENAME="" ;
-    static  String USER="" ;
-    static  String PASS="";
+    static String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    static  String DB_URL = "";
+    static  String DATABASENAME = "";
+    static  String USER = "";
+    static  String PASS = "";
 
     public static Connection getConnectDatabase() {
         Connection conn = null;

@@ -413,6 +413,11 @@ public class frmCreateGR extends javax.swing.JFrame {
         }
 
         goodsReceipt.getGRdetail().add(new Goods(id, name, num, price));
+        long total=0;
+        for (Goods goods : goodsReceipt.getGRdetail()) {
+            total+=goods.getNum()*goods.getPrice();
+        }
+        txtTotal.setText(Long.toString(total));
 
     }
 
@@ -450,6 +455,7 @@ public class frmCreateGR extends javax.swing.JFrame {
 
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
+        
         insertGRToDatabase();
         insertGRDetail();
         loadInventory();
@@ -459,6 +465,8 @@ public class frmCreateGR extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Đã xử lý xong.\n"
                 + "Chuyển sang về lại màn hình đơn nhập để cập nhật dữ liệu mới");
     }//GEN-LAST:event_btnAcceptActionPerformed
+    
+    
     private void insertGRToDatabase() {
         idGR = txtID.getText().trim();
         if (idGR.equalsIgnoreCase("")) {
@@ -481,6 +489,7 @@ public class frmCreateGR extends javax.swing.JFrame {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "lỗi thêm dữ liệu");
         }
+        
 
     }
 
@@ -530,11 +539,11 @@ public class frmCreateGR extends javax.swing.JFrame {
     
     private void sumGoodsNum() {
            
-           for (Goods newgoods : updateInventorys) {
+           for (Goods goods : updateInventorys) {
                for (Inventory inventory : listInventorys) {
-                   if (inventory.getID().equalsIgnoreCase(newgoods.getGoodsID())) {
-                       int num=inventory.getNumInventory()+newgoods.getNum();
-                       newgoods.setNum(num);
+                   if (inventory.getID().equalsIgnoreCase(goods.getGoodsID())) {
+                       int num=inventory.getNumInventory()+goods.getNum();
+                       goods.setNum(num);
                    }
                }
              
@@ -633,6 +642,7 @@ public class frmCreateGR extends javax.swing.JFrame {
     private javax.swing.JTextField txtTime;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
+
 
  
 
