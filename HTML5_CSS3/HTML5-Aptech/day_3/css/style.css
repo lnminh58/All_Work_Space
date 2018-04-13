@@ -1,0 +1,75 @@
+body{
+    background: #ebebea;
+}
+header{
+    border-top: 10px #894aa3 solid;
+    overflow: hidden;
+    background: #ffffff;
+    height:120px;
+
+}
+.logo {
+     margin-top: 36px;
+     margin-left: 30px;
+     margin-right: 120px;
+  
+    float: left;
+}
+/* 
+.logo p{
+    margin: 0;
+} */
+.logo-title{
+    margin:0;
+    font-size: 26px;
+    color: #666666;
+    text-transform: uppercase; 
+    line-height: 36px;
+}
+.logo-text{
+    margin:0;
+    font-size: 12px;
+    line-height: 12px;
+    color: #666666;
+
+}
+.logo-title-letter{
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.navbar{
+    overflow: hidden;
+    float: left;
+    margin-top: 73px;
+
+  
+}
+.nav-link{
+  
+    text-decoration: none;
+    margin-right: 31px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #666666;
+    text-transform: uppercase;
+}
+.nav-link:last-child{
+    margin: 0;
+}
+.active{
+    color: #000000;
+}
+.slider{
+    align-items: center;
+}
+
+.slider-head{
+    width: 50%;
+    margin-top: 23px;
+    margin-bottom: 0;
+    margin-left: 25%;
+    font-size: 22px; 
+    line-height: 22px;   
+    font-style: italic;
+}
