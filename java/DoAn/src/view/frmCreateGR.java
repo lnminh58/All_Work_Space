@@ -381,6 +381,7 @@ public class frmCreateGR extends javax.swing.JFrame {
         loadTableTitle();
         loadTableData();
         showOnTable();
+        calTotalPrice();
     }//GEN-LAST:event_btnAddActionPerformed
     private void addTolistGoods() {
 
@@ -407,20 +408,23 @@ public class frmCreateGR extends javax.swing.JFrame {
         int price = Integer.valueOf(sprice);
         for (Goods goods : goodsReceipt.getGRdetail()) {
             if (goods.getGoodsID().equalsIgnoreCase(id)) {
-                JOptionPane.showMessageDialog(this, "Sản phẩm này đã được chọn");
+                goods.setNum(goods.getNum()+num);   
                 return;
             }
         }
 
         goodsReceipt.getGRdetail().add(new Goods(id, name, num, price));
-        long total=0;
+    
+    }
+    private void calTotalPrice() {
+            long total=0;
         for (Goods goods : goodsReceipt.getGRdetail()) {
             total+=goods.getNum()*goods.getPrice();
         }
         txtTotal.setText(Long.toString(total));
 
     }
-
+    
     private void loadTableTitle() {
         tableTitle = new Vector<>();
         tableTitle.add("Mã sản phẩm");
@@ -643,6 +647,7 @@ public class frmCreateGR extends javax.swing.JFrame {
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 
+ 
 
  
 

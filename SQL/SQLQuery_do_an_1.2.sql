@@ -2,12 +2,15 @@ DROP DATABASE QuanLyBanHang
 CREATE DATABASE QuanLyBanHang
 USE QuanLyBanHang
 
+
 CREATE TABLE LuongCoBan(
 	maChucVu VARCHAR(5) NOT NULL PRIMARY KEY,
 	tenChucVu NVARCHAR(100) NOT NULL ,	
 	luongCoBan MONEY NOT NULL,
 )
 sp_rename "luongCoBan","LuongCoBan"
+
+
 CREATE TABLE NhanVien(
 maNV VARCHAR(5) NOT NULL PRIMARY KEY,
 tenNV NVARCHAR(100) NOT NULL,
@@ -15,6 +18,10 @@ maChucVu VARCHAR(5) NOT NULL FOREIGN KEY REFERENCES luongCoBan(maChucVu),
 sdtNV VARCHAR(12) NOT NULL,
 diaChiNV NVARCHAR(100), 	
 )
+
+ALTER TABLE NhanVien ADD 
+	trangthai BIT DEFAULT 1	
+
 
 DROP TABLE LuongHangThang
 CREATE TABLE LuongHangThang(
@@ -241,7 +248,7 @@ SELECT * FROM NhanVien AS nv
 CREATE PROCEDURE sp_getEmpForPayroll
 AS
 SELECT nv.maNV,nv.tenNV, lcb.luongCoBan FROM NhanVien AS nv, LuongCoban AS lcb
-WHERE nv.maChucVu= lcb.maChucVu
+WHERE nv.maChucVu= lcb.maChucVu AND nv.trangthai=1
 
 
 CREATE PROCEDURE sp_getEmpIDAndName
@@ -259,7 +266,7 @@ CREATE PROCEDURE sp_addNewEmp
 @diachiNV NVARCHAR(100)
 AS 
 INSERT INTO NhanVien
-
+(maNV, tenNV, maChucVu, sdtNV, diaChiNV)
 VALUES
 (
 	@maNV,
@@ -276,6 +283,13 @@ DELETE FROM NhanVien
 WHERE maNV=@maNV
 
 
+CREATE PROC sp_updateEmpStatus
+@maNV VARCHAR(5),
+@trangthai BIT
+AS
+UPDATE NhanVien 
+SET trangthai=@trangthai
+WHERE maNV=@maNV
 
 
 
@@ -338,19 +352,30 @@ exec  sp_helptext 'sp_getPayroll'
 CREATE PROCEDURE sp_getPayroll AS
 SELECT nv.maNV,nv.tenNV,lht.ngayTinhLuong ,lht.luongCoBan,lht.thuong,lht.phuCap,lht.buoiVang,lht.thucNhan
 FROM NhanVien AS nv, LuongHangThang AS lht
-WHERE nv.maNV= lht.maNV 
+WHERE nv.maNV= lht.maNV  AND nv.trangthai=1
+
+CREATE PROCEDURE sp_getPayrollAll AS
+SELECT nv.maNV,nv.tenNV,lht.ngayTinhLuong ,lht.luongCoBan,lht.thuong,lht.phuCap,lht.buoiVang,lht.thucNhan
+FROM NhanVien AS nv, LuongHangThang AS lht
+WHERE nv.maNV= lht.maNV
 
 
 CREATE PROCEDURE sp_getPayrollTime AS
 SELECT distinct ngayTinhLuong FROM Luonghangthang
 
+CREATE PROCEDURE sp_getPayrollWithDateAll
+@ngayTinhLuong DATE
+AS
+SELECT nv.maNV, nv.tenNV,lht.ngayTinhLuong ,lht.luongCoBan,lht.thuong,lht.phuCap,lht.buoiVang,lht.thucNhan
+FROM NhanVien AS nv, LuongHangThang AS lht
+WHERE  nv.maNV= lht.maNV AND lht.ngayTinhLuong = @ngayTinhLuong
 
 CREATE PROCEDURE sp_getPayrollWithDate 
 @ngayTinhLuong DATE
 AS
 SELECT nv.maNV, nv.tenNV,lht.ngayTinhLuong ,lht.luongCoBan,lht.thuong,lht.phuCap,lht.buoiVang,lht.thucNhan
 FROM NhanVien AS nv, LuongHangThang AS lht
-WHERE  nv.maNV= lht.maNV AND lht.ngayTinhLuong = @ngayTinhLuong
+WHERE  nv.maNV= lht.maNV AND lht.ngayTinhLuong = @ngayTinhLuong AND nv.trangthai=1
 
 
 CREATE PROCEDURE sp_addPayroll 
@@ -482,8 +507,24 @@ SELECT n.maNCC, n.tenNCC FROM NhaCungCap AS n
  	@giaNhap
  )
  
- 
- 
+CREATE PROC sp_delGR
+@maPN VARCHAR(5)
+AS
+DELETE FROM ChiTietPhieuNhap
+WHERE maPN=@maPN
+DELETE FROM PhieuNhap
+WHERE maPN=@maPn
+
+EXECUTE sp_delGR 'PN001'
+
+CREATE PROC sp_delGRDetail
+@maPN VARCHAR(5),
+@maSP VARCHAR(5)
+AS
+DELETE FROM ChiTietPhieuNhap
+WHERE maPN=@maPN AND maSP= @maSP
+
+
  CREATE PROC sp_updateInventory
 @maSP VARCHAR(5) ,
 @soLuong INT 
@@ -491,3 +532,103 @@ AS
 UPDATE kho
 SET soluong=@soLuong
 WHERE maSP=@maSP
+
+
+
+CREATE PROCEDURE sp_getCusIDAndName
+AS
+SELECT k.maKH,k.tenKH FROM KhachHang AS k
+
+EXECUTE sp_getCusIDAndName
+
+CREATE PROCEDURE sp_getEmpIDAndNameWithPosition
+@maChucVu VARCHAR(5)
+AS
+SELECT n.maNV,n.tenNV FROM NhanVien AS n
+WHERE maChucVu=@maChucVu AND n.trangthai=1
+
+EXECUTE sp_getEmpIDAndNameWithPosition 'CV003'
+
+
+
+ CREATE PROCEDURE sp_addOrder
+ @maPX VARCHAR(5),
+ @ngayXuat DATE,
+ @maKH VARCHAR(6),
+ @maNVBanHang VARCHAR(5),
+ @maNVGiaoHang VARCHAR(5)
+ AS
+ INSERT INTO PhieuXuat
+ VALUES
+ (
+  @maPX,
+  @ngayXuat,
+  @maKH,
+  @maNVBanHang,
+  @maNVGiaoHang
+ )
+ 
+ sp_helptext 'sp_addOrder'
+ 
+ CREATE PROC sp_addOrderDetails
+ @maPX VARCHAR(5) ,
+ @maSP VARCHAR(5),
+ @soLuongXuat INT ,
+ @giaXuat MONEY
+ AS
+ INSERT INTO ChiTietPhieuXuat
+ VALUES
+ (
+ 	@maPX,
+ 	@maSP,
+ 	@soLuongXuat,
+ 	@giaXuat
+ )
+ 
+ CREATE PROC sp_delOrder
+@maPX VARCHAR(5)
+AS
+DELETE FROM ChiTietPhieuXuat
+WHERE maPX=@maPX
+DELETE FROM PhieuXuat
+WHERE maPX=@maPX
+
+EXECUTE sp_delOrder 'PX001'
+
+CREATE PROC sp_delOrderDetail
+@maPX VARCHAR(5),
+@maSP VARCHAR(5)
+AS
+DELETE FROM ChiTietPhieuXuat
+WHERE maPX=@maPX AND maSP= @maSP
+
+ 
+ 
+ 
+ 
+ 
+CREATE PROCEDURE sp_getInventoryGRWithDate
+@maSP VARCHAR(5), @time VARCHAR(8)
+AS
+SELECT soLuongNhap, giaNhap , ngayNhap FROM PhieuNhap AS pn, ChiTietPhieuNhap AS ct
+WHERE pn.maPN = ct.maPN AND pn.ngayNhap LIKE @time AND ct.maSP = @maSP
+
+EXEC sp_getInventoryGRWithDate 'sp002','2018-03%'
+
+CREATE PROCEDURE sp_getInventoryOrderWithDate
+@maSP VARCHAR(5), @time VARCHAR(8)
+AS
+SELECT soLuongXuat, giaXuat , ngayXuat FROM PhieuXuat AS px, ChiTietPhieuXuat AS ct
+WHERE px.maPX = ct.maPX AND px.ngayXuat LIKE @time AND ct.maSP = @maSP
+
+EXEC sp_getInventoryOrderWithDate 'sp002','2018-03%'
+
+
+
+CREATE PROC sp_getTimeInOut
+as
+ SELECT distinct  ngayNhap AS thoigian FROM PhieuNhap
+ UNION
+ SELECT distinct  ngayXuat as thoigian FROM PhieuXuat
+ 
+ 

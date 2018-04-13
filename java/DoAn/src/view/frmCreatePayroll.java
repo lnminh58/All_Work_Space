@@ -85,7 +85,7 @@ public class frmCreatePayroll extends javax.swing.JFrame {
         listEmp = new Vector<>();
         cbEmp.removeAllItems();
         try (Connection conn = ConnectDatabase.getConnectDatabase()) {
-            String sql = "{call sp_getEmpForPayroll}";
+                String sql = "{call sp_getEmpForPayroll}";
             try (CallableStatement cstmt = conn.prepareCall(sql); ResultSet rs = cstmt.executeQuery()) {
                 while (rs.next()) {
                     String id = rs.getString("maNV");

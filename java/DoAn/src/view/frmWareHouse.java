@@ -105,6 +105,8 @@ public class frmWareHouse extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
         lblIcon = new javax.swing.JLabel();
+        btnDetail = new javax.swing.JButton();
+        bnNewRefresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -180,30 +182,59 @@ public class frmWareHouse extends javax.swing.JFrame {
         lblIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/warehouse.png"))); // NOI18N
 
+        btnDetail.setBackground(new java.awt.Color(255, 255, 255));
+        btnDetail.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnDetail.setForeground(new java.awt.Color(0, 0, 0));
+        btnDetail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/detail.png"))); // NOI18N
+        btnDetail.setText("Chi Tiết");
+        btnDetail.setContentAreaFilled(false);
+        btnDetail.setOpaque(true);
+        btnDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDetailActionPerformed(evt);
+            }
+        });
+
+        bnNewRefresh.setBackground(new java.awt.Color(255, 255, 255));
+        bnNewRefresh.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        bnNewRefresh.setForeground(new java.awt.Color(0, 0, 0));
+        bnNewRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh_button.png"))); // NOI18N
+        bnNewRefresh.setText("Làm Mới");
+        bnNewRefresh.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bnNewRefresh.setContentAreaFilled(false);
+        bnNewRefresh.setOpaque(true);
+        bnNewRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnNewRefreshActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnWareHouseLayout = new javax.swing.GroupLayout(pnWareHouse);
         pnWareHouse.setLayout(pnWareHouseLayout);
         pnWareHouseLayout.setHorizontalGroup(
             pnWareHouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scWareHouse, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
+            .addComponent(scWareHouse, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
             .addGroup(pnWareHouseLayout.createSequentialGroup()
                 .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(lblID)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnWareHouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDetail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(pnWareHouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnWareHouseLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(lblID)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblName)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnWareHouseLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnWareHouseLayout.createSequentialGroup()
+                        .addComponent(bnNewRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48))
         );
         pnWareHouseLayout.setVerticalGroup(
             pnWareHouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,7 +251,9 @@ public class frmWareHouse extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnWareHouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAdd)
-                            .addComponent(btnDel))
+                            .addComponent(btnDel)
+                            .addComponent(btnDetail)
+                            .addComponent(bnNewRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE))
                 .addContainerGap())
@@ -279,6 +312,28 @@ public class frmWareHouse extends javax.swing.JFrame {
         delGoods();
         loadData();
     }//GEN-LAST:event_btnDelActionPerformed
+
+    private void btnDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailActionPerformed
+        int selectedRow = tblWareHouse.getSelectedRow();
+        if(selectedRow==-1){
+            JOptionPane.showMessageDialog(this, "Xin chọn sản phẩm\n" );
+            return;
+        }
+        
+        
+        frmInventoryDetail.idInventory=(String) tblWareHouse.getValueAt(selectedRow, 0);
+        frmInventoryDetail.nameInventory=(String) tblWareHouse.getValueAt(selectedRow, 1);
+        frmInventoryDetail fi = new frmInventoryDetail();
+        fi.setLocationRelativeTo(this);
+      
+        
+        fi.setVisible(true);
+        
+    }//GEN-LAST:event_btnDetailActionPerformed
+
+    private void bnNewRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnNewRefreshActionPerformed
+        loadData();
+    }//GEN-LAST:event_bnNewRefreshActionPerformed
     
     private void delGoods() {
         if (txtID.getText().trim().equalsIgnoreCase("")) {
@@ -339,8 +394,10 @@ public class frmWareHouse extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bnNewRefresh;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnDetail;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblIcon;
     private javax.swing.JLabel lblName;

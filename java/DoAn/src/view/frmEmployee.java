@@ -78,6 +78,8 @@ public class frmEmployee extends javax.swing.JFrame {
         TableTitle.add("Chức vụ");
         TableTitle.add("Số điện thoại");
         TableTitle.add("Địa chỉ");
+        TableTitle.add("Trạng thái hoạt động");
+
     }
 
     private void loadTableData() {
@@ -89,19 +91,29 @@ public class frmEmployee extends javax.swing.JFrame {
             try (CallableStatement cstmt = conn.prepareCall(sql); ResultSet rs = cstmt.executeQuery()) {
                 while (rs.next()) {
                     listEmps.add(new Employee(rs.getString("maNV"), rs.getString("tenNV"),
-                            rs.getString("maChucVu"), rs.getString("sdtNV"), rs.getString("diaChiNV")));
+                            rs.getString("maChucVu"), rs.getString("sdtNV"), rs.getString("diaChiNV"), rs.getBoolean("trangthai")));
                 }
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "lỗi tải dữ liệu");
         }
         for (Employee emp : listEmps) {
+            if (!cboStatus.isSelected()) {
+                if (!emp.isStatus()) {
+                    continue;
+                }
+            }
             Vector<String> temp = new Vector<>();
             temp.add(emp.getID());
             temp.add(emp.getName());
             temp.add(listPosition.get(emp.getPosittion()));
             temp.add(emp.getPhoneNumber());
             temp.add(emp.getAddress());
+            if (emp.isStatus()) {
+                temp.add("Đang làm việc");
+            } else {
+                temp.add("Đã nghỉ việc");
+            }
             TableData.add(temp);
         }
 
@@ -153,6 +165,8 @@ public class frmEmployee extends javax.swing.JFrame {
         cbPosition = new javax.swing.JComboBox<>();
         lblPosition = new javax.swing.JLabel();
         btnEdit = new javax.swing.JButton();
+        cboStatus = new javax.swing.JCheckBox();
+        btnUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -259,12 +273,38 @@ public class frmEmployee extends javax.swing.JFrame {
             }
         });
 
+        cboStatus.setBackground(new java.awt.Color(30, 165, 165));
+        cboStatus.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        cboStatus.setText("Đã Nghỉ Việc");
+        cboStatus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboStatusMouseClicked(evt);
+            }
+        });
+
+        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(0, 0, 0));
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/change.png"))); // NOI18N
+        btnUpdate.setText("Đổi Trạng Thái");
+        btnUpdate.setContentAreaFilled(false);
+        btnUpdate.setOpaque(true);
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnEmpLayout = new javax.swing.GroupLayout(pnEmp);
         pnEmp.setLayout(pnEmpLayout);
         pnEmpLayout.setHorizontalGroup(
             pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnEmpLayout.createSequentialGroup()
-                .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnEmpLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(cboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnEmpLayout.createSequentialGroup()
@@ -276,17 +316,13 @@ public class frmEmployee extends javax.swing.JFrame {
                             .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtName)
-                            .addComponent(cbPosition, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtName)
+                                .addComponent(cbPosition, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnEmpLayout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEmpLayout.createSequentialGroup()
                             .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,8 +331,14 @@ public class frmEmployee extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEmpLayout.createSequentialGroup()
                             .addComponent(lblPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(90, 90, 90))
+                            .addComponent(txtPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnEmpLayout.createSequentialGroup()
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDel)))
+                .addContainerGap())
             .addComponent(scEmp)
         );
         pnEmpLayout.setVerticalGroup(
@@ -321,7 +363,9 @@ public class frmEmployee extends javax.swing.JFrame {
                                     .addComponent(lblPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(lblIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnEmpLayout.createSequentialGroup()
                         .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,12 +374,12 @@ public class frmEmployee extends javax.swing.JFrame {
                         .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
+                        .addGap(40, 40, 40)
                         .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -346,7 +390,9 @@ public class frmEmployee extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -399,16 +445,51 @@ public class frmEmployee extends javax.swing.JFrame {
         requestEditPosition();
     }//GEN-LAST:event_btnEditActionPerformed
 
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        updateEmpStatus();
+        loadTableEmp();
+    }//GEN-LAST:event_btnUpdateActionPerformed
+    private void updateEmpStatus() {
+               if (txtID.getText().trim().equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "Hãy điền vào mã khách hàng");
+            return;
+        }
+        try (Connection conn = ConnectDatabase.getConnectDatabase()) {
+            String sql = "{call sp_updateEmpStatus(?,?)}";
+            try (CallableStatement cstmt = conn.prepareCall(sql)) {
+                cstmt.setString(1, txtID.getText());
+                for (Employee emp : listEmps) {
+                    if(emp.getID().equalsIgnoreCase(txtID.getText())){
+                        cstmt.setBoolean(2, !emp.isStatus());
+                        break;
+                    }
+                }
+                
+                cstmt.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "lỗi cập nhật dữ liệu");
+        }
+
+        
+    
+    }
+
+    
+    private void cboStatusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboStatusMouseClicked
+        loadTableEmp();
+    }//GEN-LAST:event_cboStatusMouseClicked
+
     private void requestEditPosition() {
         frmPosition fp = new frmPosition();
         fp.setLocationRelativeTo(this);
         fp.setVisible(true);
-        
+
     }
 
     private void delEmp() {
         if (txtID.getText().trim().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Điền vào mã khách hàng");
+            JOptionPane.showMessageDialog(this, "Hãy điền vào mã khách hàng");
             return;
         }
         try (Connection conn = ConnectDatabase.getConnectDatabase()) {
@@ -462,7 +543,9 @@ public class frmEmployee extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDel;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<String> cbPosition;
+    private javax.swing.JCheckBox cboStatus;
     private javax.swing.JLabel lbID;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblIcon;

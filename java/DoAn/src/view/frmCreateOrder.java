@@ -34,7 +34,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
     DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
     String currentTime;
     String currentTimeSQL;
-    static Vector<Inventory> listInventorys;
+    Vector<Inventory> listInventorys;
     Vector<Vector> listCustomer;
     Order order;
     Vector<String> tableTitle;
@@ -448,6 +448,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
         loadTableTitle();
         loadTableData();
         showOnTable();
+        calTotalPrice();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void addTolistGoods() {
@@ -474,21 +475,17 @@ public class frmCreateOrder extends javax.swing.JFrame {
         int price = Integer.valueOf(sprice);
         for (Goods goods : order.getOrderdetail()) {
             if (goods.getGoodsID().equalsIgnoreCase(id)) {
-                JOptionPane.showMessageDialog(this, "Sản phẩm này đã được chọn");
+                goods.setNum(goods.getNum()+num);   
                 return;
+                
             }
         }
 
         order.getOrderdetail().add(new Goods(id, name, num, price));
-        long total=0;
-        
-        for (Goods goods : order.getOrderdetail()) {
-            total+=goods.getNum()*goods.getPrice();
-        }
-        
-        txtTotal.setText(Long.toString(total));
+     
     }
-
+    
+    
     private void loadTableTitle() {
         tableTitle = new Vector<>();
         tableTitle.add("Mã sản phẩm");
@@ -521,6 +518,15 @@ public class frmCreateOrder extends javax.swing.JFrame {
         tblOrder.setModel(dtm);
     }
     
+    private void calTotalPrice(){
+         long total=0;
+        
+        for (Goods goods : order.getOrderdetail()) {
+            total+=goods.getNum()*goods.getPrice();
+        }
+        
+        txtTotal.setText(Long.toString(total));
+    }
    
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
         if(checkInventoryNumber()){
@@ -528,7 +534,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
         inserOrderDetail();
         loadInventory();
         loadOrderDetailData();
-        sumGoodsNum();
+        subtractGoodsNum();
         updateInventory();
         JOptionPane.showMessageDialog(this, "Đã xử lý xong.\n"
                 + "Chuyển sang về lại màn hình đơn nhập để cập nhật dữ liệu mới");
@@ -618,7 +624,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
         }
     }
 
-    private void sumGoodsNum() {
+    private void subtractGoodsNum() {
         for (Goods goods : updateInventorys) {
                for (Inventory inventory : listInventorys) {
                    if (inventory.getID().equalsIgnoreCase(goods.getGoodsID())) {
@@ -723,7 +729,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private boolean checkInventoryNumber() {
-       loadInventory();
+        loadInventory();
         int count = 0;
         for (Goods goods : order.getOrderdetail()) {
             for (Inventory inventory : listInventorys) {

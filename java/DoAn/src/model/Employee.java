@@ -15,6 +15,7 @@ public class Employee {
     private String posittion;
     private String phoneNumber;
     private String address;
+    private boolean status;
 
     public String getID() {
         return ID;
@@ -56,13 +57,25 @@ public class Employee {
         this.address = address;
     }
 
-    public Employee(String ID, String name, String posittion, String phoneNumber, String address) {
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
+
+    public Employee(String ID, String name, String posittion, String phoneNumber, String address, boolean status) {
         this.ID = ID;
         this.name = name;
         this.posittion = posittion;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.status = status;
     }
+
+    
 
     public Employee() {
     }

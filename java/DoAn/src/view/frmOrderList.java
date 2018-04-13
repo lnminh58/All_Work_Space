@@ -18,9 +18,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Goods;
 import model.GoodsReceipt;
+import model.Inventory;
 import model.Order;
-import static view.frmGRList.selectedIndex;
-import static view.frmGRList.tableGRData;
 
 /**
  *
@@ -28,16 +27,19 @@ import static view.frmGRList.tableGRData;
  */
 public class frmOrderList extends javax.swing.JFrame {
 
-    static DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
-    static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    static Vector<String> tableOrderTitle;
-    static Vector<Vector> tableOrderData;
-    static Vector<Order> listOrder;
-    static Vector<String> tableOrderDetailTitle;
-    static Vector<Vector> tableOrderDetailData;
-    static HashMap<String, String> listEmp;
-    static int selectedIndex;
-    static long total;
+    private DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private Vector<String> tableOrderTitle;
+    private Vector<Vector> tableOrderData;
+    private Vector<Order> listOrder;
+    private Vector<String> tableOrderDetailTitle;
+    private Vector<Vector> tableOrderDetailData;
+    private HashMap<String, String> listEmp;
+    private int selectedIndex = -1;
+    private int selectedGoods = -1;
+    private long total;
+    private Vector<Inventory> listInventorys;
+    private Vector<Goods> updateInventorys;
 
     /**
      * Creates new form NewJFrame
@@ -51,7 +53,7 @@ public class frmOrderList extends javax.swing.JFrame {
         loadListEmp();
         loadTableOrder();
         loadTableOrderDetailTitle();
-        tableOrderDetailData= new Vector<>();
+        tableOrderDetailData = new Vector<>();
         showOnOrderDetailTable();
 
     }
@@ -135,7 +137,7 @@ public class frmOrderList extends javax.swing.JFrame {
         try {
             loadTableOrderDetailData(selectedIndex);
         } catch (Exception e) {
-            
+
         }
         showOnOrderDetailTable();
     }
@@ -212,6 +214,8 @@ public class frmOrderList extends javax.swing.JFrame {
         txtTotal = new javax.swing.JTextField();
         btnCreateNew = new javax.swing.JButton();
         lblIcon = new javax.swing.JLabel();
+        btnDel = new javax.swing.JButton();
+        bnNewRefresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -245,7 +249,7 @@ public class frmOrderList extends javax.swing.JFrame {
         pnList.setLayout(pnListLayout);
         pnListLayout.setHorizontalGroup(
             pnListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
+            .addComponent(scList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
         );
         pnListLayout.setVerticalGroup(
             pnListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,13 +272,18 @@ public class frmOrderList extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblListDetail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListDetailMouseClicked(evt);
+            }
+        });
         scDetail.setViewportView(tblListDetail);
 
         javax.swing.GroupLayout pnDetailLayout = new javax.swing.GroupLayout(pnDetail);
         pnDetail.setLayout(pnDetailLayout);
         pnDetailLayout.setHorizontalGroup(
             pnDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
+            .addComponent(scDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
         );
         pnDetailLayout.setVerticalGroup(
             pnDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -306,6 +315,33 @@ public class frmOrderList extends javax.swing.JFrame {
         lblIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/sale.png"))); // NOI18N
 
+        btnDel.setBackground(new java.awt.Color(255, 255, 255));
+        btnDel.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnDel.setForeground(new java.awt.Color(0, 0, 0));
+        btnDel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/del_button.png"))); // NOI18N
+        btnDel.setText("Xóa");
+        btnDel.setContentAreaFilled(false);
+        btnDel.setOpaque(true);
+        btnDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelActionPerformed(evt);
+            }
+        });
+
+        bnNewRefresh.setBackground(new java.awt.Color(255, 255, 255));
+        bnNewRefresh.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        bnNewRefresh.setForeground(new java.awt.Color(0, 0, 0));
+        bnNewRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh_button.png"))); // NOI18N
+        bnNewRefresh.setText("Làm Mới");
+        bnNewRefresh.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bnNewRefresh.setContentAreaFilled(false);
+        bnNewRefresh.setOpaque(true);
+        bnNewRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnNewRefreshActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnOrderListLayout = new javax.swing.GroupLayout(pnOrderList);
         pnOrderList.setLayout(pnOrderListLayout);
         pnOrderListLayout.setHorizontalGroup(
@@ -314,8 +350,12 @@ public class frmOrderList extends javax.swing.JFrame {
             .addGroup(pnOrderListLayout.createSequentialGroup()
                 .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addComponent(btnCreateNew, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCreateNew, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bnNewRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
                 .addComponent(lblTotal)
                 .addGap(30, 30, 30)
                 .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -331,7 +371,9 @@ public class frmOrderList extends javax.swing.JFrame {
                         .addGroup(pnOrderListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCreateNew, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnCreateNew, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bnNewRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnOrderListLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -363,8 +405,130 @@ public class frmOrderList extends javax.swing.JFrame {
         showOnDetailTable();
     }//GEN-LAST:event_tblOrderListMouseClicked
 
+    private void bnNewRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnNewRefreshActionPerformed
+        loadData();
+    }//GEN-LAST:event_bnNewRefreshActionPerformed
+
+    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
+        delOrderAndOrderDetail();
+
+    }//GEN-LAST:event_btnDelActionPerformed
+    private void delOrderAndOrderDetail() {
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(this, "Xin chọn dữ liệu cần xóa ");
+            return;
+        }
+        if (selectedGoods == -1) {
+            updateInventorys = listOrder.get(selectedIndex).getOrderdetail();
+            delAll();
+        } else {
+            updateInventorys = new Vector<>();
+            updateInventorys.add(listOrder.get(selectedIndex).getOrderdetail().get(selectedGoods));
+            delDetail();
+        }
+    }
+    
+    private void delAll() {
+        
+            delOrder();
+            loadInventory();
+            sumGoodsNum();
+            updateInventory();
+            loadData();
+        
+    }
+    private void delDetail() {
+      
+            delOrder();
+            loadInventory();
+            sumGoodsNum();
+            updateInventory();
+            loadTableOrderDetail();
+            selectedGoods=-1;
+        
+    }
+    
+    private void loadInventory() {
+        listInventorys=new Vector<>();
+       
+        String sql = "{call sp_getInventory}";
+        try (Connection conn = ConnectDatabase.getConnectDatabase();
+                CallableStatement cstmt = conn.prepareCall(sql);
+                ResultSet rs = cstmt.executeQuery()) {
+            while (rs.next()) {
+                listInventorys.add(new Inventory(rs.getString("maSP"), rs.getString("tenSP"), rs.getInt("soLuong")));
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Lỗi tải dữ liệu");
+        }
+    }
+    
+
+    
+    private void delOrder(){
+        try (Connection conn = ConnectDatabase.getConnectDatabase()) {
+            String sql = "{call sp_delOrder(?)}";
+            try (CallableStatement cstmt = conn.prepareCall(sql)) {
+                cstmt.setString(1, listOrder.get(selectedIndex).getID() );
+                cstmt.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "lỗi xóa dữ liệu");
+        }
+
+    }
+    private void delGRDetail() {
+        try (Connection conn = ConnectDatabase.getConnectDatabase()) {
+            String sql = "{call sp_delOrderDetail(?,?)}";
+        try (CallableStatement cstmt = conn.prepareCall(sql)) {
+                cstmt.setString(1, listOrder.get(selectedIndex).getID() );
+                cstmt.setString(2, listOrder.get(selectedIndex).getOrderdetail().get(selectedGoods).getGoodsID());
+                cstmt.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "lỗi xóa dữ liệu");
+        }
+
+    }
+
+    private void sumGoodsNum() {
+        for (Goods goods : updateInventorys) {
+               for (Inventory inventory : listInventorys) {
+                   if (inventory.getID().equalsIgnoreCase(goods.getGoodsID())) {
+                       int num=inventory.getNumInventory()+goods.getNum();
+                       goods.setNum(num);
+                   }
+               }
+           }
+    }
+
+    private void updateInventory() {
+        for (Goods  goods : updateInventorys) {
+             try (Connection conn = ConnectDatabase.getConnectDatabase()) {
+                String sql = "{call sp_updateInventory(?,?)}";
+                try (CallableStatement cstmt = conn.prepareCall(sql)) {
+
+                    cstmt.setString(1, goods.getGoodsID());
+                    cstmt.setInt(2, goods.getNum());
+                    cstmt.executeUpdate();
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "lỗi cập nhật dữ liệu");
+            }
+        }
+    }
+   
+
+    private void tblListDetailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListDetailMouseClicked
+        // TODO add your handling code here:
+        selectedGoods = tblListDetail.getSelectedRow();
+
+
+    }//GEN-LAST:event_tblListDetailMouseClicked
+
     private void showOnDetailTable() {
         selectedIndex = tblOrderList.getSelectedRow();
+        selectedGoods = -1;
         loadTableOrderDetail();
         txtTotal.setText(moneyFormater.format(total));
     }
@@ -406,7 +570,9 @@ public class frmOrderList extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bnNewRefresh;
     private javax.swing.JButton btnCreateNew;
+    private javax.swing.JButton btnDel;
     private javax.swing.JLabel lblIcon;
     private javax.swing.JLabel lblTotal;
     private javax.swing.JPanel pnDetail;

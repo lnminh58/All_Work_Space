@@ -11,20 +11,22 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Position;
-import static view.frmOrderList.moneyFormater;
+
 
 /**
  *
  * @author lnminh
  */
 public class frmPosition extends javax.swing.JFrame {
-    Vector<String> TableTitle;
-    Vector<Vector> TableData;
-    Vector<Position> listPosition;
+    private DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
+    private Vector<String> TableTitle;
+    private Vector<Vector> TableData;
+    private Vector<Position> listPosition;
     /**
      * Creates new form frmPosition
      */
