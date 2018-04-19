@@ -1,0 +1,56 @@
+body{
+  background: linear-gradient(60deg,rgb(64, 212, 138),rgb(72, 235, 226));
+  min-height: 700px;
+}
+.bg-trans{
+  background: rgba(255, 255, 255,0.3);  
+}
+
+
+.bg-main{
+  background: linear-gradient(45deg,lightseagreen,lightcoral);
+}
+
+
+.bg-navbar{
+  background-color: rgb(71, 121, 106);
+}
+
+.bg-header,.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .active>.nav-link{
+  background: rgb(59, 185, 143);
+  
+}
+.parent{
+  overflow: hidden;
+}
+.cart-list{
+  position: absolute;;
+  top: -30;
+  right: 0;
+  z-index: 99;
+}
+
+.cart{
+  position: relative;
+}
+@media (max-width: 575.98px) { 
+
+
+ }
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+ 
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
