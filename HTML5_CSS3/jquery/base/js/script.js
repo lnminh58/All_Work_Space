@@ -635,7 +635,7 @@ $(function () {
 //     validateCheckboxField(isChecked, event);
 
 //     if (!isChecked) {
-     
+
 //      invalidFeedBack($(this).add("label[for='cb']"));
 //     } else {
 //      validFeedBack($(this).add("label[for='cb']"))
@@ -710,3 +710,45 @@ $(function () {
 // function isValidMessage(message) {
 //   return message.trim() != "";
 // }
+
+// 045
+/* 
+$(function () {  
+  //$.load()
+  // $("#code").load("js/script.js");
+  $("#code").load("js/script.js",function (response,status) {  
+    if(status=="error"){
+      alert("could not find file");
+    }
+    console.log(response);
+  });
+
+}); */
+
+
+//046
+/* 
+$(function () {
+  //json $.getJSON()
+  var flickrApiUrl = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON(flickrApiUrl, {
+    //options...
+    tags: "aquarium",
+    tagmode: "any",
+    format: "json",
+  }).done(function (data) {
+    // success
+    console.log(data);
+    $.each(data.items,function (index,item) {  
+      console.log(item);
+      $("<img>").attr("src",item.media.m).appendTo("#flickr")
+      if(index==4){
+        return false;
+      }
+    });
+  }).fail(function () {
+    // failure
+    alert("Ajax call Failed")
+  })
+}) */
+

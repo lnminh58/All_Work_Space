@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.header {
+  height: 60px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DCDCDD;
+  box-shadow: 0 0 5px #DCDCDD;
+  background-color: #F5F5F5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header .img-logo {
+  width: 100px;
+  margin-left: 10px;
+  margin-top: 5px;
+  float: left;
+}
+
+.header .cart {
+  float: right;
+  margin-right: 20px;
+  font-size: 30px;
+  margin-top: 20px;
+  position: relative;
+  color: #75C4FA;
+}
+
+.cart .cart-count {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  background-color: rgb(238, 120, 116);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: none;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+}
+
+.cart-list {
+  position: absolute;
+  right: 0;
+  width: 230px;
+  background-color: #dcdcdd;
+  border-radius: 5px;
+  padding: 10px;
+  display: none
+}
+
+.cart-list .cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #333;
+}
+
+.cart-list .cart-item img {
+  width: 50px;
+  margin: 0;
+  display: inline-block;
+}
+
+.wrap-content {
+  margin: 0 auto;
+  padding: 70px 15px 15px;
+  overflow: hidden;
+}
+
+.navigation {
+  background-color: aliceblue;
+  height: 30px;
+  line-height: 30px;
+  clear: both;
+}
+
+.sidebar {
+  width: 250px;
+  float: left;
+}
+
+.prd-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  border-bottom: 1px solid #DCDCDD;
+}
+
+.list-item:hover {
+  background-color: #f8f8f8;
+  border-left: 3px solid #ed1c24;
+}
+
+.list-item .item-link {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  color: #333333;
+}
+
+.list-item:hover .item-link {
+  padding-left: 7px;
+}
+
+.content {
+  float: left;
+  width: calc(100% - 251px);
+}
+
+.group-item {
+  overflow: hidden;
+}
+
+.group-item .item {
+  float: left;
+  width: 200px;
+  margin: 15px;
+  box-shadow: 0 0 15px #333333;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.item img {
+  width: 200px;
+  display: inline-block;
+  text-align: center;
+}
+
+.item .add-cart {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100px;
+  height: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgb(16, 233, 99);
+  color: #fff;
+  cursor: pointer;
+}
+
+.group-item .item:hover .add-cart {
+  visibility: visible;
+  opacity: 1;
+}
