@@ -53,6 +53,7 @@ CREATE TABLE KhachHang(
 )
 
 
+
 CREATE TABLE Kho (
 	maSP VARCHAR(5) NOT NULL PRIMARY KEY,
 	tenSP NVARCHAR(100) NOT NULL,
@@ -630,5 +631,19 @@ as
  SELECT distinct  ngayNhap AS thoigian FROM PhieuNhap
  UNION
  SELECT distinct  ngayXuat as thoigian FROM PhieuXuat
+ 
+ 
+ DELETE FROM chitietphieuxuat
+ DELETE FROM chitietphieunhap
+ 
+ DELETE FROM phieuxuat
+ DELETE FROM phieunhap
+ 
+  
+ DELETE FROM LuongHangThang
+ DELETE FROM kho
+ DELETE FROM nhaCungCap
+  DELETE FROM KhachHang
+   DELETE FROM NhanVien
  
  

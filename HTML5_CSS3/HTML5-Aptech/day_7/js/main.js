@@ -4,12 +4,17 @@
 //     document.write("<h2>Lê Ngọc Minh</h2> "+ "<p>Lớp HTML Express</p>");
 //     alert("Viết được /n funtion rồi");
 // }
-
+*/
 const a =2;
-let b=3;
+var b=2;
+
+B();
+A();
+console.log(b);
+
 
 function C(){
-   
+    
      function A(){
         var c= a+b;
         return c;
@@ -22,12 +27,10 @@ function B(){
     b=A()+2;
 }
 
-B();
-A();
 
 console.log(a);
 console.log(b);
-
+/*
 let a=2 ;
 let b=3;
 while(a<b){
@@ -43,11 +46,11 @@ console.log(typeof(a));
 
  */
 
-function showToConsole(){
-/*    var fisrtname =  document.getElementById("name").attributes
+/* function showToConsole(){
+    var fisrtname =  document.getElementById("name").attributes
       console.log(fisrtname);
       fisrtname.value='' ; // '' or null 
- */     
+     
       var array = document.getElementsByClassName("item");
       var abc = document.createElement('h1');
       for (let index = 0; index < array.length; index++) {
@@ -59,4 +62,4 @@ function showToConsole(){
       console.log(abc);
       
      
-  }
+  } */

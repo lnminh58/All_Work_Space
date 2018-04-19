@@ -29,11 +29,11 @@ public class frmInventoryDetail extends javax.swing.JFrame {
     static String idInventory = "";
     private SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy");
     private DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
-    private String selectedTime;
+    private String selectedTime="2016/04";
     private TreeSet<String> listTime;
-    private Vector<Vector> tableGRData;
-    private Vector<Vector> tableOrderData;
-    private Vector<String> tableTitle;
+    private Vector<Vector> tableGRData = new Vector<>();
+    private Vector<Vector> tableOrderData= new Vector<>();
+    private Vector<String> tableTitle= new Vector<>();
 
     /**
      * Creates new form frmIventoryDetail
@@ -102,6 +102,7 @@ public class frmInventoryDetail extends javax.swing.JFrame {
         try (Connection conn = ConnectDatabase.getConnectDatabase(); CallableStatement cstmt = conn.prepareCall(sql)) {
             String[] split = selectedTime.split("/");
             String date = split[1] + "-" + split[0] + "%";
+//            String date ="";
             cstmt.setString(1, idInventory);
             cstmt.setString(2, date);
 
@@ -125,6 +126,7 @@ public class frmInventoryDetail extends javax.swing.JFrame {
         long totalNum = 0;
         long totalPrice = 0;
         for (Vector vector : listNumPrice) {
+      
             totalNum += (int) vector.get(0);
             totalPrice += ((int) vector.get(0) * (int) vector.get(1));
         }
@@ -153,6 +155,7 @@ public class frmInventoryDetail extends javax.swing.JFrame {
         try (Connection conn = ConnectDatabase.getConnectDatabase(); CallableStatement cstmt = conn.prepareCall(sql)) {
             String[] split = selectedTime.split("/");
             String date = split[1] + "-" + split[0] + "%";
+//String date ="";
             cstmt.setString(1, idInventory);
             cstmt.setString(2, date);
 
@@ -176,6 +179,7 @@ public class frmInventoryDetail extends javax.swing.JFrame {
         long totalNum = 0;
         long totalPrice = 0;
         for (Vector vector : listNumPrice) {
+              
             totalNum += (int) vector.get(0);
             totalPrice += ((int) vector.get(0) * (int) vector.get(1));
         }

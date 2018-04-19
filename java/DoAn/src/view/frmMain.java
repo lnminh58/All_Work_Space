@@ -185,7 +185,7 @@ public class frmMain extends javax.swing.JFrame {
         pnTitle.setLayout(pnTitleLayout);
         pnTitleLayout.setHorizontalGroup(
             pnTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1115, Short.MAX_VALUE)
+            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 966, Short.MAX_VALUE)
         );
         pnTitleLayout.setVerticalGroup(
             pnTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +200,7 @@ public class frmMain extends javax.swing.JFrame {
         pnMain.setForeground(new java.awt.Color(255, 153, 0));
 
         btnLogin.setBackground(new java.awt.Color(232, 177, 67));
-        btnLogin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login.png"))); // NOI18N
         btnLogin.setText("ĐĂNG NHẬP");
@@ -213,7 +213,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnSignUp.setBackground(new java.awt.Color(35, 197, 206));
-        btnSignUp.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnSignUp.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
         btnSignUp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/registration.png"))); // NOI18N
         btnSignUp.setText("ĐĂNG KÝ");
@@ -226,7 +226,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnEmp.setBackground(new java.awt.Color(30, 165, 165));
-        btnEmp.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnEmp.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnEmp.setForeground(new java.awt.Color(255, 255, 255));
         btnEmp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/employee.png"))); // NOI18N
         btnEmp.setText("NHÂN VIÊN");
@@ -239,7 +239,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnSalary.setBackground(new java.awt.Color(18, 185, 45));
-        btnSalary.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnSalary.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnSalary.setForeground(new java.awt.Color(255, 255, 255));
         btnSalary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salary.png"))); // NOI18N
         btnSalary.setText("QUẢN LÝ LƯƠNG");
@@ -268,7 +268,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnSupplier.setBackground(new java.awt.Color(27, 112, 218));
-        btnSupplier.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnSupplier.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnSupplier.setForeground(new java.awt.Color(255, 255, 255));
         btnSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/supplier.png"))); // NOI18N
         btnSupplier.setText("NHÀ CUNG CẤP");
@@ -284,7 +284,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnWareHouse.setBackground(new java.awt.Color(23, 187, 146));
-        btnWareHouse.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnWareHouse.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnWareHouse.setForeground(new java.awt.Color(255, 255, 255));
         btnWareHouse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/warehouse.png"))); // NOI18N
         btnWareHouse.setText("QUẢN LÝ KHO");
@@ -297,7 +297,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnCustomer.setBackground(new java.awt.Color(225, 112, 112));
-        btnCustomer.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnCustomer.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnCustomer.setForeground(new java.awt.Color(255, 255, 255));
         btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
         btnCustomer.setText("KHÁCH HÀNG");
@@ -312,7 +312,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnGRList.setBackground(new java.awt.Color(232, 134, 96));
-        btnGRList.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnGRList.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnGRList.setForeground(new java.awt.Color(255, 255, 255));
         btnGRList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buy.png"))); // NOI18N
         btnGRList.setText("ĐƠN NHẬP");
@@ -326,7 +326,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnSetting.setBackground(new java.awt.Color(173, 173, 173));
-        btnSetting.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnSetting.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnSetting.setForeground(new java.awt.Color(255, 255, 255));
         btnSetting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/settings.png"))); // NOI18N
         btnSetting.setText("CÀI ĐẶT");
@@ -339,7 +339,7 @@ public class frmMain extends javax.swing.JFrame {
         });
 
         btnInfo.setBackground(new java.awt.Color(173, 173, 173));
-        btnInfo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnInfo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnInfo.setForeground(new java.awt.Color(255, 255, 255));
         btnInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/info.png"))); // NOI18N
         btnInfo.setText("THÔNG TIN");
@@ -356,60 +356,57 @@ public class frmMain extends javax.swing.JFrame {
         pnMainLayout.setHorizontalGroup(
             pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnMainLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(20, 20, 20)
+                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnWareHouse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnMainLayout.createSequentialGroup()
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSalary, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnMainLayout.createSequentialGroup()
-                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addComponent(btnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnMainLayout.createSequentialGroup()
-                        .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnWareHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(5, 5, 5)
                         .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnMainLayout.createSequentialGroup()
-                                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnGRList, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnOrderList, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(5, 5, 5)
-                                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pnMainLayout.createSequentialGroup()
-                                .addComponent(btnSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(50, Short.MAX_VALUE))
+                            .addComponent(btnSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOrderList, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnEmp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnMainLayout.createSequentialGroup()
+                            .addComponent(btnGRList, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnMainLayout.setVerticalGroup(
             pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnMainLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnWareHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnMainLayout.createSequentialGroup()
-                        .addComponent(btnGRList, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnOrderList, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnMainLayout.createSequentialGroup()
-                        .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnWareHouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnSetting, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                        .addComponent(btnInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
-                    .addComponent(btnSalary, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnGRList, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(btnSupplier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnOrderList, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(btnCustomer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 

@@ -21,8 +21,8 @@ import model.Config;
 public class ConnectDatabase {
  
     static String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static  String DB_URL = "jdbc:sqlserver://localhost;";;
-    static  String DATABASENAME = "databaseName=quanlybanhang;";
+    static  String DB_URL = "jdbc:sqlserver://localhost;";
+    static  String DATABASENAME ="databaseName=quanlybanhang;";
     static  String USER = "user=sa;";
     static  String PASS = "password=ngocminh58";
 

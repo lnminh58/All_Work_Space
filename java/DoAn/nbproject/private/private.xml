@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/All_Work_Space/java/DoAn/src/view/frmOrderList.java</file>
+            <file>file:/F:/All_Work_Space/java/DoAn/src/controller/FileFactory.java</file>
+            <file>file:/F:/All_Work_Space/java/DoAn/src/controller/ConnectDatabase.java</file>
             <file>file:/F:/All_Work_Space/java/DoAn/src/view/frmGRList.java</file>
             <file>file:/F:/All_Work_Space/java/DoAn/src/view/frmWareHouse.java</file>
+            <file>file:/F:/All_Work_Space/java/DoAn/src/controller/CheckText.java</file>
+            <file>file:/F:/All_Work_Space/java/DoAn/src/controller/Confirm.java</file>
+            <file>file:/F:/All_Work_Space/java/DoAn/src/view/frmMain.java</file>
+            <file>file:/F:/All_Work_Space/java/DoAn/src/view/frmPosition.java</file>
+            <file>file:/F:/All_Work_Space/java/DoAn/src/view/frmInventoryDetail.java</file>
         </group>
     </open-files>
 </project-private>
