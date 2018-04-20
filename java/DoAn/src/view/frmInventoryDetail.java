@@ -8,7 +8,6 @@ package view;
 import controller.ConnectDatabase;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -17,7 +16,6 @@ import java.util.TreeSet;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.Payroll;
 
 /**
  *
@@ -233,6 +231,7 @@ public class frmInventoryDetail extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 560));
         setPreferredSize(new java.awt.Dimension(800, 560));
+        setResizable(false);
 
         pnDetail.setBackground(new java.awt.Color(23, 187, 146));
         pnDetail.setPreferredSize(new java.awt.Dimension(800, 539));

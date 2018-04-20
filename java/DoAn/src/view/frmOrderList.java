@@ -17,7 +17,6 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Goods;
-import model.GoodsReceipt;
 import model.Inventory;
 import model.Order;
 
@@ -218,6 +217,7 @@ public class frmOrderList extends javax.swing.JFrame {
         bnNewRefresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         pnOrderList.setBackground(new java.awt.Color(27, 157, 221));
 
@@ -249,7 +249,7 @@ public class frmOrderList extends javax.swing.JFrame {
         pnList.setLayout(pnListLayout);
         pnListLayout.setHorizontalGroup(
             pnListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
+            .addComponent(scList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
         );
         pnListLayout.setVerticalGroup(
             pnListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,7 +283,7 @@ public class frmOrderList extends javax.swing.JFrame {
         pnDetail.setLayout(pnDetailLayout);
         pnDetailLayout.setHorizontalGroup(
             pnDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
+            .addComponent(scDetail, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
         );
         pnDetailLayout.setVerticalGroup(
             pnDetailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,6 +302,7 @@ public class frmOrderList extends javax.swing.JFrame {
 
         btnCreateNew.setBackground(new java.awt.Color(255, 255, 255));
         btnCreateNew.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnCreateNew.setForeground(new java.awt.Color(51, 51, 51));
         btnCreateNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add_button.png"))); // NOI18N
         btnCreateNew.setText("Tạo bảng mới");
         btnCreateNew.setContentAreaFilled(false);
@@ -346,16 +347,16 @@ public class frmOrderList extends javax.swing.JFrame {
         pnOrderList.setLayout(pnOrderListLayout);
         pnOrderListLayout.setHorizontalGroup(
             pnOrderListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(spOrderList)
+            .addComponent(spOrderList, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(pnOrderListLayout.createSequentialGroup()
                 .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(btnCreateNew, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bnNewRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bnNewRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addComponent(btnDel)
+                .addGap(40, 40, 40)
                 .addComponent(lblTotal)
                 .addGap(30, 30, 30)
                 .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)

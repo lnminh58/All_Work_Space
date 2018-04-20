@@ -48,20 +48,18 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblIcon" min="-2" pref="64" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblPassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblGroup" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblUsername" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btnSignUp" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblPassword" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblGroup" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblUsername" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtPassword" max="32767" attributes="0"/>
-                              <Component id="cbGroup" max="32767" attributes="0"/>
-                              <Component id="txtUsername" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtPassword" max="32767" attributes="0"/>
+                          <Component id="cbGroup" max="32767" attributes="0"/>
+                          <Component id="txtUsername" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>

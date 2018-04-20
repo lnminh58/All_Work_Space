@@ -8,11 +8,9 @@ package controller;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import model.Config;
 
 /**
  *
@@ -20,11 +18,11 @@ import model.Config;
  */
 public class ConnectDatabase {
  
-    static String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static  String DB_URL = "jdbc:sqlserver://localhost;";
-    static  String DATABASENAME ="databaseName=quanlybanhang;";
-    static  String USER = "user=sa;";
-    static  String PASS = "password=ngocminh58";
+    static String JDBC_DRIVER =  "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    static  String DB_URL =    "";          //  "jdbc:sqlserver://localhost;";
+    static  String DATABASENAME = "";       //  "databaseName=quanlybanhang;";
+    static  String USER =  "";              //  "user=sa;";
+    static  String PASS ="";                //  "password=ngocminh58";
 
     public static Connection getConnectDatabase() {
         Connection conn = null;

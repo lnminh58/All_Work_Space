@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -14,12 +14,9 @@ import java.sql.SQLException;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Employee;
-import sun.net.www.MimeTable;
 
 /**
  *
@@ -27,10 +24,10 @@ import sun.net.www.MimeTable;
  */
 public class frmEmployee extends javax.swing.JFrame {
 
-    Vector<String> TableTitle;
-    Vector<Vector> TableData;
-    Vector<Employee> listEmps;
-    TreeMap<String, String> listPosition;
+    private Vector<String> TableTitle;
+    private Vector<Vector> TableData;
+    private Vector<Employee> listEmps;
+    private TreeMap<String, String> listPosition;
 
     /**
      * Creates new form frmEmployee
@@ -316,12 +313,11 @@ public class frmEmployee extends javax.swing.JFrame {
                             .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtName)
-                                .addComponent(cbPosition, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                        .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName)
+                            .addComponent(cbPosition, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEdit))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 40, Short.MAX_VALUE)
                 .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnEmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnEmpLayout.createSequentialGroup()
@@ -335,9 +331,9 @@ public class frmEmployee extends javax.swing.JFrame {
                     .addGroup(pnEmpLayout.createSequentialGroup()
                         .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAdd)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDel)))
+                        .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(scEmp)
         );
@@ -413,7 +409,7 @@ public class frmEmployee extends javax.swing.JFrame {
                 || txtName.getText().trim().equalsIgnoreCase("")
                 || txtAddress.getText().trim().equalsIgnoreCase("")
                 || txtPhoneNum.getText().trim().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Hãy điền vào đầy đủ thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền vào đầy đủ thông tin");
             return;
         }
         try (Connection conn = ConnectDatabase.getConnectDatabase()) {
@@ -451,7 +447,7 @@ public class frmEmployee extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateActionPerformed
     private void updateEmpStatus() {
                if (txtID.getText().trim().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Hãy điền vào mã khách hàng");
+            JOptionPane.showMessageDialog(this, "Xin điền vào mã nhân viên");
             return;
         }
         try (Connection conn = ConnectDatabase.getConnectDatabase()) {

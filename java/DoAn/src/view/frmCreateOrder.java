@@ -21,7 +21,6 @@ import javax.swing.table.DefaultTableModel;
 import model.Goods;
 import model.Inventory;
 import model.Order;
-import static view.frmCreateGR.listInventorys;
 
 /**
  *
@@ -29,30 +28,28 @@ import static view.frmCreateGR.listInventorys;
  */
 public class frmCreateOrder extends javax.swing.JFrame {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    SimpleDateFormat sdfSQL = new SimpleDateFormat("yyyy-MM-dd");
-    DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
-    String currentTime;
-    String currentTimeSQL;
-    Vector<Inventory> listInventorys;
-    Vector<Vector> listCustomer;
-    Order order;
-    Vector<String> tableTitle;
-    Vector<Vector> tableData = new Vector<>();
-    Vector<Vector> listSaler;
-    Vector<Vector> listShipper;
-    String idOrder;
-    boolean confirm = false;
-    Vector<Goods> updateInventorys;
-    
-    
-    
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private SimpleDateFormat sdfSQL = new SimpleDateFormat("yyyy-MM-dd");
+    private DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
+    private String currentTime;
+    private String currentTimeSQL;
+    private Vector<Inventory> listInventorys;
+    private Vector<Vector> listCustomer;
+    private Order order;
+    private Vector<String> tableTitle;
+    private Vector<Vector> tableData = new Vector<>();
+    private Vector<Vector> listSaler;
+    private Vector<Vector> listShipper;
+    private String idOrder;
+    private boolean confirm = false;
+    private Vector<Goods> updateInventorys;
+
     public frmCreateOrder() {
         initComponents();
         loadData();
         addWindowListener(Confirm.disposeListener(this));
     }
-    
+
     private void loadData() {
         setDefaultValue();
         loadInventory();
@@ -62,13 +59,13 @@ public class frmCreateOrder extends javax.swing.JFrame {
         loadTableTitle();
         showOnTable();
     }
-    
+
     private void getCurrentTime() {
 
         currentTime = sdf.format((new Date()).getTime());
         currentTimeSQL = sdfSQL.format((new Date()).getTime());
     }
-    
+
     private void setDefaultValue() {
         order = new Order();
         order.setOrderdetail(new Vector<Goods>());
@@ -77,9 +74,9 @@ public class frmCreateOrder extends javax.swing.JFrame {
         txtNum.setText("0");
         txtPrice.setText("0");
     }
-    
+
     private void loadInventory() {
-        listInventorys=new Vector<>();
+        listInventorys = new Vector<>();
         cbGoods.removeAllItems();
         String sql = "{call sp_getInventory}";
         try (Connection conn = ConnectDatabase.getConnectDatabase();
@@ -93,7 +90,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Lỗi tải dữ liệu");
         }
     }
-    
+
     private void loadCustomer() {
         listCustomer = new Vector<>();
         cbCustomer.removeAllItems();
@@ -112,43 +109,43 @@ public class frmCreateOrder extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Lỗi tải dữ liệu");
         }
     }
+
     private void loadSaler() {
         listSaler = new Vector<>();
         cbSale.removeAllItems();
         String sql = "{call sp_getEmpIDAndNameWithPosition(?)}";
         try (Connection conn = ConnectDatabase.getConnectDatabase();
-                CallableStatement cstmt = conn.prepareCall(sql)
-                ) {
+                CallableStatement cstmt = conn.prepareCall(sql)) {
             cstmt.setString(1, "CV003");
-            try (ResultSet rs = cstmt.executeQuery()){;
-            while (rs.next()) {
-                Vector temp = new Vector();
-                temp.add(rs.getString("maNV"));
-                temp.add(rs.getString("tenNV"));
-                listSaler.add(temp);
-                cbSale.addItem(rs.getString("tenNV"));
-            }
+            try (ResultSet rs = cstmt.executeQuery()) {;
+                while (rs.next()) {
+                    Vector temp = new Vector();
+                    temp.add(rs.getString("maNV"));
+                    temp.add(rs.getString("tenNV"));
+                    listSaler.add(temp);
+                    cbSale.addItem(rs.getString("tenNV"));
+                }
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Lỗi tải dữ liệu");
         }
     }
+
     private void loadShipper() {
         listShipper = new Vector<>();
         cbShipper.removeAllItems();
         String sql = "{call sp_getEmpIDAndNameWithPosition(?)}";
         try (Connection conn = ConnectDatabase.getConnectDatabase();
-                CallableStatement cstmt = conn.prepareCall(sql)
-                ) {
+                CallableStatement cstmt = conn.prepareCall(sql)) {
             cstmt.setString(1, "CV004");
-            try (ResultSet rs = cstmt.executeQuery()){;
-            while (rs.next()) {
-                Vector temp = new Vector();
-                temp.add(rs.getString("maNV"));
-                temp.add(rs.getString("tenNV"));
-                listShipper.add(temp);
-                cbShipper.addItem(rs.getString("tenNV"));
-            }
+            try (ResultSet rs = cstmt.executeQuery()) {;
+                while (rs.next()) {
+                    Vector temp = new Vector();
+                    temp.add(rs.getString("maNV"));
+                    temp.add(rs.getString("tenNV"));
+                    listShipper.add(temp);
+                    cbShipper.addItem(rs.getString("tenNV"));
+                }
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Lỗi tải dữ liệu");
@@ -190,6 +187,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
         btnDel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         pnCreateOrder.setBackground(new java.awt.Color(27, 157, 221));
 
@@ -353,7 +351,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
                                 .addComponent(lblGoods, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbGoods, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(40, 40, 40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnCreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblShipper, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -363,7 +361,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
                             .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                             .addComponent(cbShipper, 0, 164, Short.MAX_VALUE)
                             .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                        .addGap(40, 40, 40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnCreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblSale, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -429,7 +427,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnCreateOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnCreateOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -460,14 +458,14 @@ public class frmCreateOrder extends javax.swing.JFrame {
 
         if (snum.equalsIgnoreCase("")
                 || sprice.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Hãy điền vào đầy đủ thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền vào đầy đủ thông tin");
             return;
 
         }
 
         if (!CheckText.isInteger(snum)
                 || !CheckText.isInteger(sprice)) {
-            JOptionPane.showMessageDialog(this, "Hãy điền đúng kiểu thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền đúng kiểu thông tin");
             return;
         }
 
@@ -475,17 +473,16 @@ public class frmCreateOrder extends javax.swing.JFrame {
         int price = Integer.valueOf(sprice);
         for (Goods goods : order.getOrderdetail()) {
             if (goods.getGoodsID().equalsIgnoreCase(id)) {
-                goods.setNum(goods.getNum()+num);   
+                goods.setNum(goods.getNum() + num);
                 return;
-                
+
             }
         }
 
         order.getOrderdetail().add(new Goods(id, name, num, price));
-     
+
     }
-    
-    
+
     private void loadTableTitle() {
         tableTitle = new Vector<>();
         tableTitle.add("Mã sản phẩm");
@@ -504,11 +501,11 @@ public class frmCreateOrder extends javax.swing.JFrame {
             temp.add(moneyFormater.format(goods.getPrice()));
             tableData.add(temp);
         }
-        
+
     }
 
     private void showOnTable() {
-         DefaultTableModel dtm = new DefaultTableModel(tableData, tableTitle) {
+        DefaultTableModel dtm = new DefaultTableModel(tableData, tableTitle) {
             @Override
             public boolean isCellEditable(int i, int i1) {
                 return false; //To change body of generated methods, choose Tools | Templates.
@@ -517,48 +514,46 @@ public class frmCreateOrder extends javax.swing.JFrame {
         };
         tblOrder.setModel(dtm);
     }
-    
-    private void calTotalPrice(){
-         long total=0;
-        
+
+    private void calTotalPrice() {
+        long total = 0;
+
         for (Goods goods : order.getOrderdetail()) {
-            total+=goods.getNum()*goods.getPrice();
+            total += goods.getNum() * goods.getPrice();
         }
-        
+
         txtTotal.setText(Long.toString(total));
     }
-   
+
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
-        if(checkInventoryNumber()){
-        insertOrderToDatabase();
-        inserOrderDetail();
-        loadInventory();
-        loadOrderDetailData();
-        subtractGoodsNum();
-        updateInventory();
-        JOptionPane.showMessageDialog(this, "Đã xử lý xong.\n"
-                + "Chuyển sang về lại màn hình đơn nhập để cập nhật dữ liệu mới");
+        if (checkInventoryNumber()) {
+            insertOrderToDatabase();
+            inserOrderDetail();
+            loadInventory();
+            loadOrderDetailData();
+            subtractGoodsNum();
+            updateInventory();
+            JOptionPane.showMessageDialog(this, "Đã xử lý xong.\n"
+                    + "Chuyển sang về lại màn hình đơn nhập để cập nhật dữ liệu mới");
         }
-        
+
     }//GEN-LAST:event_btnAcceptActionPerformed
 
-
     private void insertOrderToDatabase() {
-        
-        
+
         idOrder = txtID.getText().trim();
         if (idOrder.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Hãy điền vào đầy đủ thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền vào đầy đủ thông tin");
             return;
         }
         int indexCus = cbCustomer.getSelectedIndex();
         Vector customer = listCustomer.get(indexCus);
         String idCus = (String) customer.get(0);
-        
+
         int indexSal = cbSale.getSelectedIndex();
         Vector saler = listSaler.get(indexSal);
         String idSal = (String) saler.get(0);
-        
+
         int indexShip = cbShipper.getSelectedIndex();
         Vector shipper = listShipper.get(indexShip);
         String idShip = (String) shipper.get(0);
@@ -626,19 +621,19 @@ public class frmCreateOrder extends javax.swing.JFrame {
 
     private void subtractGoodsNum() {
         for (Goods goods : updateInventorys) {
-               for (Inventory inventory : listInventorys) {
-                   if (inventory.getID().equalsIgnoreCase(goods.getGoodsID())) {
-                       int num=inventory.getNumInventory()-goods.getNum();
-                       goods.setNum(num);
-                   }
-               }
-             
-           }
+            for (Inventory inventory : listInventorys) {
+                if (inventory.getID().equalsIgnoreCase(goods.getGoodsID())) {
+                    int num = inventory.getNumInventory() - goods.getNum();
+                    goods.setNum(num);
+                }
+            }
+
+        }
     }
 
     private void updateInventory() {
-        for (Goods  goods : updateInventorys) {
-             try (Connection conn = ConnectDatabase.getConnectDatabase()) {
+        for (Goods goods : updateInventorys) {
+            try (Connection conn = ConnectDatabase.getConnectDatabase()) {
                 String sql = "{call sp_updateInventory(?,?)}";
                 try (CallableStatement cstmt = conn.prepareCall(sql)) {
 
@@ -651,14 +646,14 @@ public class frmCreateOrder extends javax.swing.JFrame {
             }
         }
     }
-    
+
     private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
         delFromListGoods();
         loadTableTitle();
         loadTableData();
         showOnTable();
     }//GEN-LAST:event_btnDelActionPerformed
-     private void delFromListGoods() {
+    private void delFromListGoods() {
         int selectedRow = tblOrder.getSelectedRow();
         if (selectedRow == -1) {
             return;
@@ -666,6 +661,7 @@ public class frmCreateOrder extends javax.swing.JFrame {
         order.getOrderdetail().remove(selectedRow);
 
     }
+
     /**
      * @param args the command line arguments
      */
@@ -733,29 +729,20 @@ public class frmCreateOrder extends javax.swing.JFrame {
         int count = 0;
         for (Goods goods : order.getOrderdetail()) {
             for (Inventory inventory : listInventorys) {
-                if(goods.getGoodsID().equalsIgnoreCase(inventory.getID())){
-                    if(goods.getNum()>inventory.getNumInventory()){
-                        
-                         JOptionPane.showMessageDialog(this, "Số lượng sản phẩm "+ goods.getGoodsID()+ " hiện không đủ");
+                if (goods.getGoodsID().equalsIgnoreCase(inventory.getID())) {
+                    if (goods.getNum() > inventory.getNumInventory()) {
+
+                        JOptionPane.showMessageDialog(this, "Số lượng sản phẩm " + goods.getGoodsID() + " hiện không đủ");
                         count++;
                     }
                 }
             }
         }
-        if(count!=0){
+        if (count != 0) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
 
-    
-
-    
-
-    
-
-    
-
-    
 }

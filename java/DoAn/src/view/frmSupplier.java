@@ -21,9 +21,9 @@ import model.Supplier;
  * @author lnminh
  */
 public class frmSupplier extends javax.swing.JFrame {
-    static Vector<String> tableTitle;
-    static Vector<Vector> tableData;
-    static Vector<Supplier> listSuppliers;
+   private  Vector<String> tableTitle;
+   private  Vector<Vector> tableData;
+   private  Vector<Supplier> listSuppliers;
    
 public frmSupplier() {
         initComponents();
@@ -105,6 +105,7 @@ private void loadTableTitle() {
         lblIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         pnSupplier.setBackground(new java.awt.Color(27, 112, 218));
 
@@ -198,23 +199,23 @@ private void loadTableTitle() {
                         .addComponent(lblID, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 38, Short.MAX_VALUE)
+                .addGap(33, 40, Short.MAX_VALUE)
                 .addGroup(pnSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnSupplierLayout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnSupplierLayout.createSequentialGroup()
+                    .addGroup(pnSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnSupplierLayout.createSequentialGroup()
                             .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtAddress))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnSupplierLayout.createSequentialGroup()
+                        .addGroup(pnSupplierLayout.createSequentialGroup()
                             .addComponent(lblPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtPhoneNum))))
-                .addGap(80, 80, 80))
+                            .addComponent(txtPhoneNum)))
+                    .addGroup(pnSupplierLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                        .addComponent(btnAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDel)))
+                .addContainerGap())
             .addComponent(scSupplier)
         );
         pnSupplierLayout.setVerticalGroup(
@@ -303,11 +304,9 @@ private void loadTableTitle() {
             cstmt.setString(4, txtPhoneNum.getText());
             cstmt.executeUpdate();
         } catch (SQLException ex) {
-            if (ex.getMessage().contains("duplicate key")) {
-                JOptionPane.showMessageDialog(this, "Lỗi trùng dữ liệu");
-            } else {
-                JOptionPane.showMessageDialog(this, "Lỗi thêm dữ liệu \n" + ex.getMessage());
-            }
+         
+                JOptionPane.showMessageDialog(this, "Lỗi thêm dữ liệu \n");
+         
         }
     }
     
@@ -324,7 +323,7 @@ private void loadTableTitle() {
             cstmt.executeUpdate();
         } catch (SQLException ex) {
 
-            JOptionPane.showMessageDialog(this, "Lỗi xóa dữ liệu \n" + ex.getMessage());
+            JOptionPane.showMessageDialog(this, "Lỗi xóa dữ liệu \n" );
         }
     }
     /**

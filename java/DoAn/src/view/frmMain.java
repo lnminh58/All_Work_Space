@@ -10,20 +10,13 @@ import controller.ConnectDatabase;
 import controller.FileFactory;
 import java.awt.Component;
 import java.awt.Container;
-import java.awt.Toolkit;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.plaf.IconUIResource;
-import model.frmInfo;
 
 /**
  *
@@ -31,7 +24,7 @@ import model.frmInfo;
  */
 public class frmMain extends javax.swing.JFrame {
 
-    static ArrayList<Component> listComponents;
+    private ArrayList<Component> listComponents;
     static ArrayList<String> groupfuntions = new ArrayList<>();
     static boolean loginSuccess = false;
 
@@ -47,8 +40,8 @@ public class frmMain extends javax.swing.JFrame {
         listComponents = getListComponents(this);
         FileFactory.loadFile();
         try {
-               createFirstAdminAccount();
-            } catch (Exception e) {
+            createFirstAdminAccount();
+        } catch (Exception e) {
         }
         addWindowListener(Confirm.exitListener);
     }
@@ -173,6 +166,7 @@ public class frmMain extends javax.swing.JFrame {
         btnInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         lblTitle.setBackground(new java.awt.Color(203, 64, 64));
         lblTitle.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -185,12 +179,12 @@ public class frmMain extends javax.swing.JFrame {
         pnTitle.setLayout(pnTitleLayout);
         pnTitleLayout.setHorizontalGroup(
             pnTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 966, Short.MAX_VALUE)
+            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
         );
         pnTitleLayout.setVerticalGroup(
             pnTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnTitleLayout.createSequentialGroup()
-                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -375,17 +369,17 @@ public class frmMain extends javax.swing.JFrame {
                             .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnEmp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEmp, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnMainLayout.createSequentialGroup()
                             .addComponent(btnGRList, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         pnMainLayout.setVerticalGroup(
             pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnMainLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -407,7 +401,7 @@ public class frmMain extends javax.swing.JFrame {
                     .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnMain, java.awt.BorderLayout.CENTER);
@@ -499,13 +493,13 @@ public class frmMain extends javax.swing.JFrame {
     private void btnSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSettingActionPerformed
         requestConfig();
     }//GEN-LAST:event_btnSettingActionPerformed
-    
+
     private void requestConfig() {
         frmConfig fc = new frmConfig();
         fc.setLocationRelativeTo(this);
         fc.setVisible(true);
     }
-    
+
     private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
         frmInfo fi = new frmInfo(this, true);
         fi.setLocationRelativeTo(this);
@@ -563,6 +557,5 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JPanel pnMain;
     private javax.swing.JPanel pnTitle;
     // End of variables declaration//GEN-END:variables
-
 
 }

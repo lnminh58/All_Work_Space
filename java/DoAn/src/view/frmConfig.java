@@ -46,6 +46,7 @@ public class frmConfig extends javax.swing.JFrame {
         btnAccept = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -185,7 +186,7 @@ public class frmConfig extends javax.swing.JFrame {
                 || txtDBName.getText().trim().equalsIgnoreCase("")
                 || txtUser.getText().trim().equalsIgnoreCase("")
                 || txtPassword.getText().trim().equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Hãy điền vào đầy đủ thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền vào đầy đủ thông tin");
             return;
         }
         

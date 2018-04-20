@@ -15,14 +15,8 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.Map;
-import java.util.Stack;
-import java.util.TreeMap;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Payroll;
@@ -33,16 +27,16 @@ import model.Payroll;
  */
 public class frmCreatePayroll extends javax.swing.JFrame {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy");
-    SimpleDateFormat sdfSQL = new SimpleDateFormat("yyyy-MM");
-    DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
-    String currentTime;
-    String currentTimeSQL;
-    Vector<Vector> listEmp;
-    Vector<Payroll> listNewPayroll = new Vector<>();
-    Vector<String> tableTitle;
-    Vector<Vector> tableData;
-    int cboSelectedIndex;
+    private SimpleDateFormat sdf = new SimpleDateFormat("MM/yyyy");
+    private SimpleDateFormat sdfSQL = new SimpleDateFormat("yyyy-MM");
+    private DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
+    private String currentTime;
+    private String currentTimeSQL;
+    private Vector<Vector> listEmp;
+    private Vector<Payroll> listNewPayroll = new Vector<>();
+    private Vector<String> tableTitle;
+    private Vector<Vector> tableData;
+    private int cboSelectedIndex;
 
     /**
      * Creates new form frmCreatePayroll
@@ -133,13 +127,13 @@ public class frmCreatePayroll extends javax.swing.JFrame {
         if (sbonus.equalsIgnoreCase("")
                 || sallowance.equalsIgnoreCase("")
                 || sdayOff.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Hãy điền vào đầy đủ thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền vào đầy đủ thông tin");
             return;
         }
         if (!CheckText.isInteger(sbonus)
                     || !CheckText.isInteger(sallowance)
                     || !CheckText.isInteger(sdayOff)) {
-                JOptionPane.showMessageDialog(this, "Hãy điền đúng kiểu thông tin");
+                JOptionPane.showMessageDialog(this, "Xin điền đúng kiểu thông tin");
                 return;
          }
         
@@ -212,6 +206,7 @@ public class frmCreatePayroll extends javax.swing.JFrame {
         btnAccept = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         pnPayroll.setBackground(new java.awt.Color(18, 185, 45));
 
@@ -281,6 +276,7 @@ public class frmCreatePayroll extends javax.swing.JFrame {
         btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/down_arrow_button.png"))); // NOI18N
         btnAdd.setText("Thêm");
         btnAdd.setContentAreaFilled(false);
+        btnAdd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnAdd.setOpaque(true);
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,28 +341,26 @@ public class frmCreatePayroll extends javax.swing.JFrame {
                         .addGroup(pnPayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbEmp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(74, 74, 74)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnPayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblBonus)
                             .addComponent(lblAllowance))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnPayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtBonus, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(txtAllowance, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnPayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAllowance, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                            .addComponent(txtBonus, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE))
-                        .addGap(74, 74, 74)
-                        .addGroup(pnPayrollLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnPayrollLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnAdd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnDel))
                             .addGroup(pnPayrollLayout.createSequentialGroup()
                                 .addComponent(lblDayOff)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtDayOff, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE))
-                            .addGroup(pnPayrollLayout.createSequentialGroup()
-                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(pnPayrollLayout.createSequentialGroup()
-                        .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(txtDayOff, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))))
+                    .addComponent(btnAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         pnPayrollLayout.setVerticalGroup(

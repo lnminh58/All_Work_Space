@@ -28,19 +28,19 @@ import model.Inventory;
  */
 public class frmCreateGR extends javax.swing.JFrame {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    SimpleDateFormat sdfSQL = new SimpleDateFormat("yyyy-MM-dd");
-    DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
-    String currentTime;
-    String currentTimeSQL;
-    static Vector<Inventory> listInventorys;
-    Vector<Vector> listSupplier;
-    GoodsReceipt goodsReceipt;
-    Vector<String> tableTitle;
-    Vector<Vector> tableData = new Vector<>();
-    String idGR;
-    boolean confirm = false;
-    Vector<Goods> updateInventorys;
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private SimpleDateFormat sdfSQL = new SimpleDateFormat("yyyy-MM-dd");
+    private DecimalFormat moneyFormater = new DecimalFormat("###,###,###");
+    private String currentTime;
+    private String currentTimeSQL;
+    private  Vector<Inventory> listInventorys;
+    private  Vector<Vector> listSupplier;
+    private  GoodsReceipt goodsReceipt;
+    private Vector<String> tableTitle;
+    private Vector<Vector> tableData = new Vector<>();
+    private String idGR;
+    private boolean confirm = false;
+    private Vector<Goods> updateInventorys;
 
     /**
      * Creates new form frmCreateGR
@@ -142,6 +142,7 @@ public class frmCreateGR extends javax.swing.JFrame {
         txtNum = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
 
         pnCreateGR.setBackground(new java.awt.Color(232, 134, 96));
 
@@ -289,7 +290,7 @@ public class frmCreateGR extends javax.swing.JFrame {
                                 .addComponent(lblGoods, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbGoods, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(74, 74, 74)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnCreateGRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTime)
                             .addComponent(lblNum))
@@ -297,7 +298,7 @@ public class frmCreateGR extends javax.swing.JFrame {
                         .addGroup(pnCreateGRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnCreateGRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSupplier, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
@@ -318,7 +319,7 @@ public class frmCreateGR extends javax.swing.JFrame {
                         .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(pnCreateGRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(scGR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE))
+                .addComponent(scGR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 869, Short.MAX_VALUE))
         );
         pnCreateGRLayout.setVerticalGroup(
             pnCreateGRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,14 +394,14 @@ public class frmCreateGR extends javax.swing.JFrame {
 
         if (snum.equalsIgnoreCase("")
                 || sprice.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Hãy điền vào đầy đủ thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền vào đầy đủ thông tin");
             return;
 
         }
 
         if (!CheckText.isInteger(snum)
                 || !CheckText.isInteger(sprice)) {
-            JOptionPane.showMessageDialog(this, "Hãy điền đúng kiểu thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền đúng kiểu thông tin");
             return;
         }
 
@@ -474,7 +475,7 @@ public class frmCreateGR extends javax.swing.JFrame {
     private void insertGRToDatabase() {
         idGR = txtID.getText().trim();
         if (idGR.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Hãy điền vào đầy đủ thông tin");
+            JOptionPane.showMessageDialog(this, "Xin điền vào đầy đủ thông tin");
             return;
         }
         int index = cbSupplier.getSelectedIndex();
