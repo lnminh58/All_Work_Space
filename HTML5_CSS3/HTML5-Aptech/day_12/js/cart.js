@@ -12,6 +12,8 @@ $(document).on('click', '.add-cart', function () {
     if(cart_arr.length){
         showTotal();
     }
+
+    localStorage.setItem("payment",JSON.stringify(cart_arr));
 });
 
 $(document).on('click','.cart-button',function () {

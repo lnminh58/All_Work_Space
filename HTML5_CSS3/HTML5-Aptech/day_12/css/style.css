@@ -31,17 +31,18 @@ body{
 } */
 .cart-list {
   position: absolute;;
-  top:200;
+  top: 60px;
   right: 0;
   z-index: 99;
   width: 230px;
-  background-color: #dcdcdd;
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 10px;
   display: none
 }
 
 .cart-list .cart-item {
+  margin-top: 10px ;
   display: flex;
   align-items: center;
   justify-content: space-between;

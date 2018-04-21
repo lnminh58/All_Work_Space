@@ -1,0 +1,39 @@
+
+.navbar-dark .navbar-brand{
+   font-size: 22px;
+}
+.carousel-indicators li {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+
+ }
+ .carousel-control-next-icon, .carousel-control-prev-icon{
+   width: 40px;
+   height: 40px;
+ }
+
+ .border-gray{
+  border-color: #aaa;  
+ }
+ .message{
+   position: absolute;
+   top: 0;
+   right: 0;
+ }
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+ 
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
