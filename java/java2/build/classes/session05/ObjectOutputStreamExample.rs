@@ -1,3 +1,0 @@
-session05.ObjectOutputStreamExample
-session05.Student
-session05.Pupil

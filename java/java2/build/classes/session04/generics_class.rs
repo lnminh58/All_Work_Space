@@ -1,3 +1,0 @@
-session04.generics_class
-session04.classGenerics2
-session04.classGenerics1

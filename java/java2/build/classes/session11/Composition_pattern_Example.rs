@@ -1,3 +1,0 @@
-session11.classPerson
-session11.classJob
-session11.Composition_pattern_Example

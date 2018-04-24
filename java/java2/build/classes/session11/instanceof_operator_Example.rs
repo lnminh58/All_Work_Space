@@ -1,4 +1,0 @@
-session11.Animal
-session11.instanceof_operator_Example
-session11.Student
-session11.Person

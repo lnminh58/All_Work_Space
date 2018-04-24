@@ -1,2 +1,0 @@
-session11.Singleton
-session11.Singleton_pattern_Example

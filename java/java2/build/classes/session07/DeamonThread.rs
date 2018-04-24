@@ -1,3 +1,0 @@
-session07.DeamonThread
-session07.None_DeamonThread
-session07.Deamon_Thread

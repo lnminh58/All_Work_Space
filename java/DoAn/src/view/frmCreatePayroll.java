@@ -120,7 +120,7 @@ public class frmCreatePayroll extends javax.swing.JFrame {
         String id = (String) emp.get(0);
 
         String sbonus = txtBonus.getText().trim().replace(",","");
-        String sallowance = txtAllowance.getText().trim();
+        String sallowance = txtAllowance.getText().trim().replace(",","");
         String sdayOff =  txtDayOff.getText().trim();
      
 

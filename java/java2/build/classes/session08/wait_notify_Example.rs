@@ -1,4 +1,0 @@
-session08.myFile
-session08.wait_notify_Example
-session08.displayContent
-session08.ReadFile

@@ -1,2 +1,0 @@
-session01.user_defined_exceptions
-session01.LoiNhapSoKhong

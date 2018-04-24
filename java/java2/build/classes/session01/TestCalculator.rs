@@ -1,3 +1,0 @@
-session01.TestCalculator
-session01.CalculatorException
-session01.Calculator

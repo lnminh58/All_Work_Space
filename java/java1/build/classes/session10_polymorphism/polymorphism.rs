@@ -1,3 +1,0 @@
-session10_polymorphism.polymorphism
-session10_polymorphism.HocSinh
-session10_polymorphism.NhanSu

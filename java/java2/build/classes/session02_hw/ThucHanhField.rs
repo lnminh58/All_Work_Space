@@ -1,3 +1,0 @@
-session02_hw.ThucHanhField
-session02_hw.Class2
-session02_hw.Class1

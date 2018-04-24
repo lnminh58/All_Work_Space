@@ -1,2 +1,0 @@
-session04_baitap.classAllType
-session04_baitap.session04_baitap1

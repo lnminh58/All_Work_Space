@@ -1,2 +1,0 @@
-session03.Comparable_Example
-session03.Student1

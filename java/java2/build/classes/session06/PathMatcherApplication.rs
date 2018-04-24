@@ -1,2 +1,0 @@
-session06.Finder
-session06.PathMatcherApplication
