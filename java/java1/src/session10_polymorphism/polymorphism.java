@@ -18,11 +18,11 @@ class NhanSu {
 
 class HocSinh extends NhanSu {
 
-    public void khoiTao(int i) {
+    public void khoiTao(int i,String j) {
         System.out.println("Day la phuong thuc khoi tao co 1 tham so");
     }
 
-    public void khoiTao(int i, int j) {
+    public void khoiTao(String i, int j) {
         System.out.println("Day la phuong thuc khoi tao co 2 tham so");
     }
 }
@@ -32,7 +32,7 @@ public class polymorphism {
     public static void main(String[] args) {
         HocSinh hocsinh = new HocSinh();
         hocsinh.khoiTao();
-        hocsinh.khoiTao(0);
-        hocsinh.khoiTao(0, 0);
+        hocsinh.khoiTao(0,"hello");
+        hocsinh.khoiTao("allo", 0);
     }
 }

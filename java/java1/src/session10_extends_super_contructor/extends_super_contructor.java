@@ -30,6 +30,8 @@ class HocSinh extends NhanSu {
     int tuoi;
 
     public HocSinh() {
+        super();
+        this.tuoi =18;
     }
     
     public void hienThiHocSinh(){

@@ -28,6 +28,7 @@ public class frmCustomer extends javax.swing.JFrame {
     /**
      * Creates new form frmEmployee
      */
+    
     public frmCustomer() {
         initComponents();
         addWindowListener(Confirm.disposeListener(this));
