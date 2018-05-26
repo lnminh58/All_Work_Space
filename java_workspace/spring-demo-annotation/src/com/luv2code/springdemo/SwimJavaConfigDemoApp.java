@@ -21,5 +21,5 @@ public class SwimJavaConfigDemoApp {
 		System.out.println("Team: " +theCoach.getTeam());
 		context.close();
 	}
-
+	
 }

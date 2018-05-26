@@ -10,47 +10,46 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/hello")
 public class HelloWorldController {
-	// need a controller method to show the initial html form
+	
 	@RequestMapping("/showForm")
-	public String showForm() {
+	public String showFrom() {
 		return "helloworld-form";
 	}
-
-	// need a controller method to process the html form
+	
 	@RequestMapping("/processForm")
 	public String processForm() {
 		return "helloworld";
 	}
-
-	// new a controller method to read form data and
-	// add data to the model
-	@RequestMapping("/processFromVersionTwo")
-	public String lesShoutDude(HttpServletRequest request, Model model) {
-		// Read the request parameter from the HTML form
+	
+	
+//	new a controller method to read form data and
+//	add data to the model
+	@RequestMapping("/processFormVersionTwo")
+	public String letsShoutDude(HttpServletRequest request, Model model) {
+		
 		String theName = request.getParameter("studentName");
-		// convert the data to all caps
+		
 		theName = theName.toUpperCase();
-		// create the message
-		String result = "Yo! " + theName;
-		// add message to the model
-		model.addAttribute("message", result);
-
+		
+		String result = "Yo!" + theName;
+		
+		model.addAttribute("message",result);
+		
 		return "helloworld";
-
 	}
-
-	@RequestMapping("/processFromVersionThree")
+	
+	@RequestMapping("/processFormVersionThree")
 	public String processFormVersionThree(
-			@RequestParam("studentName") String theName, Model model) {
-		// convert the data to all caps
+			@RequestParam("studentName") String theName,
+			Model model) {
+				
 		theName = theName.toUpperCase();
-		// create the message
-		String result = "Hey My Friend from V3! " + theName;
-		// add message to the model
-		model.addAttribute("message", result);
-
+		
+		String result = "Hey My Friend form v3!" + theName;
+		
+		model.addAttribute("message",result);
+		
 		return "helloworld";
-
 	}
-
+	
 }

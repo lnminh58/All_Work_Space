@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Hello World - input Form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Hello World - Input Form</title>
 </head>
 <body>
-    <form action="processFromVersionThree" method="GET">
-    <input type="text" name="studentName"
-    placeholder="What 's your name?"/>
-    <input type="submit"/>
-    </form>
+	<form action="processFormVersionThree" method="post">
+		<input type="text" name="studentName" placeholder="What's your name?"/>
+		<input type="submit"/>
+	</form>
+	
 </body>
 </html>
