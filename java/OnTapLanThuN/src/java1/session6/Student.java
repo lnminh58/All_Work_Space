@@ -5,6 +5,7 @@
  */
 package java1.session6;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -12,7 +13,9 @@ import java.util.Scanner;
  *
  * @author lnminh
  */
-public class Student implements Comparable<Student>{
+public class Student implements Comparable<Student>,Serializable{
+    private static int counter=0;
+    private int id;
     private String name;
     private int age;
     private float english;
@@ -34,6 +37,7 @@ public class Student implements Comparable<Student>{
         System.out.println("Enter Math Mark");
         this.math=scan.nextFloat();
         this.averageMark=(this.english+this.computer+this.math)/3;
+        this.id =++counter;
     }
 
     public Student(String name, int age, float english, float Computer, float math) {
@@ -43,6 +47,7 @@ public class Student implements Comparable<Student>{
         this.computer = Computer;
         this.math = math;
         this.averageMark=(this.english+this.computer+this.math)/3;
+        this.id = ++counter;
     }
 
     public String getName() {
@@ -88,8 +93,17 @@ public class Student implements Comparable<Student>{
     public float getAverageMark() {
         return averageMark;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public static void setCounter(int counter) {
+        Student.counter = counter;
+    }
     
     public void showInfo(){
+        System.out.println("Student "+ this.id);
         System.out.println("Name: "+this.name);
         System.out.println("Age: "+this.age);
         System.out.println("Mark");
@@ -108,8 +122,6 @@ public class Student implements Comparable<Student>{
             return -1;
         }
         return 0;
-        
-        
     }
     
 

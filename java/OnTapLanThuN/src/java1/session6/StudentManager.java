@@ -17,6 +17,29 @@ import java.util.Vector;
 public class StudentManager {
 
     private static Vector<Student> listStudents = new Vector<>();
+    private static String path = "data.dat";
+
+    public static void saveData() {
+        FileController.saveFile(listStudents, path);
+    }
+
+    public static void loadData() {
+        listStudents = FileController.loadFile(path);
+        try {
+            int currentCounter = listStudents.get(0).getId();
+            for (Student student : listStudents) {
+                if (student.getId() > currentCounter) {
+                    currentCounter = student.getId();
+                }
+            }
+            Student.setCounter(currentCounter);
+        }
+        catch (Exception e) {
+            System.out.println("Loi set Coutter");
+            e.printStackTrace();
+        }
+
+    }
 
     public static String inputText() {
         Scanner scan = new Scanner(System.in);
@@ -47,6 +70,16 @@ public class StudentManager {
         }
     }
 
+    public static void deleteStudent() {
+        System.out.println("Nhap thu tu sinh vien can xoa");
+        try {
+            listStudents.remove(inputInteger() - 1);
+        } catch (Exception e) {
+            System.out.println("Loi xoa du lieu");
+        }
+
+    }
+
     public static void sortByName() {
         listStudents.sort(new Comparator<Student>() {
             @Override
@@ -56,6 +89,22 @@ public class StudentManager {
         });
         System.out.println("List Student After Sort By Name: ");
         showStudents();
+    }
+
+    public static void sortByID() {
+        Collections.sort(listStudents, new Comparator<Student>() {
+            @Override
+            public int compare(Student t, Student t1) {
+                if (t.getId() > t1.getId()) {
+                    return -1;
+                }
+                if (t.getId() < t1.getId()) {
+                    return 1;
+                }
+                return 0;
+
+            }
+        });
     }
 
     public static void sortByAge() {
@@ -68,10 +117,10 @@ public class StudentManager {
         listStudents.sort(new Comparator<Student>() {
             @Override
             public int compare(Student t, Student t1) {
-                if(t.getAverageMark()>t1.getAverageMark()){
+                if (t.getAverageMark() > t1.getAverageMark()) {
                     return 1;
                 }
-                if(t.getAverageMark()<t1.getAverageMark()){
+                if (t.getAverageMark() < t1.getAverageMark()) {
                     return -1;
                 }
                 return 0;
@@ -102,7 +151,7 @@ public class StudentManager {
     }
 
     public static void main(String[] args) {
-
+        loadData();
         while (true) {
             System.out.println("CHƯƠNG TRÌNH QUẢN LÝ HỌC SINH");
             System.out.println("1. Enter Student ");
@@ -140,6 +189,7 @@ public class StudentManager {
                     FindByAge(inputInteger());
                     break;
                 case 8:
+                    saveData();
                     System.exit(0);
 
             }

@@ -35,6 +35,7 @@ class HocSinh extends NhanSu {
     public void hienthi(){
         System.out.println("Thong tin cua class hoc sinh");
     }
+   
 }
 
 class GiaoVien extends NhanSu {
