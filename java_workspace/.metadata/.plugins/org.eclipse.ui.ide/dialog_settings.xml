@@ -8,6 +8,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="E:\All_Work_Space\java_workspace"/>
 			<item value="F:\All_Work_Space\java_workspace"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

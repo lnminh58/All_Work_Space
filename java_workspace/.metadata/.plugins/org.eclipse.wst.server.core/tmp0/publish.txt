@@ -1,4 +1,2 @@
 #Tomcat publish data
-#Wed May 30 09:18:44 ICT 2018
-org.eclipse.jst.jee.server\:/binary\:F\:\\All_Work_Space\\java_workspace\\spring-mvc-demo\\WebContent\\WEB-INF\\lib\\spring-web-5.0.6.RELEASE.jar=WEB-INF/lib/spring-web-5.0.6.RELEASE.jar
-org.eclipse.jst.jee.server\:/binary\:F\:\\All_Work_Space\\java_workspace\\spring-mvc-demo\\WebContent\\WEB-INF\\lib\\spring-web-5.0.6.RELEASE-sources.jar=WEB-INF/lib/spring-web-5.0.6.RELEASE-sources.jar
+#Tue Jun 05 13:56:55 ICT 2018
