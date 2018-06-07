@@ -1,0 +1,124 @@
+header, nav, footer, article {
+                display:block;
+            } 
+            nav {float:left; width:20%;} 
+            article {float:right; width:79%;} 
+            footer {clear:both;}
+            session{
+                
+            }
+            .min{
+                width:100%;
+            }
+            .container{
+		width:99%;
+	           }
+                .view-pro5{padding-top: 25px;}
+                .description-profile{padding-top: 15px;}
+                .name-group{padding-bottom: 25px;}
+                .business-group{padding-top:15px;}
+                .address-group{padding-top: 15px;padding-bottom: 15px;}
+        .action-save{padding-top: 15px;
+                }
+        .save-profile{width: auto;}
+                .btn-submit-save-profile{
+                    font-size: 17px;
+                    font-weight: 200 !important;
+                    margin-top: 20px;
+                    height: 45px;
+                    width: 100%;
+                    border-radius: 0;
+                    color: #fff;
+                    background-color: #04be5b;
+                    border: 1px solid #04be5b;
+                    transition: all 0.5s;
+                    box-shadow: none;
+                    outline: none !important;
+                }
+                .btn-submit-update-products{
+                    font-size: 17px;
+                    font-weight: 200 !important;
+                    margin-top: 20px;
+                    height: 45px;
+                    width: 100%;
+                    border-radius: 0;
+                    color: #fff;
+                    background-color: orange;
+                    border: 1px solid #04be5b;
+                    transition: all 0.5s;
+                    box-shadow: none;
+                    outline: none !important;
+                }
+             .topright-avatar {
+                position: absolute;
+                top: 1%;
+                right: 16%;
+                font-size: 10px;
+                }.topright-avatar #button{width: 10px;}
+             .span-address-add{padding-right: 25px;}
+             .btn-address-add{width: 150%;}
+              .business-item--cover__large-profile {
+                    width: 100%;
+                    border: 1.5px solid #eee;
+                    background-color: #fafafa;
+                            }
+               .container-avatar-pencil{
+               	width: 100%;
+               	
+               }             
+   				.view-avatar{
+   				            margin-top: 20px;}
+   				.upload-avatar{margin-top:20px;}
+        .input-tel{
+            position: relative;
+    z-index: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 48px;
+    margin-left: 0;
+    transition: background-color 100ms ease-out;
+        }
+        .avatar-defaul{
+            width: 90%;
+        }    
+   .view-business--tag {
+    margin: 20px 0 15px;
+}
+.tag-group {
+    display: table;
+} 
+.tag-group .tag-icon {
+    display: table-cell;
+    background-color: #55657E;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 10px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.list-categories.left {
+    text-align: left;
+}
+.list-categories {
+    clear: both;
+}        
+.tag-group .tag-content {
+    border: 1px solid #adb9ca;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 15px;
+    font-style: italic;
+    color: #777777;
+}
+.tag-group .tag-content span {
+    margin-right: 10px;
+    margin-right: 5px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 0px;
+}
+.tag-group .btn-add-profile{
+                display: table-cell;
+        }     

@@ -1,0 +1,27 @@
+
+/*!
+ * Start Bootstrap - 1 Col Portfolio (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+
+.img-responsive{
+	width: 30em;
+	height: 12em;
+}
+.person {
+	padding-left: 3em;
+	margin-top: 5em;
+}
+a:hover{
+	text-decoration: none;
+}
+
+.media-body .glyphicon{
+	height: 1.5em;
+}
+.info-person{
+	padding-left: 2em;
+}
+

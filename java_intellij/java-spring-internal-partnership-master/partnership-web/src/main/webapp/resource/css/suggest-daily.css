@@ -1,0 +1,23 @@
+#load{
+    border-bottom: 4px solid red;
+    border-left: 4px solid blue;
+    border-top: 4px solid yellow;
+    border-right: 4px solid green;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: load 2s linear infinite;
+}
+@keyframes load{
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}
+.mini-profile{    
+    margin: 0.1em 0;    
+}
