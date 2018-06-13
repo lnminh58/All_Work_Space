@@ -1,0 +1,144 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<!-- Base Define -->
+	<definition name="definition" template="/view/template/layout/template.jsp">
+		<put-attribute name="header" value="/view/template/layout/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/view/template/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="definitionHome"  extends="definition">
+		<put-attribute name="header" value="/view/template/layout/headerHome.jsp" />		
+	</definition>
+	
+
+	<definition name="homePage" extends="definitionHome">
+		<put-attribute name="body" value="/view/user/home.jsp" />
+	</definition>
+	
+	<definition name="comment2" extends="definition">
+		<put-attribute name="body" value="/view/user/comment2.jsp" />
+	</definition>
+	
+	<definition name="about" extends="definition">
+		<put-attribute name="body" value="/view/user/about.jsp" />
+	</definition>
+	
+	<definition name="contact" extends="definition">
+		<put-attribute name="body" value="/view/user/contact.jsp" />
+	</definition>
+	
+	<definition name="HomeError" extends="definition">
+		<put-attribute name="body" value="/view/error/HomeError.jsp"></put-attribute>
+	</definition>
+	
+	<!-- try -->
+		<definition name="location" extends="definition">
+			<put-attribute name="body" value="/view/user/location.jsp" />
+		</definition>
+	<!-- try -->
+
+	<!-- ContactUs Page -->
+	<definition name="servicefriend" extends="definition">
+		<put-attribute name="body" value="/view/user/service_friend.jsp" />
+	</definition>
+	<definition name="service_rating" extends="definition">
+		<put-attribute name="body" value="/view/user/service_rating.jsp" />
+	</definition>
+	<definition name="users" extends="definition">
+		<put-attribute name="body" value="/view/user/users.jsp" />
+	</definition>
+	<definition name="comment" extends="definition">
+		<put-attribute name="body" value="/view/user/comment.jsp" />
+	</definition>
+	<definition name="success" extends="definition">
+		<put-attribute name="body" value="/view/user/successt.jsp" />
+	</definition>
+	<definition name="findfriend" extends="definition">
+		<put-attribute name="body" value="/view/user/findfriend.jsp" />
+	</definition>
+	<definition name="hotel" extends="definition">
+		<put-attribute name="body" value="/view/user/service_hotel.jsp" />
+	</definition>
+	<definition name="detailhotel" extends="definition">
+		<put-attribute name="body" value="/view/user/detailhotel.jsp" />
+	</definition>
+	<definition name="search" extends="definition">
+		<put-attribute name="body" value="/view/user/search.jsp" />
+	</definition>
+	<definition name="place" extends="definition">
+		<put-attribute name="body" value="/view/user/placedetail.jsp" />
+	</definition>
+	<definition name="login" extends="definition">
+		<put-attribute name="body" value="/view/user/form-login.jsp" />
+	</definition>
+	<definition name="find" extends="definition">
+		<put-attribute name="body" value="/view/user/form-find.jsp" />
+	</definition>
+	<definition name="register" extends="definition">
+		<put-attribute name="body" value="/view/user/form-register.jsp" />
+	</definition>
+	<definition name="servicehost" extends="definition">
+		<put-attribute name="body" value="/view/user/host.jsp"></put-attribute>
+	</definition>
+	<definition name="profile" extends="definition">
+		<put-attribute name="body" value="/view/user/profile.jsp"></put-attribute>
+	</definition>
+	<definition name="detail_profile" extends="definition">
+		<put-attribute name="body" value="/view/user/detail_profile.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="error" extends="definition">
+		<put-attribute name="body" value="/view/error/error.jsp"></put-attribute>
+	</definition>
+	<definition name="generic_error" extends="definition">
+		<put-attribute name="body" value="/view/error/generic_error.jsp"></put-attribute>
+	</definition>
+	<definition name="database_error" extends="definition">
+		<put-attribute name="body" value="/view/error/database_error.jsp"></put-attribute>
+	</definition>
+	<definition name="404" extends="definition">
+		<put-attribute name="body" value="resource/404.jsp"></put-attribute>
+	</definition>
+	<definition name="success" extends="definition">
+		<put-attribute name="body" value="/view/user/success.jsp"></put-attribute>
+	</definition>
+	<definition name="event" extends="definition">
+		<put-attribute name="body" value="/view/user/event.jsp"></put-attribute>
+	</definition>
+	
+	<definition name= "food" extends="definition">
+		<put-attribute name="body" value="/view/user/food.jsp"></put-attribute>
+	</definition>
+	<definition name= "jspdemo" extends="definition">
+		<put-attribute name="body" value="/view/user/jspdemo.jsp"></put-attribute>
+	</definition>
+	<definition name= "eventajax" extends="definition">
+		<put-attribute name="body" value="/view/user/eventajax.jsp"></put-attribute>
+	</definition>
+	<definition name= "ajaxdemo" extends="definition">
+		<put-attribute name="body" value="/view/user/ajaxdemo.jsp"></put-attribute>
+	</definition>
+	<definition name= "updateprofile" extends="definition">
+		<put-attribute name="body" value="/view/user/updateprofile.jsp"></put-attribute>
+	</definition>
+	<definition name= "changepassword" extends="definition">
+		<put-attribute name="body" value="/view/user/changepassword.jsp"></put-attribute>
+	</definition>
+	<definition name= "userprofile" extends="definition">
+		<put-attribute name="body" value="/view/user/userprofile.jsp"></put-attribute>
+	</definition>
+	<definition name= "post" extends="definition">
+		<put-attribute name="body" value="/view/user/post.jsp"></put-attribute>
+	</definition>
+	<definition name= "comment3" extends="definition">
+		<put-attribute name="body" value="/view/user/comment3.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>  
+ 
+ 
+ 
+ 

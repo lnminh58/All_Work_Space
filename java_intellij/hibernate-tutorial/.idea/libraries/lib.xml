@@ -6,7 +6,9 @@
     <JAVADOC>
       <root url="http://docs.jboss.org/hibernate/core/3.6/javadocs/" />
     </JAVADOC>
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/hibernate-core-5.3.1.Final-sources.jar!/" />
+    </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
   </library>
 </component>
