@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="codegymdanang-spring-controller-tiles:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="codegymdanang-spring-controller-tiles.war">
+      <element id="artifact" artifact-name="codegymdanang-spring-controller-tiles:war exploded" />
+    </root>
+  </artifact>
+</component>

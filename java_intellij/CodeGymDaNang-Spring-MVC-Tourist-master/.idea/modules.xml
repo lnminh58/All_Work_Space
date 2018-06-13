@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/tour-bo-web/tour-bo-web.iml" filepath="$PROJECT_DIR$/tour-bo-web/tour-bo-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tour-dao/tour-dao.iml" filepath="$PROJECT_DIR$/tour-dao/tour-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tour-parent.iml" filepath="$PROJECT_DIR$/tour-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tour-phuot-web-prod/tour-phuot-web-prod.iml" filepath="$PROJECT_DIR$/tour-phuot-web-prod/tour-phuot-web-prod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tour-service/tour-service.iml" filepath="$PROJECT_DIR$/tour-service/tour-service.iml" />
+    </modules>
+  </component>
+</project>
