@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="E:\All_Work_Space\java_workspace"/>
 		<item value="F:\All_Work_Space\java_workspace\spring-demo-one"/>
 	</list>
 	<section name="ExternalProjectImportWizard">

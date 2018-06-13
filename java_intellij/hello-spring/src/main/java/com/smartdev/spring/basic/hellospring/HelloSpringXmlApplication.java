@@ -3,23 +3,20 @@ package com.smartdev.spring.basic.hellospring;
 import com.smartdev.spring.basic.hellospring.greeting.SpringReceptionist;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@Configuration
-@ComponentScan("com.smartdev.spring.basic.hellospring")
-@PropertySource("classpath:contact.properties")
-public class HelloSpringApplication {
+
+public class HelloSpringXmlApplication {
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(HelloSpringApplication.class);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         SpringReceptionist springReceptionist = applicationContext.getBean(SpringReceptionist.class);
-        System.out.println("annotation config");
+        System.out.println( "By xml config");
         System.out.println(springReceptionist.requestWelcome());
         System.out.println(springReceptionist.getContact());
+
+
         ((ConfigurableApplicationContext) applicationContext).close();
     }
 }
