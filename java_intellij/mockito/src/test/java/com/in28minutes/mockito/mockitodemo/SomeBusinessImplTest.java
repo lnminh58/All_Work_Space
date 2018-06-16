@@ -1,4 +1,4 @@
-package com.in28minutes.mockito.mockito;
+package com.in28minutes.mockito.mockitodemo;
 
 import org.junit.Test;
 
