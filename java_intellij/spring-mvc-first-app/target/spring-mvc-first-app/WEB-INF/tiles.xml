@@ -1,0 +1,22 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+
+<tiles-definitions>
+
+
+    <definition name="home" template="/view/home.jsp">
+
+    </definition>
+
+    <definition name="form" template="/view/form/form.jsp">
+
+    </definition>
+    <definition name="form-respond" template="/view/form/form-respond.jsp">
+
+    </definition>
+
+
+
+</tiles-definitions>
