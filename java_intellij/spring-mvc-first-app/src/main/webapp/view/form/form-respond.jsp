@@ -7,8 +7,9 @@ Hello World of Spring!
 
 <br><br>
 
-Student name: ${param.username}
-
+User name: ${param.username}
+<br><br>
+User name to upper case : ${upperUsername}
 </body>
 
 </html>

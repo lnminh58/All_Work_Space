@@ -6,7 +6,7 @@
 
 <body>
 
-	<form action="processForm" method="GET">
+	<form action="/hello/processFormAddDataToModel_RequestParam" method="GET">
 	
 		<input type="text" name="username"
 			placeholder="What's your name?" />

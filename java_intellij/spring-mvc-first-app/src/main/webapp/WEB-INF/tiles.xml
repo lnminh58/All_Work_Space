@@ -16,7 +16,14 @@
     <definition name="form-respond" template="/view/form/form-respond.jsp">
 
     </definition>
+    <!--Student form-->
+    <definition name="student-form" template="/view/student/form.jsp">
 
+    </definition>
+
+    <definition name="student-confirmation" template="/view/student/form-respond.jsp">
+
+    </definition>
 
 
 </tiles-definitions>
