@@ -1,2 +1,6 @@
+com\lnminh\controller\CustomerController.class
 com\lnminh\controller\HelloWorldController.class
 com\lnminh\controller\HomeController.class
+com\lnminh\model\Customer.class
+com\lnminh\controller\StudentController.class
+com\lnminh\model\Student.class
