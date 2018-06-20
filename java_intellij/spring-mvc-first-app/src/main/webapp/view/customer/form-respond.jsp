@@ -11,5 +11,11 @@
     <h1>customer confirmation page</h1>
     <br><br>
     Customer name: ${customer.firstName} ${customer.lastName}
+
+    <br><br>
+    Free passes: ${customer.freePasses}
+    <br><br>
+    Postal Code: ${customer.postalCode}
+
 </body>
 </html>
