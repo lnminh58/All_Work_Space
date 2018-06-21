@@ -1,0 +1,92 @@
+.parent {
+  overflow: hidden;
+}
+
+.bg-base {
+  background-color: #232425;
+}
+
+.bg-trans {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 5px;
+}
+
+.primary-border {
+  background: #dc3545;
+  height: 10px;
+}
+
+.bottom-shadow {
+  box-shadow: 0px 20px 40px rgba(255, 0, 0, 0.2);
+}
+
+header .logo {
+  height: 40px;
+  line-height: 40px;
+  font-size: 30px;
+}
+
+header .logo::first-letter {
+  font-size: 50px;
+}
+
+#slider {
+  position: relative;
+}
+
+#slider .primary-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.1) !important;
+  z-index: 9;
+}
+
+#slider .carousel-indicators li {
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  margin-left: 20px;
+}
+
+#slider .carousel-control-next-icon,
+#slider .carousel-control-prev-icon {
+  width: 30px;
+  height: 30px;
+}
+
+#service i {
+  border: 3px white solid;
+  border-radius: 10%;
+  padding: 5px;
+}
+
+#lastBuild img {
+  border: 5px #dc3545 solid;
+}
+
+@media (min-width: 576px) {
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #dc3545;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-dark .navbar-nav .nav-link {
+    height: 50px;
+    line-height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .navbar-dark .navbar-nav .nav-link:hover {
+    background-color: #dc3545;
+    color: white;
+  }
+  .navbar-dark .navbar-nav .active > .nav-link {
+    background-color: #dc3545;
+    color: white;
+  }
+}
+/*# sourceMappingURL=style.css.map */
