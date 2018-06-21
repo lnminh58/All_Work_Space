@@ -24,7 +24,7 @@ public class getCoursesForMaryDemo {
 //            start a transaction
             session.beginTransaction();
 
-            int studentId = 2;
+            int studentId = 3;
             Student student = session.get(Student.class, studentId);
 
             System.out.println("\nLoaded student: " + student);

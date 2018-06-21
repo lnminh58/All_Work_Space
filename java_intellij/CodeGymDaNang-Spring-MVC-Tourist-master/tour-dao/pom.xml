@@ -156,7 +156,7 @@
 							</propertyFile>
 							<changeLogFile>src/main/resources/liquibase/db.changelog-dbmaster.xml
 							</changeLogFile>
-							<dropFirst>true</dropFirst> <!-- Becare full. All tables will be deleted -->
+							<dropFirst>true</dropFirst> <!-- Becarefull. All tables will be deleted -->
 							<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
 						</configuration>
 						<phase>process-resources</phase>
