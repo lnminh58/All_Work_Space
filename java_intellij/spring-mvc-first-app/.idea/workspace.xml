@@ -18,15 +18,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CustomerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/CustomerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CourseCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/validation/CourseCode.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -39,19 +30,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2436">
-              <caret line="116" selection-start-line="116" selection-end-line="130" selection-end-column="12" />
+            <state relative-caret-position="155">
+              <caret line="146" column="72" selection-start-line="146" selection-start-column="72" selection-end-line="146" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_changelogs_master.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/liquibase/db_changelogs_master.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_changelogs_master_1.0.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/liquibase/db_changelogs_master_1.0.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
+            <state relative-caret-position="451">
               <caret line="26" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
             </state>
           </provider>
@@ -134,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/view/student/form-respond.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lnminh/model/Student.java" />
         <option value="$PROJECT_DIR$/src/main/resources/operatingSystems.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/customer/custommer-confirmation.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml" />
@@ -149,6 +166,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/view/customer/form-respond.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lnminh/validation/CourseCodeContraintValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lnminh/validation/CourseCode.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/liquibase/db_changelogs_master.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/liquibase/db_changelogs_master_1.0.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -186,10 +207,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="366" />
-    <option name="y" value="25" />
-    <option name="width" value="1021" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-4" />
+    <option name="width" value="1377" />
     <option name="height" value="775" />
   </component>
   <component name="ProjectView">
@@ -197,8 +217,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,6 +249,14 @@
               <item name="spring-mvc-first-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="liquibase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spring-mvc-first-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spring-mvc-first-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -239,18 +267,22 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="spring-mvc-first-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../liquibase-demo-app" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -259,20 +291,21 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.lnminh.validation" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\resources\liquibase" />
+      <recent name="E:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp" />
+      <recent name="E:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\resources" />
+      <recent name="E:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp\view\student" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp\resources\css" />
       <recent name="F:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp" />
       <recent name="F:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp\WEB-INF\view\form" />
       <recent name="F:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp\WEB-INF" />
       <recent name="F:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp\view" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.lnminh.validation" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp" />
-      <recent name="E:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\resources" />
-      <recent name="E:\All_Work_Space\java_intellij\spring-mvc-first-app\src\main\webapp\view\student" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -287,7 +320,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Unnamed">
+  <component name="RunManager" selected="Maven.Unnamed">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -460,14 +493,16 @@
       <workItem from="1529582175611" duration="625000" />
       <workItem from="1529582993893" duration="107000" />
       <workItem from="1529583261240" duration="36000" />
+      <workItem from="1529586875212" duration="2783000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52363000" />
+    <option name="totallyTimeSpent" value="55146000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-4" y="0" width="1377" height="775" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010941" side_tool="true" weight="0.34796575" />
@@ -487,10 +522,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989059" weight="0.3469388" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989059" visible="true" weight="0.35164836" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8207547" visible="true" weight="0.2246596" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8207547" visible="true" weight="0.25284737" />
       <window_info anchor="right" id="Bean Validation" order="0" />
       <window_info id="Web" order="6" sideWeight="0.17924528" side_tool="true" weight="0.19213313" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -520,21 +555,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/appconfig-mvc.xml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -737,17 +757,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2436">
-          <caret line="116" selection-start-line="116" selection-end-line="130" selection-end-column="12" />
+        <state relative-caret-position="451">
+          <caret line="26" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/database.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        <state relative-caret-position="63">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/liquibase/db_changelogs_master.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/liquibase/db_changelogs_master_1.0.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="146" column="72" selection-start-line="146" selection-start-column="72" selection-end-line="146" selection-end-column="72" />
         </state>
       </provider>
     </entry>
