@@ -13,11 +13,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="tour-bo-web" target="1.7" />
+      <module name="tour-bo-web" target="1.5" />
       <module name="tour-dao" target="1.7" />
       <module name="tour-parent" target="1.7" />
-      <module name="tour-phuot-web-prod" target="1.7" />
-      <module name="tour-service" target="1.7" />
+      <module name="tour-phuot-web-prod" target="1.5" />
+      <module name="tour-service" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
