@@ -27,6 +27,7 @@
             <scope>test</scope>
         </dependency>
     <!-- Spring MVC support -->
+
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>
@@ -44,6 +45,8 @@
     </dependency>
 
     <!-- Tag libs support for view layer -->
+
+
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>jstl</artifactId>

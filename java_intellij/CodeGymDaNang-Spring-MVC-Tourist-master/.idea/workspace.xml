@@ -15,18 +15,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="spring-data.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tour-dao/src/main/resources/spring-data.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-727">
+            <state>
               <caret selection-end-line="68" selection-end-column="8" />
-              <folding>
-                <element signature="e#2904#2915#0" expanded="true" />
-                <element signature="e#2948#2956#0" expanded="true" />
-                <element signature="e#2994#3007#0" expanded="true" />
-                <element signature="e#3045#3058#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -34,7 +28,7 @@
       <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tour-phuot-web-prod/src/main/webapp/WEB-INF/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-160">
+            <state relative-caret-position="462">
               <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
             </state>
           </provider>
@@ -279,7 +273,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../aptech_sem4/weblab4-servlet" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -369,11 +363,12 @@
       <workItem from="1529651382532" duration="2733000" />
       <workItem from="1529662004479" duration="307000" />
       <workItem from="1529680703832" duration="1562000" />
+      <workItem from="1529766651514" duration="31000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26358000" />
+    <option name="totallyTimeSpent" value="26389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="647" y="0" width="1291" height="775" extended-state="0" />
@@ -398,7 +393,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3151909" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.320065" />
       <window_info anchor="right" id="Bean Validation" order="3" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -693,9 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,21 +728,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-phuot-web-prod/src/main/webapp/WEB-INF/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
+        <state relative-caret-position="462">
           <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tour-dao/src/main/resources/spring-data.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-727">
+        <state>
           <caret selection-end-line="68" selection-end-column="8" />
-          <folding>
-            <element signature="e#2904#2915#0" expanded="true" />
-            <element signature="e#2948#2956#0" expanded="true" />
-            <element signature="e#2994#3007#0" expanded="true" />
-            <element signature="e#3045#3058#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

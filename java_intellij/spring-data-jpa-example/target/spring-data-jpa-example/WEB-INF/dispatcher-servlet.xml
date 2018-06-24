@@ -11,37 +11,35 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
 ">
 
-<!-- Step 1: Add support for component scanning -->
-    <context:component-scan base-package="com.lnminh.*"/>
-    <context:annotation-config/>
-    <!-- step 2: Scan properties file -->
+    <!-- It register the beans in context and scan the annotations inside beans and activate them -->
+    <context:component-scan base-package="com.lnminh.*" />
 
-    <!--Load custom message resources-->
-    <!--<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">-->
-    <!--<property name="basename" value="messages"/>-->
-    <!--</bean>-->
-    <!-- Step 3: mapping for resource css,js file -->
-    <!-- Step 4: Add support for conversion, formatting and validation support -->
-    <mvc:annotation-driven/>
+    <!-- This allow for dispatching requests to Controllers -->
+    <mvc:annotation-driven />
 
-    <!-- Step 5: Define Spring MVC view resolver -->
+    <!-- This helps in mapping the logical view names to directly view files under a certain pre-configured directory -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/view/"/>
-        <property name="suffix" value=".jsp"/>
+        <property name="prefix" value="/WEB-INF/view/" />
+        <property name="suffix" value=".jsp" />
     </bean>
 
+    <!-- This resolves messages from resource bundles for different locales -->
+
+
+    <!-- To validate the posted add employee form -->
+    <!--   <bean id="employeeValidator" class="com.howtodoinjava.demo.validator.EmployeeValidator" />-->
 
     <!-- This produces a container-managed EntityManagerFactory;
-     rather than application-managed EntityManagerFactory as in case of LocalEntityManagerFactoryBean-->
+         rather than application-managed EntityManagerFactory as in case of LocalEntityManagerFactoryBean-->
     <bean id="entityManagerFactoryBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="dataSource" />
         <!-- This makes /META-INF/persistence.xml is no longer necessary -->
-        <property name="packagesToScan" value="com.lnminh.entity"/>
+        <property name="packagesToScan" value="com.lnminh.entity" />
         <!-- JpaVendorAdapter implementation for Hibernate EntityManager.
              Exposes Hibernate's persistence provider and EntityManager extension interface -->
         <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="generateDdl" value="true"></property>
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" >
+                <property name="generateDdl" value="true" ></property>
                 <property name="showSql" value="true"></property>
             </bean>
         </property>
@@ -56,23 +54,21 @@
     <!-- Simple implementation of the standard JDBC DataSource interface,
          configuring the plain old JDBC DriverManager via bean properties -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/jpa_db"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/jpa_db" />
+        <property name="username" value="root" />
+        <property name="password" value="root" />
     </bean>
 
-    <jpa:repositories base-package="com.lnminh.repository"/>
+    <jpa:repositories base-package="com.lnminh.repository" />
     <!-- This transaction manager is appropriate for applications that use a single JPA EntityManagerFactory for transactional data access.
         JTA (usually through JtaTransactionManager) is necessary for accessing multiple transactional resources within the same transaction. -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactoryBean"/>
+        <property name="entityManagerFactory" ref="entityManagerFactoryBean" />
     </bean>
 
     <!-- responsible for registering the necessary Spring components that power annotation-driven transaction management;
          such as when @Transactional methods are invoked -->
-    <tx:annotation-driven/>
+    <tx:annotation-driven />
 
 </beans>
-
-

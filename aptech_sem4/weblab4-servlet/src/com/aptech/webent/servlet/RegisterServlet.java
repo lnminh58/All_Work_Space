@@ -13,10 +13,10 @@ public class RegisterServlet extends HttpServlet {
 
     private String form = "\n" +
             "<form action='register.do' method='POST'>\n" +
-            "    <input type='text' placeholder='username' name='username'/><br>\n" +
-            "    <input type='password'  name='password'/><br>\n" +
-            "    <input type='password'  name='cfmPassword'/><br>\n" +
-            "    <input type='text'  name='email'/><br>\n" +
+            "Username <br> <input type='text' name='username'/><br>\n" +
+            "Password <br>  <input type='password'  name='password'/><br>\n" +
+            "Confirm password <br>  <input type='password'  name='cfmPassword'/><br>\n" +
+            "Email <br>  <input type='text'  name='email'/><br>\n" +
             "    <input type='submit' value='submit' name='submit'/>\n" +
             "</form>";
 
@@ -41,14 +41,14 @@ public class RegisterServlet extends HttpServlet {
             if(isBlank(username)||isBlank(password)||isBlank(cfmPassword)){
                 try (PrintWriter out = response.getWriter()) { /* TODO output your page here. You may use following sample code. */
                     String error1 = "<span style='color:red'>vui long dien vao</span>";
-                    form=error1 +"<br>"+form;
-                    out.println(this.form);
+                    String formError=error1 +"<br>"+form;
+                    out.println(formError);
                 }
             }else if(!password.equals(cfmPassword)){
                 try (PrintWriter out = response.getWriter()) { /* TODO output your page here. You may use following sample code. */
-                    String error1 = "<span style='color:red'>mat khau khong trung nhau</span>";
-                    form=error1 +"<br>"+form;
-                    out.println(this.form);
+                    String error2 = "<span style='color:red'>mat khau khong trung nhau</span>";
+                    String formError = error2 +"<br>"+form;
+                    out.println(formError);
                 }
             }else {
                 response.sendRedirect("index.jsp");
@@ -60,6 +60,6 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        viewRegister(request,response);
     }
 }

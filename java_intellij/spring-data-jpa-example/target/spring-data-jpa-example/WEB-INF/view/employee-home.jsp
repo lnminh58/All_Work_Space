@@ -1,16 +1,17 @@
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <html>
 <head>
-    <title>Hello</title>
-</head>
-<body>
-    <h1>List employees</h1>
-    <ul>
-        <c:forEach  items="${list}" var="employee">
-            <li>${employee.fullName}</li>
-        </c:forEach>
-    </ul>
+    <title>Employee Management</title>
 
+</head>
+
+<body>
+
+<ul>
+    <c:forEach items="${list}" var="e">
+        <li>${e.fullName}</li>
+    </c:forEach>
+</ul>
 </body>
 </html>
