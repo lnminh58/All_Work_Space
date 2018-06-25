@@ -22,14 +22,12 @@ public class EmployeeController {
     @RequestMapping(value="/home", method = RequestMethod.GET)
     public ModelAndView setupForm()
     {
+        ModelAndView mav = new ModelAndView("employees");
         List<Employee> employees = employeeManager.getAllEmployee();
         for (Employee employ : employees) {
             System.out.println(employ.getFullName());
         }
-        //model.addObject("allEmployees",employees);
-        ModelAndView model = new ModelAndView("employee-home");
-        model.addObject("list", employees);
-
-        return model;
+        mav.addObject("list", employees);
+        return mav;
     }
 }
