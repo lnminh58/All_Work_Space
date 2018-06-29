@@ -36,4 +36,12 @@
         <url-pattern>/register.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GiaiPhuongTrinhServlet</servlet-name>
+        <servlet-class>com.aptech.webent.servlet.GiaiPhuongTrinhBac2Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GiaiPhuongTrinhServlet</servlet-name>
+        <url-pattern>/giaiphuongtrinh.do</url-pattern>
+    </servlet-mapping>
 </web-app>

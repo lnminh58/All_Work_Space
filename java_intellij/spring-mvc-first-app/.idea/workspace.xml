@@ -21,31 +21,34 @@
       <file leaf-file-name="CustomerController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/CustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+            <state relative-caret-position="672">
+              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="43" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/messages.properties">
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/model/Customer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="47" />
+            <state relative-caret-position="105">
+              <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
+      <file leaf-file-name="HelloWorldController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/HelloWorldController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="756">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form-respond.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="form-respond.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/view/student/form-respond.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -54,10 +57,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="form-respond.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/customer/form-respond.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
+            <state relative-caret-position="525">
               <caret line="25" selection-start-line="25" selection-end-line="34" selection-end-column="21" />
             </state>
           </provider>
@@ -67,7 +79,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/StudentController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/customer/form.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -77,24 +98,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
               <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/customer/form.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/form/form.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -154,7 +157,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lnminh/controller/StudentController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-mvc-config.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/messages.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lnminh/model/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/customer/form.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/customer/form-respond.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lnminh/validation/CourseCodeContraintValidator.java" />
@@ -164,6 +166,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/liquibase/db_changelogs_master_1.0.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lnminh/controller/CustomerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lnminh/model/Customer.java" />
       </list>
     </option>
   </component>
@@ -201,16 +204,18 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="664" />
-    <option name="width" value="1263" />
-    <option name="height" value="1087" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="63" />
+    <option name="y" value="46" />
+    <option name="width" value="1232" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -354,7 +359,6 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -580,14 +584,16 @@
       <workItem from="1529680426098" duration="11000" />
       <workItem from="1529721451056" duration="61000" />
       <workItem from="1529806476473" duration="1500000" />
+      <workItem from="1530072947847" duration="1030000" />
+      <workItem from="1530074429749" duration="563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61019000" />
+    <option name="totallyTimeSpent" value="62612000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="63" y="46" width="1232" height="775" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
@@ -611,7 +617,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989059" weight="0.34674922" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8207547" visible="true" weight="0.2531983" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8207547" visible="true" weight="0.28412968" />
       <window_info anchor="right" id="Bean Validation" order="0" />
       <window_info id="Web" order="6" sideWeight="0.17924528" side_tool="true" weight="0.19213313" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -738,13 +744,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/main.js" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/style.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/HelloWorldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/model/Student.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tiles.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -768,13 +767,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.json" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/customer/form-respond.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/liquibase/db_changelogs_master.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -800,9 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="21" column="60" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,30 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="4" selection-start-line="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/model/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/customer/form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/CustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -882,13 +847,13 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/StudentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
+        <state relative-caret-position="525">
           <caret line="25" selection-start-line="25" selection-end-line="34" selection-end-column="21" />
         </state>
       </provider>
@@ -897,6 +862,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/customer/form-respond.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/HelloWorldController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="43" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lnminh/model/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/customer/form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="36" />
         </state>
       </provider>
     </entry>
