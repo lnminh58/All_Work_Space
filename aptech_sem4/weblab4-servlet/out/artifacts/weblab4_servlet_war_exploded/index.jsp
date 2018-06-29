@@ -28,5 +28,7 @@
 <a href="/register.do"> Registration</a>
 <br><br>
 <a href="/giaiphuongtrinh.jsp"> Giai phuong trinh</a>
+<br><br>
+<a href="/buy.jsp"> Mua Hàng</a>
 </body>
 </html>

@@ -39,7 +39,7 @@
     <%  Random random = new Random();
         String alphabet= "0123456789abcdefghijklmnopqrstuvwxyz";
         String capcha="";
-        for (int i= 0;i<random.nextInt(10);i++){
+        for (int i= 0;i<5;i++){
             capcha+=alphabet.charAt(random.nextInt(alphabet.length()-1));
         }
         session1.setAttribute("capcha",capcha);
