@@ -1,16 +1,16 @@
-package com.luv2code.jdbc;
+package com.lnminh.test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class TestJdbc {
+public class TestConnect {
+
     public static void main(String[] args) {
-        String jdbcUrl = "jdbc:mysql://localhost:3306/hb-01-one-to-one-uni?useSSL=false";
-        String user = "hbstudent";
-        String pass = "hbstudent";
+        String jdbcUrl = "jdbc:sqlserver://localhost;databaseName=education";
+        String user = "sa";
+        String pass = "ngocminh58";
 
         try{
-            Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Connecting to database");
             Connection conn = DriverManager.getConnection(jdbcUrl,user,pass);
             System.out.println("connection successfull: " + conn);
