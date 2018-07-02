@@ -19,5 +19,5 @@ public interface StudentService {
 
     public Page<Student> getLimitNumberRow(Pageable pageable);
 
-
+    public List<Student> findStudentsByAbstractField(String columnName, String keyword);
 }

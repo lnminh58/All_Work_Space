@@ -18,5 +18,11 @@ public class HelloSpringXmlApplication {
 
 
         ((ConfigurableApplicationContext) applicationContext).close();
+//        int a =4;
+        if(true){
+           int a =4;
+        }
+        a=3;
+
     }
 }

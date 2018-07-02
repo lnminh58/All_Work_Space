@@ -45,5 +45,10 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findAll(pageable);
     }
 
+    @Override
+    public List<Student> findStudentsByAbstractField(String columnName, String keyword) {
+        return studentRepository.findAbstractField(columnName,keyword);
+    }
+
 
 }

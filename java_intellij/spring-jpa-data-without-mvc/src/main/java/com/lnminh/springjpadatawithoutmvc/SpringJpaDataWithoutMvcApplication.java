@@ -43,9 +43,10 @@ public class SpringJpaDataWithoutMvcApplication {
 
 //		List<Student> students = studentService.getStudentsHaveGender(true);
 
-		Page<Student> students = studentService.getLimitNumberRow(new
-				PageRequest(0, 2));
+//		Page<Student> students = studentService.getLimitNumberRow(new
+//				PageRequest(0, 2));
 
+		List<Student> students = studentService.findStudentsByAbstractField("full_name", "a");
 		System.out.println("\n\n\n\n");
 		for (Student student : students) {
 			System.out.println(student.toString());
