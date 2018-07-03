@@ -19,5 +19,7 @@ public interface StudentService {
 
     public Page<Student> getLimitNumberRow(Pageable pageable);
 
-    public List<Student> findStudentsByAbstractField(String columnName, String keyword);
+    public List<Student> findStudentsByCustomField(String columnName, String keyword);
+
+    public List<Student> getStudentsByFullNameNative(String fullName);
 }

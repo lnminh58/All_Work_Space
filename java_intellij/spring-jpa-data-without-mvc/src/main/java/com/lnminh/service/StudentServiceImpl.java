@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -46,8 +47,14 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> findStudentsByAbstractField(String columnName, String keyword) {
-        return studentRepository.findAbstractField(columnName,keyword);
+    public List<Student> findStudentsByCustomField(String columnName, String keyword) {
+//        return studentRepository.findLikeMultiField(columnName,keyword);
+        return new ArrayList<>();
+    }
+
+    @Override
+    public List<Student> getStudentsByFullNameNative(String fullName) {
+        return studentRepository.findByFullNameNative(fullName);
     }
 
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <title>Facelet Title</title>
+</h:head>
+<h:body>
+   <f:view>
+      <h:form>
+         <h:outputLabel value="Name:" for="name"/>
+         <h:selectOneMenu id="prefix"
+                          value="#{Members.reg.RegistrationManagedBean.prefix}">
+            <f:selectItem itemLabel="Mr." itemValue="Mr"/>
+            <f:selectItem itemLabel="Mrs." itemValue="Mrs"/>
+            <f:selectItem itemLabel="Ms" itemValue="Ms"/>
+         </h:selectOneMenu>
+         <h:inputText id="Name" label="Name" required="true"
+                      value="#{Members.reg.RegistrationManagedBean.Name}"/>
+         <h:message for="firstName" />
+         <p></p>
+         <h:outputLabel value="Phone:" for="phone"/>
+         <h:inputText id="contactno" label="Phone" required="true"
+                      value="#{Members.reg.RegistrationManagedBean.contactno}">
+         </h:inputText>
+         <p></p>
+         <h:outputLabel for="age" value="Age:"/>
+         <h:inputText id="age" label="Age" size="2"
+                      value="#{Members.reg.RegistrationManagedBean.age}"/>
+         <p></p>
+         <h:commandButton id="register" value="Register" action="confirm"/>
+      </h:form>
+   </f:view>
+</h:body>
+
+</html>
