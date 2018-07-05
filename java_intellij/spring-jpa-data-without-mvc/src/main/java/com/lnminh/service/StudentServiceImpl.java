@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,6 +56,16 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> getStudentsByFullNameNative(String fullName) {
         return studentRepository.findByFullNameNative(fullName);
+    }
+
+    @Override
+    public Student getStudentHighestAge() {
+        return studentRepository.findTopByOrderByAgeDesc();
+    }
+
+    @Override
+    public List<Student> getStudentsByBirthdayLike(Date month) {
+        return studentRepository.findByBirthdayContaining(month);
     }
 
 

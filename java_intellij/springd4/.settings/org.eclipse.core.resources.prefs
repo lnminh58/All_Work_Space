@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/templates/cnews/footer.jsp=UTF-8
+encoding//WebContent/WEB-INF/templates/cnews/header.jsp=UTF-8
+encoding//WebContent/WEB-INF/templates/cnews/right-bar.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/basic/cat.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/basic/index.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/basic/user.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/cnews/add.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/cnews/cat.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/cnews/detail.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/cnews/index.jsp=UTF-8
+encoding//src/controller/CnewsController.java=UTF-8
+encoding//src/model/bean/News.java=UTF-8

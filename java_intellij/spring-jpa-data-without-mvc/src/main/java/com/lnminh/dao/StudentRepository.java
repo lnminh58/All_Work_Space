@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.awt.print.Pageable;
+
+import java.sql.Date;
 import java.util.List;
 
 public interface StudentRepository extends JpaRepository<Student,Integer> {
@@ -20,11 +22,15 @@ public interface StudentRepository extends JpaRepository<Student,Integer> {
 
     public List<Student> findByOverGender(boolean gender);
 
+    public Student findTopByOrderByAgeDesc();
+
+    public List<Student> findByBirthdayContaining(Date month);
 //    @Query(value = "Select s from  student s where s.:name_column like %:keyword%")
 //    public List<Student> findLikeMultiField(String columnName,String keyword);
 
 
     @Query(value = "Select * from student  where full_name like %?1%", nativeQuery = true)
     public List<Student> findByFullNameNative(String  fullName);
+
 
 }

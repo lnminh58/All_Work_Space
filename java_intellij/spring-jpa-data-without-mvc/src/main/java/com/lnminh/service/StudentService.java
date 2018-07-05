@@ -4,6 +4,7 @@ import com.lnminh.entity.Student;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface StudentService {
@@ -22,4 +23,8 @@ public interface StudentService {
     public List<Student> findStudentsByCustomField(String columnName, String keyword);
 
     public List<Student> getStudentsByFullNameNative(String fullName);
+
+    public Student getStudentHighestAge();
+
+    public List<Student> getStudentsByBirthdayLike(Date month);
 }

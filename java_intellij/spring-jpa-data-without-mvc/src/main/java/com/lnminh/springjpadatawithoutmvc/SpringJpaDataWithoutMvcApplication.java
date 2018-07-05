@@ -21,6 +21,8 @@ import javax.persistence.criteria.CriteriaDelete;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.metamodel.Metamodel;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -58,13 +60,20 @@ public class SpringJpaDataWithoutMvcApplication {
 //		List<Student> students = studentService.findStudentsByCustomField("full_name", "o");
 //		List<Student> students = studentService.findStudentsByCustomField("age", "2");
 
-		StudentRepositoryCustomImpl studentRepositoryCustom = applicationContext.getBean(StudentRepositoryCustomImpl.class);
-		List<Student> students = studentRepositoryCustom.findLikeMultiField("age", "2");
+//		StudentRepositoryCustomImpl studentRepositoryCustom = applicationContext.getBean(StudentRepositoryCustomImpl.class);
+//		List<Student> students = studentRepositoryCustom.findLikeMultiField("age", "2");
+
+//		Student student = studentService.getStudentHighestAge();
+
+		List<Student> students = studentService.getStudentsByBirthdayLike();
+
 
 		System.out.println("\n\n\n\n");
 		for (Student student : students) {
 			System.out.println(student.toString());
 		}
+//		System.out.println(student);
+
 		System.out.println("\n\n\n\n");
 
 //		list batch
@@ -74,6 +83,8 @@ public class SpringJpaDataWithoutMvcApplication {
 
 		List<Batch> batchs = batchService.getAllBatchs();
 //		List<Batch> batchs = batchService.getBatchByBatchName("Batch_130");
+
+
 
 		System.out.println("\n\n\n\n");
 		for (Batch batch : batchs){

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+<!-- template basic -->
+	<definition name="basic.template" template="/WEB-INF/templates/basic/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/templates/basic/header.jsp"></put-attribute>
+     <put-attribute name="content" value=""></put-attribute>
+    <put-attribute name="footer" value="/WEB-INF/templates/basic/footer.jsp"></put-attribute>
+     
+  </definition>
+  <definition name="basic.index" extends="basic.template"> <!--kế thừa  -->
+    
+     <put-attribute name="content" value="/WEB-INF/views/basic/index.jsp"></put-attribute> <!-- override -->
+     
+  </definition>
+  <definition name="basic.cat" extends="basic.template">
+   
+     <put-attribute name="content" value="/WEB-INF/views/basic/cat.jsp"></put-attribute>
+    
+     
+  </definition>
+   <definition name="basic.user" extends="basic.template">
+    
+     <put-attribute name="content" value="/WEB-INF/views/basic/user.jsp"></put-attribute>
+  
+     
+  </definition>
+  
+  
+  <!--template cnews  -->
+  <definition name="cnews.template" template="/WEB-INF/templates/cnews/template.jsp">
+  <put-attribute name="title" ></put-attribute>
+    <put-attribute name="header" value="/WEB-INF/templates/cnews/header.jsp"></put-attribute>
+     <put-attribute name="content" value=""></put-attribute>
+     <put-attribute name="right-bar" value="/WEB-INF/templates/cnews/right-bar.jsp"></put-attribute>
+    <put-attribute name="footer" value="/WEB-INF/templates/cnews/footer.jsp"></put-attribute>
+     
+  </definition>
+   <definition name="cnews.index" extends="cnews.template">
+    <put-attribute name="title" value="trang-chu"></put-attribute>
+     <put-attribute name="content" value="/WEB-INF/views/cnews/index.jsp"></put-attribute>
+     
+  </definition>
+   <definition name="cnews.add" extends="cnews.template">
+     <put-attribute name="title" value="them"></put-attribute>
+     <put-attribute name="content" value="/WEB-INF/views/cnews/add.jsp"></put-attribute>
+     
+  </definition>
+   <definition name="cnews.cat" extends="cnews.template">
+     <put-attribute name="title" value="danh-muc"></put-attribute>
+     <put-attribute name="content" value="/WEB-INF/views/cnews/cat.jsp"></put-attribute>
+     
+  </definition>
+   <definition name="cnews.detail" extends="cnews.template">
+     <put-attribute name="title" value="chi-tiet-tin"></put-attribute>
+     <put-attribute name="content" value="/WEB-INF/views/cnews/detail.jsp"></put-attribute>
+     
+  </definition>
+  
+</tiles-definitions>
