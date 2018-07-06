@@ -12,17 +12,13 @@ public class HelloSpringXmlApplication {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         SpringReceptionist springReceptionist = applicationContext.getBean(SpringReceptionist.class);
+        SpringReceptionist springReceptionist1 = applicationContext.getBean(SpringReceptionist.class);
+
         System.out.println( "By xml config");
         System.out.println(springReceptionist.requestWelcome());
         System.out.println(springReceptionist.getContact());
 
 
         ((ConfigurableApplicationContext) applicationContext).close();
-//        int a =4;
-        if(true){
-           int a =4;
-        }
-        a=3;
-
     }
 }

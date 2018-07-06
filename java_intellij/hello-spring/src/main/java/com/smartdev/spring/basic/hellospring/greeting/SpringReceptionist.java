@@ -8,8 +8,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+//@Component
 public class SpringReceptionist {
+
     @Autowired
     @Qualifier(value = "englishGreet")
     private DialectGreet dialectGreet;

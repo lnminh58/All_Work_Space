@@ -7,14 +7,15 @@
 
    <context:component-scan base-package="com.smartdev.spring.basic.hellospring"/>
     <context:property-placeholder location="classpath:contact.properties"/>
-    <!-- more bean definitions go hesSre --><!--
-    <bean id="englishGreet" class="com.smartdev.spring.basic.hellospring.greetingxml.EnglishGreet"/>
-    <bean id="springReceptionist" class="com.smartdev.spring.basic.hellospring.greetingxml.SpringReceptionist"
-        init-method="afterWelcome" destroy-method="afterWelcome"
-    >
+     <!--more bean definitions go hesSre -->
 
-        <property name="dialectGreet" ref="englishGreet"/>
+  <bean id="englishGreet" class="com.smartdev.spring.basic.hellospring.greetingxml.EnglishGreet"/>
 
-    </bean>
--->
+    <!--<bean id="springReceptionist" class="com.smartdev.spring.basic.hellospring.greetingxml.SpringReceptionist"-->
+        <!--init-method="afterWelcome" destroy-method="afterWelcome">-->
+
+        <!--<property name="dialectGreet" ref="englishGreet"/>-->
+
+    <!--</bean>-->
+
 </beans>
