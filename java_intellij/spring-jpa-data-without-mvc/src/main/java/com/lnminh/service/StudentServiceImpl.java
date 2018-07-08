@@ -68,5 +68,10 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findByBirthdayContaining(month);
     }
 
+    @Override
+    public void saveStudent(Student student) {
+        studentRepository.save(student);
+    }
+
 
 }

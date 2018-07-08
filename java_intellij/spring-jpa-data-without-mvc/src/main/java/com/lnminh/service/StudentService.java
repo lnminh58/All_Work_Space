@@ -27,4 +27,6 @@ public interface StudentService {
     public Student getStudentHighestAge();
 
     public List<Student> getStudentsByBirthdayLike(Date month);
+
+    public void saveStudent(Student student);
 }

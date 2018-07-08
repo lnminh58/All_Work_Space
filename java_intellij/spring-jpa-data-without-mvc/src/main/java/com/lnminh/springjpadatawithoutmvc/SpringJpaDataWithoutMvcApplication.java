@@ -12,6 +12,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -42,6 +44,9 @@ public class SpringJpaDataWithoutMvcApplication {
 		StudentService studentService = applicationContext.getBean(StudentService.class);
 
 
+
+
+
 //		List student
 
 //		List<Student> students = studentService.getAllStudent();
@@ -52,8 +57,8 @@ public class SpringJpaDataWithoutMvcApplication {
 
 //		List<Student> students = studentService.getStudentsHaveGender(true);
 
-//		Page<Student> students = studentService.getLimitNumberRow(new
-//				PageRequest(0, 2));
+		Page<Student> students = studentService.getLimitNumberRow(new
+				PageRequest(1, 2));
 
 //		List<Student> students = studentService.getStudentsByFullNameNative("a");
 
@@ -65,15 +70,15 @@ public class SpringJpaDataWithoutMvcApplication {
 
 //		Student student = studentService.getStudentHighestAge();
 
-		List<Student> students = studentService.getStudentsByBirthdayLike();
+//		List<Student> students = studentService.getStudentsByBirthdayLike("12");
 
 
 		System.out.println("\n\n\n\n");
-		for (Student student : students) {
+		for (Student student : students.getContent()) {
 			System.out.println(student.toString());
 		}
 //		System.out.println(student);
-
+//
 		System.out.println("\n\n\n\n");
 
 //		list batch
@@ -81,18 +86,20 @@ public class SpringJpaDataWithoutMvcApplication {
 		BatchService batchService = applicationContext.getBean(BatchService.class);
 
 
-		List<Batch> batchs = batchService.getAllBatchs();
-//		List<Batch> batchs = batchService.getBatchByBatchName("Batch_130");
-
-
-
+//		List<Batch> batchs = batchService.getAllBatchs();
+		List<Batch> batchs = batchService.getBatchByBatchName("Batch_130");
 		System.out.println("\n\n\n\n");
 		for (Batch batch : batchs){
 			System.out.println(batch.toString());
 		}
 		System.out.println("\n\n\n\n");
 
+
+
+
+
 		((ConfigurableApplicationContext) applicationContext).close();
+
 
 	}
 }

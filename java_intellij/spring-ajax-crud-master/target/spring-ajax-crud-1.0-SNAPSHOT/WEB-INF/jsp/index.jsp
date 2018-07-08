@@ -38,13 +38,16 @@
                   <input type="text" name="editAge${user.id}" id="editAge${user.id}" value="${user.age}" />
                 </td>
                 <td>
-                  <input type="button" class="delete-person" data-item-id="${user.id}" id="delete-person${user.id}" value="Delete" /> 
+                  <input type="button" class="delete-person" data-item-id="${user.id}" id="delete-person${user.id}"
+                         value="Delete" />
                 </td>
                 <td> 
-                  <input type="button" class="update-person" data-item-id="${user.id}" id="update-person${user.id}" value="Update" /> 
+                  <input type="button" class="update-person" data-item-id="${user.id}" id="update-person${user.id}"
+                         value="Update" />
                 </td>
                 <td style="display: none;" class="edit${user.id}">
-                  <input type="button"  class="update-person" data-item-id="${user.id}" id="edit-person${user.id}" value="Confirm" /> 
+                  <input type="button"  class="update-person" data-item-id="${user.id}" id="edit-person${user.id}"
+                         value="Confirm" />
                 </td>
                 <td id="updatecheck${user.id}" style="display: none"><span class="label label-success" >OK</span></td>
             </tr>
@@ -160,6 +163,7 @@
             var id = $(event.target).data('itemId');
             var data = JSON.stringify({"id":id});
             var rowId= "#"+event.target.id;
+            console.log(rowId);
             $.ajax({
             type : "DELETE",
             url : "${pageContext.request.contextPath}/deletePerson",
@@ -168,7 +172,7 @@
             success: function(data){
                $(rowId).closest('tr').remove();
                $(".otherchecks").show();
-               setTimeout(function() { $(".otherchecks").hide(); }, 2000);
+               setTimeout(function() { $(".otherchecks").hide();}, 2000);
             }
             });
         });
@@ -187,7 +191,6 @@
 //            contentType: "application/json",
             data : data,
             success: function(data){
-               
             }
             });
         });

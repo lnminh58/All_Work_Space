@@ -30,7 +30,7 @@
       <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
+            <state relative-caret-position="1365">
               <caret line="65" selection-start-line="65" selection-end-line="65" selection-end-column="61" />
             </state>
           </provider>
@@ -78,8 +78,8 @@
       <file leaf-file-name="employees.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employees.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="57" />
+            <state relative-caret-position="21">
+              <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -145,7 +145,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-5" />
     <option name="width" value="1821" />
     <option name="height" value="1010" />
@@ -155,6 +155,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -245,7 +246,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,15 +465,17 @@
       <workItem from="1530343525148" duration="32000" />
       <workItem from="1530362775290" duration="599000" />
       <workItem from="1530805897361" duration="604000" />
+      <workItem from="1530930408678" duration="648000" />
+      <workItem from="1530932560418" duration="601000" />
+      <workItem from="1530962841806" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28165000" />
+    <option name="totallyTimeSpent" value="29420000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="0" width="1821" height="1010" extended-state="1" />
-    <editor active="true" />
+    <frame x="-5" y="0" width="1821" height="1010" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -858,7 +860,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
+        <state relative-caret-position="1365">
           <caret line="65" selection-start-line="65" selection-end-line="65" selection-end-column="61" />
         </state>
       </provider>
@@ -872,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/employees.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="57" />
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="57" />
         </state>
       </provider>
     </entry>

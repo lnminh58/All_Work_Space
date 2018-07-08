@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class BatchServiceImpl implements BatchService {
 
@@ -22,4 +23,5 @@ public class BatchServiceImpl implements BatchService {
     public List<Batch> getBatchByBatchName(String batchName) {
         return batchReposity.findByBatchName(batchName);
     }
+
 }

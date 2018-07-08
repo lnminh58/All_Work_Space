@@ -58,6 +58,7 @@ public class CRUDController {
     @RequestMapping(value = "/deletePerson" , method = RequestMethod.DELETE)
     @ResponseBody
     public void deletePerson(@RequestBody Map<String, String> id) {
+
         dAOImpl.remove(Integer.parseInt(id.get("id")));
     }
     
