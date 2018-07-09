@@ -23,6 +23,8 @@ public interface StudentRepository extends JpaRepository<Student,Integer> {
     public List<Student> findByOverGender(boolean gender);
 
     public Student findTopByOrderByAgeDesc();
+    @Query( value = "select * from student s where MONTH(s.birthday) = ?1 ",nativeQuery = true)
+    public List<Student> findByBirthdayLike(int month);
 
     public List<Student> findByBirthdayContaining(Date month);
 //    @Query(value = "Select s from  student s where s.:name_column like %:keyword%")

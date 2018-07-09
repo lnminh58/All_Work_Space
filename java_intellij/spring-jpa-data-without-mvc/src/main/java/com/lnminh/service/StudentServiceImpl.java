@@ -69,6 +69,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> getStudentBornInMonth(int month) {
+        return studentRepository.findByBirthdayLike(month);
+    }
+
+    @Override
     public void saveStudent(Student student) {
         studentRepository.save(student);
     }

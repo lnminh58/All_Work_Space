@@ -113,7 +113,7 @@
 
                         <div class="form-check mb-3">
                             <input type="checkbox" class="form-check-input" id="stGender">
-                            <label class="form-check-label" for="stGender">Check me out</label>
+                            <label class="form-check-label" for="stGender">Male</label>
                         </div>
 
                         <div class="input-group mb-3">
@@ -329,7 +329,6 @@
             }
             , 2000);
     }
-
 
 </script>
 

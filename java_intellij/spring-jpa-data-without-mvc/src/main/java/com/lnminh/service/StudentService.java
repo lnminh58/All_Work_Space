@@ -28,5 +28,7 @@ public interface StudentService {
 
     public List<Student> getStudentsByBirthdayLike(Date month);
 
+    public List<Student> getStudentBornInMonth(int month);
+
     public void saveStudent(Student student);
 }

@@ -57,8 +57,10 @@ public class SpringJpaDataWithoutMvcApplication {
 
 //		List<Student> students = studentService.getStudentsHaveGender(true);
 
-		Page<Student> students = studentService.getLimitNumberRow(new
-				PageRequest(1, 2));
+//		Page<Student> students = studentService.getLimitNumberRow(new
+//				PageRequest(1, 2));
+
+		List<Student> students = studentService.getStudentBornInMonth(7);
 
 //		List<Student> students = studentService.getStudentsByFullNameNative("a");
 
@@ -74,7 +76,7 @@ public class SpringJpaDataWithoutMvcApplication {
 
 
 		System.out.println("\n\n\n\n");
-		for (Student student : students.getContent()) {
+		for (Student student : students) {
 			System.out.println(student.toString());
 		}
 //		System.out.println(student);
