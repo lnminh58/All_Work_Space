@@ -1,8 +1,7 @@
 // import library for making a component
 
 import React from 'react';
-import { Text, View } from 'react-native';
-
+import ReactNative, { Text, View } from 'react-native';
 // make a component
 
 const Header = (props) => {
@@ -13,6 +12,7 @@ const Header = (props) => {
     </View>
 );
 };
+
 
 const styles = {
     viewStyle: {
