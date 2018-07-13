@@ -16,6 +16,7 @@
         First name: <form:input path="firstName"/>
         <br><br>
         Last name: <form:input path="lastName"/>
+        <%--<input type="text" name="firstName" value="${student.firstName}"/>--%>
         <br><br>
         Country : 
             <form:select path="country">

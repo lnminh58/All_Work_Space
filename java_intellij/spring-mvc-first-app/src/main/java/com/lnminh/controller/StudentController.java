@@ -24,7 +24,10 @@ public class StudentController {
 
     @RequestMapping("/showForm")
     public String showForm(Model model){
-        model.addAttribute("student",new Student());
+        Student student = new Student();
+        student.setFirstName("LE");
+        student.setLastName("Minh");
+        model.addAttribute("student",student);
         model.addAttribute("countryOptions", countryOptions);
         model.addAttribute("favoriteLanguageOptions", favoriteLanguageOptions);
         model.addAttribute("operatingSystemOptions",operatingSystemOptions);
