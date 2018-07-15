@@ -1,6 +1,6 @@
 // import a library to help create a component
 import React from 'react';
-import ReactNative, { View, AppRegistry } from 'react-native';
+import { View, AppRegistry } from 'react-native';
 
 // import ReactNative from 'react-native';
 import Header from './src/components/Header';

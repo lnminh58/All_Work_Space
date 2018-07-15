@@ -1,7 +1,7 @@
 // import library for making a component
 
 import React from 'react';
-import ReactNative, { Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 // make a component
 
 const Header = (props) => {
