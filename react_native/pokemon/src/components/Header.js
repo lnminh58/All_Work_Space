@@ -14,7 +14,7 @@ const Header = (props) => {
 
 const styles = {
     frameStyle: {
-        backgroundColor: '#555555',
+        backgroundColor: '#ff3f4f',
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
@@ -29,3 +29,4 @@ const styles = {
 };
 
 export default Header;
+
