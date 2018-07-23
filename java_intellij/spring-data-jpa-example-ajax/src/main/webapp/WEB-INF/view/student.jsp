@@ -244,7 +244,7 @@
             success: function (dataStudent) {
                 renderStudentRow(dataStudent);
                 saySucccess();
-                hideModal()
+                hideModal();
             }
         })
     }

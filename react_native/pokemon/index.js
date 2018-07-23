@@ -5,10 +5,10 @@ import Header from './src/components/Header';
 import PokemonList from './src/components/PokemonList';
 
 const App = () => (
-    <View>
-        <Header headerText={'Pokemons'} />
-        <PokemonList />
-    </View>    
+   <View>
+      <Header headerText={'Pokemons'} />
+      <PokemonList />
+   </View>
 );
 
 AppRegistry.registerComponent('pokemon', () => App);
