@@ -11,6 +11,8 @@ const App = () => (
         <Header headerText={'Albums'} />
         <AlbumList />
     </View>
-);
+); 
 // render it to device
+console.log('hello');
+
 AppRegistry.registerComponent('albums', () => App);

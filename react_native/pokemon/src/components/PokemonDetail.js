@@ -10,9 +10,8 @@ class PokemonDetail extends Component {
             version_group: {},
             sprites: {},
         },
-        
     };
-    
+
     componentWillMount() {
         Axios.get(this.props.pokemon.url).then(response =>
             this.setState({ pokemonData: response.data }));
@@ -32,6 +31,7 @@ class PokemonDetail extends Component {
     render() {
         // console.log(this.state.pokemonData.version_group);
         return (
+
             <Card>
                 <CardSection>
                     <View>
@@ -39,15 +39,19 @@ class PokemonDetail extends Component {
                     </View>
                 </CardSection>
                 <CardSection>
-                    <Image 
-                            style={this.styles.imageStyle} 
-                            source={{ uri: this.state.pokemonData.sprites
-                                .back_default }}
+                    <Image
+                        style={this.styles.imageStyle}
+                        source={{
+                            uri: this.state.pokemonData.sprites
+                                .back_default
+                        }}
                     />
-                    <Image 
-                            style={this.styles.imageStyle} 
-                            source={{ uri: this.state.pokemonData.sprites
-                                .front_default }}
+                    <Image
+                        style={this.styles.imageStyle}
+                        source={{
+                            uri: this.state.pokemonData.sprites
+                                .front_default
+                        }}
                     />
                 </CardSection>
             </Card>

@@ -8,29 +8,29 @@ class PokemonList extends Component {
         pokemons: [],
     }
     componentWillMount() {
-         console.log('componet will mount in PokemonList');
+        console.log('componet will mount in PokemonList');
         Axios.get('https://pokeapi.co/api/v2/pokemon-form/').then(response => this.setState({ pokemons: response.data.results }));
     }
 
     renderPokemon() {
         if (this.state.pokemons.length === 0) {
             return (
-                <Text>There is no data</Text>
+                <Text>Loading...</Text>
             );
         }
-        return this.state.pokemons.map(pokemon => 
-           <PokemonDetail key={pokemon.name} pokemon={pokemon} />
+        return this.state.pokemons.map(pokemon =>
+            <PokemonDetail key={pokemon.name} pokemon={pokemon} />
         );
     }
 
     render() {
         console.log(this.state.pokemons);
-        
+
         return (
 
-                <ScrollView>
-                        {this.renderPokemon()}
-                </ScrollView>
+            <ScrollView>
+                {this.renderPokemon()}
+            </ScrollView>
 
         );
     }
