@@ -8,14 +8,22 @@ class Word extends Component {
          id: this.props.word.id
       });
    }
+
+   toggleShowWord() {
+      this.props.dispatch({
+         type: 'TOGGLE_SHOW',
+         id: this.props.word.id,
+      });
+   }
    render() {
-      const { en, vn, memorized } = this.props.word;
+      const { en, vn, memorized, isShow } = this.props.word;
       const textDecorationLine = memorized ? 'line-through' : 'none';
       const memorizedButtonText = memorized ? 'forget' : 'memorized';
+      const meaning = isShow ? vn : '';
       return (
          <View style={styles.container}>
             <Text style={{ textDecorationLine }}>{en}</Text>
-            <Text>{vn}</Text>
+            <Text>{meaning}</Text>
             <View style={styles.controller}>
                <TouchableOpacity
                   style={styles.button}
@@ -23,7 +31,7 @@ class Word extends Component {
                >
                   <Text>{memorizedButtonText}</Text>
                </TouchableOpacity>
-               <TouchableOpacity style={styles.button}>
+               <TouchableOpacity style={styles.button} onPress={this.toggleShowWord.bind(this)}>
                   <Text>Show</Text>
                </TouchableOpacity>
             </View>

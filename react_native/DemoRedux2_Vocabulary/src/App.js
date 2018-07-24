@@ -55,8 +55,38 @@ const reducer = (state = defaultState, action) => {
             ...state,
             arrWords: state.arrWords.map(item => {
                if (item.id !== action.id) return item;
-               return {...item, memorized: !item.memorized}
-              })
+               return { ...item, memorized: !item.memorized };
+            })
+         };
+
+      case 'TOGGLE_IS_ADDING':
+         return {
+            ...state,
+            isAdding: !state.isAdding
+         };
+
+      case 'TOGGLE_SHOW':
+      return {
+            ...state,
+            arrWords: state.arrWords.map(item => {
+               if (item.id !== action.id) return item;
+               return { ...item, isShow: !item.isShow };
+            })
+         };
+
+      case 'ADD_WORD':
+         return {
+            ...state,
+            arrWords: [
+               {
+                  id: state.arrWords.length + 1,
+                  en: action.en,
+                  vn: action.vn,
+                  memorized: false,
+                  isShow: false
+               },
+               ...state.arrWords
+            ]
          };
       default:
          return state;
