@@ -1,0 +1,3 @@
+rootProject.name = 'DemoRedux2_Vocabulary'
+
+include ':app'
