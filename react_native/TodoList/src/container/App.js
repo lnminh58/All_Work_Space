@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Content, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { Container, Content, Text } from 'native-base';
+import AppHeader from './Header';
+import ListToDo from './ListTodo';
 export default class App extends Component {
-  render() {
-    return (
-      <Container>
-        <Header success>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content>
-          <Text>
-            This is Content Section
-          </Text>
-        </Content>
-      </Container>
-    );
-  }
+   render() {
+      return (
+         <Provider store={ createStore(reducer)}>
+            <Container>
+               <AppHeader />
+               <ListToDo />
+            </Container>
+         </Provider>
+      );
+   }
 }
+
+const reducer = ()=> [];

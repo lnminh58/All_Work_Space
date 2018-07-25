@@ -1,0 +1,27 @@
+[
+   {
+      "id": 1, 
+      "title":"example work",
+      "detail":"description of the work",
+      "done": false
+   },
+   {
+      "id": 2, 
+      "title":"Need to do",
+      "detail":"Some thing i must do today",
+      "done": true
+   },
+   {
+      "id": 3, 
+      "title":"Call for John",
+      "detail":"To borrow his car",
+      "done": false
+   },
+   {
+      "id": 4, 
+      "title":"Go to Supermarket",
+      "detail":"Buy a new Watch",
+      "done": false
+   }
+
+]
