@@ -3,25 +3,38 @@
       "id": 1, 
       "title":"example work",
       "detail":"description of the work",
-      "done": false
+      "isDone": false
    },
    {
       "id": 2, 
       "title":"Need to do",
       "detail":"Some thing i must do today",
-      "done": true
+      "isDone": true
    },
    {
       "id": 3, 
       "title":"Call for John",
       "detail":"To borrow his car",
-      "done": false
+      "isDone": false
    },
    {
       "id": 4, 
       "title":"Go to Supermarket",
       "detail":"Buy a new Watch",
-      "done": false
+      "isDone": true
+   },
+   {
+      "id": 5, 
+      "title":"Take a photo for CV",
+      "detail":"7:30 pm",
+      "isDone": false
+   },
+   {
+      "id": 6, 
+      "title":"Hangout with Clare",
+      "detail":"At the Park",
+      "isDone": false
    }
+   
 
 ]

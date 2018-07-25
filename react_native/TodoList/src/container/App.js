@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { Container, Content, Text } from 'native-base';
+import { Container } from 'native-base';
+import reducer from '../reducer/reducer';
 import AppHeader from './Header';
-import ListToDo from './ListTodo';
-export default class App extends Component {
+import Content from './Content';
+
+ export default class App extends Component {
+
    render() {
       return (
-         <Provider store={ createStore(reducer)}>
+         <Provider store={createStore(reducer)}>
             <Container>
                <AppHeader />
-               <ListToDo />
+               <Content />
+              
             </Container>
          </Provider>
       );
    }
 }
 
-const reducer = ()=> [];
+
