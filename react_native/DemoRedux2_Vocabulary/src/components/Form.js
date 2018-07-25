@@ -7,8 +7,9 @@ import {
    StyleSheet
 } from 'react-native';
 import { connect } from 'react-redux';
+import { toggleIsAdding, addWord } from '../redux/actionCreators';
 
- class Form extends Component {
+class Form extends Component {
    // state = {};
    constructor(props) {
       super(props);
@@ -20,15 +21,9 @@ import { connect } from 'react-redux';
    }
 
    onAdd() {
-      const { en, vn } = this.state;
-      this.props.dispatch({
-         type: 'ADD_WORD',
-         en,
-         vn,
-      });
-      this.props.dispatch({
-         type: 'TOGGLE_IS_ADDING',
-      });
+      const { en, vi } = this.state;
+      this.props.addWord(en, vi);
+      this.props.toggleIsAdding();
    }
    render() {
       return (
@@ -45,9 +40,7 @@ import { connect } from 'react-redux';
                value={this.state.vi}
                onChangeText={text => this.setState({ vi: text })}
             />
-            <TouchableOpacity
-               onPress={() => this.onAdd()}   
-            >
+            <TouchableOpacity onPress={() => this.onAdd()}>
                <Text>Add</Text>
             </TouchableOpacity>
          </View>
@@ -65,4 +58,10 @@ const styles = StyleSheet.create({
    }
 });
 
-export default connect()(Form)
+export default connect(
+   null,
+   {
+      addWord,
+      toggleIsAdding
+   }
+)(Form);

@@ -34,7 +34,7 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
+            <state relative-caret-position="119">
               <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#h4#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -189,8 +189,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="84" />
-    <option name="width" value="1242" />
+    <option name="x" value="-7" />
+    <option name="y" value="3" />
+    <option name="width" value="782" />
     <option name="height" value="772" />
   </component>
   <component name="ProjectView">
@@ -415,16 +416,15 @@
       <workItem from="1530274180904" duration="11777000" />
       <workItem from="1531827237097" duration="1861000" />
       <workItem from="1531998774473" duration="839000" />
-      <workItem from="1532433363423" duration="2814000" />
+      <workItem from="1532433363423" duration="3464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44858000" />
+    <option name="totallyTimeSpent" value="45508000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="84" y="0" width="1242" height="772" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="3" width="782" height="772" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
@@ -445,9 +445,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.24232633" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27948305" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27948305" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69379014" visible="true" weight="0.25126904" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69379014" visible="true" weight="0.41135734" />
       <window_info id="Web" order="6" sideWeight="0.30620986" side_tool="true" weight="0.21482602" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -788,7 +788,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="119">
           <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding>
             <element signature="n#style#0;n#h4#0;n#body#0;n#html#0;n#!!top" expanded="true" />
