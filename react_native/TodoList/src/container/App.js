@@ -4,7 +4,7 @@ export default class App extends Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header success>
           <Left>
             <Button transparent>
               <Icon name='menu' />
