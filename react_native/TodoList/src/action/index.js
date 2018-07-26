@@ -12,26 +12,32 @@ export function removeWork(id) {
    };
 }
 
-export function changeToTab(tabId) {
+export function saveWork(title, detail, id = null) {
    return {
-      type: 'CHANGE_TAB',
-      tabId
-   };
-}
-
-export function addWork(title, detail) {
-   return {
-      type: 'ADD',
+      type: 'SAVE',
       title,
-      detail
+      detail,
+      id
    };
 }
 
-
-export function fillUpForm(title, detail) {
+export function fillUpForm(title, detail, id = null) {
    return {
       type: 'FILLUP',
       title,
-      detail
+      detail,
+      id
+   };
+}
+
+export function goToForm() {
+   return {
+      type: 'GO_FORM'
+   };
+}
+
+export function goToHome() {
+   return {
+      type: 'GO_HOME'
    };
 }

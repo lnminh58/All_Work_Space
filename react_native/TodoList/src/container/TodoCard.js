@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import {
    changeWorkStatus,
    removeWork,
-   changeToTab,
-   fillUpForm
+   goToForm,
+   fillUpForm,
+   saveWork
 } from '../action';
 
 class TodoCard extends Component {
@@ -50,16 +51,21 @@ class TodoCard extends Component {
                </Button>
                <Button
                   onPress={() => {
-                     this.props.changeToTab(1);
-                     this.props.changeToTab(1);
-                     this.props.fillUpForm(title, detail);
+                     this.props.fillUpForm(title, detail, id);
+                     this.props.goToForm();
                   }}
+                  style={buttonStyle}
                   warning
                   small
                >
                   <Icon type="Entypo" name="edit" />
                </Button>
-               <Button onPress={() => this.props.removeWork(id)} danger small>
+               <Button
+                  onPress={() => this.props.removeWork(id)}
+                  style={buttonStyle}
+                  danger
+                  small
+               >
                   <Icon name="remove" />
                </Button>
             </CardItem>
@@ -75,8 +81,8 @@ const styles = StyleSheet.create({
       borderBottomRightRadius: 0
    },
    buttonContainerStyle: {
-      flexDirection: 'row-reverse',
-      justifyContent: 'space-around'
+      flexDirection: 'row-reverse'
+      // justifyContent: 'space-around'
    },
    cardHeaderTextStyle: {
       color: 'white',
@@ -89,5 +95,5 @@ const styles = StyleSheet.create({
 
 export default connect(
    null,
-   { changeWorkStatus, removeWork, changeToTab, fillUpForm }
+   { changeWorkStatus, removeWork, goToForm, fillUpForm, saveWork }
 )(TodoCard);

@@ -3,6 +3,7 @@ import { FlatList, StyleSheet } from 'react-native';
 import { Content, Container } from 'native-base';
 import { connect } from 'react-redux';
 import TodoCard from './TodoCard';
+import AppHeader from './Header';
 
 class ListTodos extends Component {
    render() {
@@ -10,6 +11,11 @@ class ListTodos extends Component {
       const { listTodos } = this.props;
       return (
          <Container>
+            <AppHeader
+               headerText="Todo List"
+               headerIconName="list"
+               headerNavButtonText="ADD"
+            />
             <FlatList
                style={containerStyle}
                data={listTodos}

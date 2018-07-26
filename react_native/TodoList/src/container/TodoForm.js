@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Container, Content, Card, Button, Text, Textarea } from 'native-base';
 import { StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { changeToTab, addWork, fillUpForm } from '../action';
+import { saveWork, fillUpForm, goToHome } from '../action';
+import AppHeader from './Header';
 
 class TodoForm extends Component {
    constructor(props) {
@@ -24,14 +25,16 @@ class TodoForm extends Component {
    componentWillReceiveProps(nextProps) {
       this.setState({
          title: nextProps.currentFormData.title,
-         detail: nextProps.currentFormData.detail
+         detail: nextProps.currentFormData.detail,
+         id: nextProps.currentFormData.id
       });
    }
    render() {
       const { containerStyle, cardStyle, buttonStyle } = styles;
 
       return (
-         <Container style={containerStyle}>
+         <Container>
+            <AppHeader headerText="Todo Form" headerIconName="edit" />
             <Content>
                <Card style={cardStyle}>
                   <Textarea
@@ -52,10 +55,13 @@ class TodoForm extends Component {
 
                   <Button
                      onPress={() => {
-                        this.props.changeToTab(0);
-                        this.props.changeToTab(0);
-                        this.props.addWork(this.state.title, this.state.detail);
+                        this.props.saveWork(
+                           this.state.title,
+                           this.state.detail,
+                           this.state.id,
+                        );
                         this.props.fillUpForm('', '');
+                        this.props.goToHome();
                      }}
                      block
                      success
@@ -92,5 +98,5 @@ function mapStateToProps(state) {
 
 export default connect(
    mapStateToProps,
-   { changeToTab, addWork, fillUpForm }
+   { saveWork, fillUpForm, goToHome }
 )(TodoForm);

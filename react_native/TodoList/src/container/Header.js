@@ -1,18 +1,44 @@
 import React, { Component } from 'react';
 import { Header, Title, Left, Right, Body, Button, Icon } from 'native-base';
 import { StyleSheet } from 'react-native';
-export default class AppHeader extends Component {
+import { connect } from 'react-redux';
+import { goToForm, goToHome } from '../action';
+
+class AppHeader extends Component {
+   renderNavButton(headerNavButtonText) {
+      switch (headerNavButtonText) {
+         case 'ADD':
+            return (
+               <Button onPress={() => this.props.goToForm()} transparent>
+                  <Icon name="add-circle" />
+               </Button>
+            );
+         default :
+            return (
+               <Button onPress={() => this.props.goToHome()} transparent>
+                  <Icon name="home" />
+               </Button>
+            );
+      }
+   }
    render() {
-      const { headerStyle, headerTitleStyle, addButtonColor } = styles;
+      const { headerText, headerIconName, headerNavButtonText } = this.props;
+      const { headerStyle, headerTitleStyle  } = styles;
       return (
          <Header style={headerStyle} androidStatusBarColor="#189735">
             <Left>
-               <Icon style={headerTitleStyle} name="list" />
+               <Icon
+                  style={headerTitleStyle}
+                  type="Entypo"
+                  name={headerIconName}
+               />
             </Left>
             <Body>
-               <Title>TODO LIST</Title>
+               <Title>{headerText}</Title>
             </Body>
-            <Right />
+            <Right>
+               {this.renderNavButton(headerNavButtonText)}
+            </Right>
          </Header>
       );
    }
@@ -20,10 +46,15 @@ export default class AppHeader extends Component {
 
 const styles = StyleSheet.create({
    headerStyle: {
-      height: 30,
+      height: 50,
       backgroundColor: '#28a745'
    },
    headerTitleStyle: {
       color: 'white'
    }
 });
+
+export default connect(
+   null,
+   { goToForm, goToHome }
+)(AppHeader);

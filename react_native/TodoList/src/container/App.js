@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { Container } from 'native-base';
 import reducer from '../reducer/reducer';
-import AppHeader from './Header';
-import Content from './Content';
+import { AppNavigator, middleware } from './Router';
 
+
+const store = createStore(reducer, applyMiddleware(middleware));
  export default class App extends Component {
 
    render() {
       return (
-         <Provider store={createStore(reducer)}>
-            <Container>
-               <AppHeader />
-               <Content />
-              
-            </Container>
+         <Provider store={store}>
+            <AppNavigator />
          </Provider>
       );
    }
 }
-
-

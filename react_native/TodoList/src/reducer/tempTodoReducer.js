@@ -1,13 +1,11 @@
-const tempTodoReducer = (state = { title: 'aa', detail: 'aa' }, action) => {
+const tempTodoReducer = (state = { title: '', detail: '' }, action) => {
    switch (action.type) {
       case 'FILLUP':
-         console.log('====================================');
-         console.log(action);
-         console.log('====================================');
-         return { title: action.title, detail: action.detail };
+      //    console.log(action);
+         return { title: action.title, detail: action.detail, id: action.id };
       default:
          return state;
-   }
+ }
 };
 
 export default tempTodoReducer;

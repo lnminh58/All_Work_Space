@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import listTodosReducer from './listTodosReducer';
-import changeTabReducer from './changeTabReducer';
+import navigateReducer from './navigateReducer';
 import tempTodoReducer from './tempTodoReducer';
 
 const reducer = combineReducers({
    listTodos: listTodosReducer,
-   destinationTab: changeTabReducer,
+   navigation: navigateReducer,
    currentFormData: tempTodoReducer,
 });
 
