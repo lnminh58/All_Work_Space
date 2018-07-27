@@ -1,32 +1,28 @@
 import { AsyncStorage } from 'react-native';
 
-export const storeData = async () => {
+const storeData = async (key, value) => {
    try {
-         console.log('before saving');
-         await AsyncStorage.setItem('TASKS', 'I like to save it.');
-         console.log('after saving');
-      } catch (error) {
-            // Error saving data
-            console.log('error when save');
-      }
-};
-
-export const retrieveData = async () => {
-      try {
-            console.log('before loading');
-            const value = await AsyncStorage.getItem('TASKS');
-            console.log('after loading');
-      if (value !== null) {
-            // We have data!!
-            console.log('value: ');
-            console.log(value);
-      }
+         // console.log('before set item');
+      console.log('====================================');
+      await AsyncStorage.setItem(key, value);
+   
+      console.log('after set item');
+      console.log('====================================');
    } catch (error) {
-      // Error retrieving data
-      console.log('error when load');
+      console.log('inside catch block of store method');
    }
 };
 
+const retrieveData = async (key) => {
+   try {
+      // console.log('before get item');
+      const value = await AsyncStorage.getItem(key);
+      console.log('after get item');
+      return value;
+   } catch (error) {
+      console.log('inside catch block of retrieve method');
+   }
+};
 // storeData();
 // retrieveData();
-
+export { storeData, retrieveData };

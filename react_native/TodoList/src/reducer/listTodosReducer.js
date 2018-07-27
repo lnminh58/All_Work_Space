@@ -1,10 +1,8 @@
 import ListToDo from '../resource/TodoList.json';
-import { retrieveData, storeData } from '../helper/DataFactory';
-
-// retrieveData();
-// storeData();
+// import { retrieveData, storeData } from '../helper/DataFactory';
 
 const listTodoReducer = (state = ListToDo, action) => {
+   console.log('inside listTodoReducer');
    switch (action.type) {
       case 'TOGGLE_IS_DONE':
          return state.map(item => {

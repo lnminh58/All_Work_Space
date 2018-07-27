@@ -5,6 +5,7 @@ const firstAction = RootNavigator.router.getActionForPathAndParams('Home');
 const initialState = RootNavigator.router.getStateForAction(firstAction);
 
 const navigateReducer = (state = initialState, action) => {
+      console.log("inside navigateReducer");
    let nextState;
    switch (action.type) {
       case 'GO_FORM':

@@ -1,4 +1,5 @@
 const tempTodoReducer = (state = { title: '', detail: '' }, action) => {
+        console.log('inside tempTodoReducer');
    switch (action.type) {
       case 'FILLUP':
       //    console.log(action);
