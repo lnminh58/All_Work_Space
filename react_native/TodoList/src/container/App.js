@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { Container } from 'native-base';
-import reducer from '../reducer/reducer';
-import { AppNavigator, middleware } from './Router';
+// import { AsyncStorage } from 'react-native';
+// import reducer from '../reducer/reducer';
+// import { createStore, applyMiddleware } from 'redux';
+import { AppNavigator } from './Router';
+import { store } from '../store';
 
 
-const store = createStore(reducer, applyMiddleware(middleware));
+// const store = createStore(reducer, applyMiddleware(middleware));
+
  export default class App extends Component {
 
    render() {

@@ -14,26 +14,30 @@ import {
 } from 'react-native';
 
 export default class App extends Component {
-   storeData = async () => {
+    async storeData  () {
+       user = {
+           name: 'John',
+           age: 24
+       }
       try {
          console.log('before set item');
-         await AsyncStorage.setItem('user', `I 'm minh`);
+         await AsyncStorage.setItem('user', JSON.stringify(user) );
          console.log('after set item');
       } catch (error) {
-         console.log('inside catch block of store method');
+         console.log('inside catch block of store m ethod');
          // Error saving data
       }
    };
 
-   retrieveData = async () => {
+   async retrieveData  () {
       try {
          console.log('before get item');
          const value = await AsyncStorage.getItem('user');
          console.log('after get item');
-         if (value !== null) {
-            // We have data!!
+        if(value!==null){
             console.log(value);
-         }
+            return value;
+        }
       } catch (error) {
          console.log('inside catch block of retrieve method');
       }
@@ -43,10 +47,12 @@ export default class App extends Component {
        this.retrieveData();
       return (
          <View style={styles.container}>
-            <TouchableOpacity onPress={ this.retrieveData}>
+            <TouchableOpacity onPress={()=> {
+                this.retrieveData().then(value => console.log(value));
+            }}>
                <Text style={styles.welcome}>GET DATA</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={this.storeData} >
+            <TouchableOpacity onPress={this.storeData } >
                <Text style={styles.welcome}>SAVE DATA</Text>
             </TouchableOpacity>
          </View>
@@ -58,9 +64,7 @@ const styles = StyleSheet.create({
    container: {
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF'
-   },
+    },
    welcome: {
       fontSize: 20,
       textAlign: 'center',

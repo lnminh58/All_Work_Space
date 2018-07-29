@@ -1,18 +1,28 @@
 import ListToDo from '../resource/TodoList.json';
-// import { retrieveData, storeData } from '../helper/DataFactory';
+import { save } from '../helper/DataFactory';
 
-const listTodoReducer = (state = ListToDo, action) => {
-   console.log('inside listTodoReducer');
+const key = 'todos';
+
+const listTodoReducer = (state = [], action) => {
+   let nextState;
+   console.log('inside listTodoReducer', action);
    switch (action.type) {
+      case 'LOAD_DATA':
+         //    console.log(action);
+         nextState = action.data;
+         save(key, nextState);
+         break;
       case 'TOGGLE_IS_DONE':
-         return state.map(item => {
+         nextState = state.map(item => {
             return item.id !== action.id
                ? item
                : { ...item, isDone: !item.isDone };
          });
+         save(key, nextState);
+         break;
       case 'SAVE':
          if (action.id === null) {
-            return [
+            nextState = [
                {
                   id: Math.max(...state.map(item => item.id)) + 1,
                   title: action.title,
@@ -22,20 +32,25 @@ const listTodoReducer = (state = ListToDo, action) => {
                ...state
             ];
          } else {
-            return state.map(item => {
+            nextState = state.map(item => {
                return item.id !== action.id
                   ? item
                   : { ...item, title: action.title, detail: action.detail };
             });
          }
+         save(key, nextState);
+         break;
 
       case 'REMOVE':
-         return state.filter(item => {
+         nextState = state.filter(item => {
             return item.id !== action.id;
          });
+         save(key, nextState);
+         break;
       default:
-         return state;
+         nextState = state;
    }
+   return nextState;
 };
 
 export default listTodoReducer;
