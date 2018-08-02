@@ -1,17 +1,35 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
-">
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <http auto-config="false">
+        <csrf disabled="true"/>
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
 
+        <intercept-url pattern="/student/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
 
+        <form-login login-page="/" authentication-failure-url="/?error=true"
+                    authentication-success-handler-ref="myAuthenticationSuccessHandler"
+                    username-parameter="username" password-parameter="password"/>
+        <logout logout-success-url="/" delete-cookies="JSESSIONID" />
+    </http>
 
-</beans>
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userDetailsServiceImpl">
+            <!--<password-encoder ref="encoder"></password-encoder>-->
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean id="userDetailsServiceImpl" class="com.lnminh.service.user.UserDetailsServiceImpl"></beans:bean>
+
+    <!--<beans:bean id="encoder"-->
+                <!--class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">-->
+        <!--<beans:constructor-arg name="strength" value="11"/>-->
+    <!--</beans:bean>-->
+    <beans:bean id="myAuthenticationSuccessHandler" class="com.lnminh.service.user.StudentWebAppAuthenticationSuccessHandler"/>
+</beans:beans>

@@ -9,9 +9,10 @@
 
     <http auto-config="false">
         <csrf disabled="true"/>
-        <intercept-url pattern="/manager_crm/**" access="hasRole('ROLE_MANAGER')"/>
-        <intercept-url pattern="/seller/**" access="hasRole('ROLE_MANAGER')"/>
-        <intercept-url pattern="/seller/**" access="hasRole('ROLE_SELLER')"/>
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+
+        <intercept-url pattern="/student/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
+
         <form-login login-page="/" authentication-failure-url="/?error=true"
                     authentication-success-handler-ref="myAuthenticationSuccessHandler"
                     username-parameter="username" password-parameter="password"/>
@@ -20,14 +21,15 @@
 
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="userDetailsServiceImpl">
-            <password-encoder ref="encoder"></password-encoder>
+            <!--<password-encoder ref="encoder"></password-encoder>-->
         </authentication-provider>
     </authentication-manager>
 
     <beans:bean id="userDetailsServiceImpl" class="com.lnminh.service.user.UserDetailsServiceImpl"></beans:bean>
 
-    <beans:bean id="encoder"
-                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
-        <beans:constructor-arg name="strength" value="11"/>
-    </beans:bean>
-    <beans:bean id="myAuthenticationSuccessHandler" class="com.smartdev.crm.service.secure.CrmAuthenticationSuccessHandler"/>
+    <!--<beans:bean id="encoder"-->
+                <!--class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">-->
+        <!--<beans:constructor-arg name="strength" value="11"/>-->
+    <!--</beans:bean>-->
+    <beans:bean id="myAuthenticationSuccessHandler" class="com.lnminh.service.user.StudentWebAppAuthenticationSuccessHandler"/>
+</beans:beans>

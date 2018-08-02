@@ -27,7 +27,7 @@ public class StudentController {
     @ResponseBody
     public Page<Student> showStudents(@RequestParam(value = "page", required = true) int pageNumber, @RequestParam
             (value = "quantity", required = true) int quantity) {
-        List<Batch> batchs = batchService.getAllBatchs();
+//        List<Batch> batchs = batchService.getAllBatchs();
         Page<Student> studentsPage = studentService.getStudentsLimitNumberRow(new PageRequest(pageNumber, quantity));
         return studentsPage;
     }
@@ -39,7 +39,7 @@ public class StudentController {
         return batchs;
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = {RequestMethod.POST, RequestMethod.PUT})
     @ResponseBody
     public Student addPerson(@RequestBody StudentVO studentVO) {
         Student student = Converter.convertStudentVOToStudent(studentVO);

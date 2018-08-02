@@ -19,7 +19,7 @@ public class LoginController extends HttpServlet {
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
 //                System.out.println(username + " "+ password);
-                LoginModel login = new LoginModel();
+                    LoginModel login = new LoginModel();
                 boolean result = login.authenticate(username, password);
                 if(result){
                      rd = request.getRequestDispatcher("/view/success.jsp");

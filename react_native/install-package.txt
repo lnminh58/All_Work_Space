@@ -3,4 +3,8 @@ npm install -D eslint-config-rallycoding
 
 npm install -s redux react-redux
 
+npm install -s native-base 
+
 npm install -s redux-saga
+
+npm install -s redux-thunk
