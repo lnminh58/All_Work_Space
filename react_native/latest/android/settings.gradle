@@ -1,0 +1,3 @@
+rootProject.name = 'boobytrapp'
+
+include ':app'

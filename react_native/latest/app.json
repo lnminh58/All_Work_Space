@@ -1,0 +1,5 @@
+{
+  "name": "boobytrapp",
+  "displayName": "boobytrapp",
+  "apiRoot": "http://localhost:3333/api/v1"
+}
