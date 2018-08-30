@@ -18,7 +18,7 @@ public class UserDAO {
     public boolean checkLogin (String username, String password){
 
         boolean isValid= false;
-        String sql = "Select * From users where username = '"+username+"' and password = '"+ password+"'";
+        String sql = "Select * From thanhvien where username = '"+username+"' and pass = '"+ password+"'";
         try (ResultSet resultSet = mssqlConnection.query(sql)) {
                 if(resultSet.next()){
                     System.out.println("ok");
@@ -31,13 +31,37 @@ public class UserDAO {
         }
         return isValid;
     }
+    public boolean checkLoginWithCookie (String username, String secureText) {
+
+        boolean isValid = false;
+        String sql = "Select * From thanhvien where username = '" + username + "' and secure = '" + secureText + "'";
+        try (ResultSet resultSet = mssqlConnection.query(sql)) {
+            if (resultSet.next()) {
+                isValid = true;
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return isValid;
+    }
+
+    public void createLoginSession(String username, String secureText){
+        String sql = "update thanhvien set secure='"+secureText+"' where username='"+username+"'";
+        try {
+            mssqlConnection.execute(sql);
+        } catch (SQLException e) {
+            System.out.println("update fail: "+e.getMessage());
+        }
+    }
 
     public List<User> getAll() {
         List<User> users = new ArrayList<>();
-        String sql ="SELECT * FROM USERS";
+        String sql ="SELECT * FROM thanhvien";
         try (ResultSet rs = mssqlConnection.query(sql)) {
             while (rs.next()){
-                users.add(new User(rs.getInt("id"),rs.getString("username"),rs.getString("password")));
+                users.add(new User(rs.getInt("id"),rs.getString("username"),rs.getString("pass")));
             }
         } catch (Exception e) {
             e.printStackTrace();

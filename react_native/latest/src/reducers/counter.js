@@ -11,6 +11,7 @@ export default handleActions({
       counter: state.counter + 1
     };
   },
+  
   DECREMENT: (state) => {
     return {
       ...state,
