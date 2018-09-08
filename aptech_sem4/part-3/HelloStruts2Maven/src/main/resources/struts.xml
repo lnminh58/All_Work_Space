@@ -4,9 +4,29 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
     <package name="basicStruts2" extends="struts-default">
+        <interceptors>
+            <interceptor name="myLog" class="com.lnminh.hello.interceptor.MyLogInterceptor">
+            </interceptor>
+            <interceptor name="auth" class="com.lnminh.hello.interceptor.AuthenticationInterceptor">
+            </interceptor>
+            <interceptor-stack name="defStack">
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>
+            <interceptor-stack name="logStack">
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+                <interceptor-ref name="myLog"></interceptor-ref>
+            </interceptor-stack>
+            <interceptor-stack name="authStack">
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+                <interceptor-ref name="auth"></interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="defStack"></default-interceptor-ref>
+        <default-action-ref name="index.action"/>
         <global-results>
-            <result name="hello">/hello.jsp</result>
+            <result name="login">/login.jsp</result>
         </global-results>
+
         <action name="index">
             <result>/index.jsp</result>
         </action>
@@ -21,4 +41,6 @@
     <constant name="struts.convention.classes.reload" value="true" />
     <constant name="struts.convention.package.locators" value="action"/>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.mapper.action.prefix.enabled" value="true"/>
+
 </struts>
