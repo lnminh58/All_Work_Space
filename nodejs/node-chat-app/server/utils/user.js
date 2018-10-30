@@ -1,14 +1,11 @@
 var users = [];
-var addUser = (id, name, room) => {
-  users.push({});
-};
 
 class Users {
   constructor() {
     this.users = [];
   }
-  addUser(id, name, room) {
-    const user = { id, name, room };
+  addUser(id, name, room, password) {
+    const user = { id, name, room, password };
     this.users.push(user);
     return user;
   }
@@ -27,6 +24,9 @@ class Users {
   getUserList(room) {
     var users = this.users.filter(user => user.room === room);
     return users.map(user => user.name);
+  }
+  getUserOnRoom(room) {
+    return this.users.filter(user => user.room === room);
   }
 }
 

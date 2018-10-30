@@ -57,9 +57,16 @@ io.on('connection', socket => {
       callback('Name and room name are required');
     }
     params.room = params.room.toLowerCase();
+    const usersOnRoom = users.getUserOnRoom(params.room);
+    console.log(usersOnRoom)
+    if(usersOnRoom.length !== 0) {
+      if(params.password !== usersOnRoom[0].password) {
+        callback('password not correct');
+      }
+    }
     socket.join(params.room);
     users.removeUser(socket.id);
-    users.addUser(socket.id, params.name, params.room);
+    users.addUser(socket.id, params.name, params.room, params.password);
 
     io.to(params.room).emit('updateUserList', users.getUserList(params.room));
     socket.emit('newMessage', generateMessage('ADMIN', `WELCOME TO CHAT ROOM`));

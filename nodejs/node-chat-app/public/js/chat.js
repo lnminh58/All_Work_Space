@@ -20,7 +20,7 @@ function scrollToBottom() {
 socket.on('updateUserList', users => {
   console.log('user list:::::::', users);
   let ol = $(
-    '<ul class=" border border-info rounded p-0" style="height: 555px; overflow-y: auto"> </ul>'
+    '<ul class="transparent-background border border-info rounded p-0" style="height: 555px; overflow-y: auto"> </ul>'
   );
 
   ol.append(
@@ -47,7 +47,8 @@ socket.on('connect', () => {
       alert(err);
       window.location.href = '/';
     } else {
-      $('#room-name').append(params.room)
+      $('#room-name').text(`room name: ${params.room}`)
+      $('#room-password').text(`password: ${params.password}`)
       console.log('No err');
     }
   });
