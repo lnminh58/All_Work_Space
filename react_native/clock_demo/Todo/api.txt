@@ -1,0 +1,24 @@
+apiRoot: http://boobytrapp.smartdev.vn/api/v1
+
+Login:
+POST: /auth/login
+Body: 
+{
+	email: string,
+    password: string
+}
+
+Sign up:
+POST: /users
+Body: 
+{
+	email: string,
+    password: string
+}
+
+Confirm code:
+POST: /users/verify
+Body: 
+{
+	code: string
+}

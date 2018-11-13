@@ -17,10 +17,15 @@ function scrollToBottom() {
   }
 }
 
+$('#logout').on('click',() => {
+  localStorage.removeItem('user');
+  window.location.href='/'
+})
+
 socket.on('updateUserList', users => {
   console.log('user list:::::::', users);
   let ol = $(
-    '<ul class="transparent-background border border-info rounded p-0" style="height: 555px; overflow-y: auto"> </ul>'
+    '<ul class=" main-shadow transparent-background border border-info rounded p-0" style="height: 555px; overflow-y: auto"></ul>'
   );
 
   ol.append(
@@ -40,7 +45,12 @@ socket.on('updateUserList', users => {
 });
 
 socket.on('connect', () => {
-  const params = jQuery.deparam(window.location.search);
+  const params = JSON.parse(localStorage.getItem('user'));
+  if(!params) {
+    alert('user not found, login first');
+    window.location.href = '/';
+    return
+  }
   console.log(params);
   socket.emit('join', params, err => {
     if (err) {
@@ -48,7 +58,7 @@ socket.on('connect', () => {
       window.location.href = '/';
     } else {
       $('#room-name').text(`room name: ${params.room}`)
-      $('#room-password').text(`password: ${params.password}`)
+      $('#room-password').text(`PASSWORD: ${params.password}`)
       console.log('No err');
     }
   });

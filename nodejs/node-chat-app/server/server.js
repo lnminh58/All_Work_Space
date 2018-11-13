@@ -3,6 +3,7 @@ const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
 
+const port = process.env.PORT || 3000;
 const { generateMessage, generateLocationMessage } = require('./utils/message');
 const { isRealString } = require('./utils/validation');
 const { Users } = require('./utils/user');
@@ -31,7 +32,7 @@ io.on('connection', socket => {
     if (user && isRealString(message.text)) {
       io.to(user.room).emit(
         'newMessage',
-        { ...generateMessage(user.name, message.text), userId: user.id }
+        { ...generateMessage(user.name, message.text), userId: socket.id }
       );
     }
     callback();
@@ -65,9 +66,7 @@ io.on('connection', socket => {
       }
     }
     socket.join(params.room);
-    users.removeUser(socket.id);
     users.addUser(socket.id, params.name, params.room, params.password);
-
     io.to(params.room).emit('updateUserList', users.getUserList(params.room));
     socket.emit('newMessage', generateMessage('ADMIN', `WELCOME TO CHAT ROOM`));
     socket.broadcast
@@ -85,13 +84,13 @@ io.on('connection', socket => {
       io.to(user.room).emit('updateUserList', users.getUserList(user.room));
       io.to(user.room).emit(
         'newMessage',
-        generateMessage('Admin', `${user.name} has left`)
+        generateMessage('ADMIN', `${user.name} has left`)
       );
     }
   });
 });
 
-server.listen(3000, () => {
-  console.log('Server is up on port 3000');
+server.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
 

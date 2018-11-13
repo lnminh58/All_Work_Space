@@ -17,11 +17,11 @@
 
     <div class="rounded bg-form main-shadow">
       <p class="h2 text-center text-white py-3 main-text-shadow" >Join a Chat</p>
-      <form action="/chat.html" class="px-5 pb-5" style="width: 400px">
+      <form id="login-form" class="px-5 pb-5" style="width: 400px">
         <p class="lead text-white mb-0">Display name</p>
-        <input type="text" name='name' required class="form-control">
-        <p class="lead mt-3 text-white  mb-0">Room name</p>
-        <input type="text" name='room' required class="form-control">
+        <input type="text" name='name' autocomplete="off" required class="form-control">
+        <p class="lead mt-3 text-white  mb-0" >Room name</p>
+        <input type="text" name='room' autocomplete="off" required class="form-control">
         <p class="lead mt-3 text-white  mb-0">Room Password</p>
         <input type="password" name='password' required class="form-control">
         <input type="submit" value="JOIN" class="btn btn-block btn-outline-light mt-3">
@@ -38,6 +38,21 @@
   <script src="./js/moment.js"></script>
   <script src="./js/mustache.js"></script>
   <script src="./js/deparam.js"></script>
-</body >
+  <script>
+  $('#login-form').on('submit', function(e) {
+  e.preventDefault();
+  const user = { 
+    name: $('[name=name]').val(),
+    room: $('[name=room]').val(),
+    password: $('[name=password]').val() 
+  };
 
+  localStorage.setItem('user',JSON.stringify(user));
+  window.location.href='/chat.html';
+});
+  
+  </script>
+
+
+</body >
 </html >

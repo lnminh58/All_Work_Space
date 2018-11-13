@@ -1,0 +1,6 @@
+{
+  "name": "appyguide",
+  "displayName": "appyguide",
+  "apiRoot": "http://appyguide.smartdev.vn/api",
+  "baseUrl": "http://appyguide.smartdev.vn"
+}
