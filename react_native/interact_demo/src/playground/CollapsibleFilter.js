@@ -10,16 +10,20 @@ import {
   FlatList
 } from 'react-native';
 import Interactable from 'react-native-interactable';
+import SplashScreen from 'react-native-splash-screen'
 
 const { width, height } = Dimensions.get('window');
 
 class CollapsibleExample extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+     SplashScreen.show();
+    this.state = {
+      refreshing: false,
+    };
     this.snapPoints = [
-      { y: 0, tension: 500, damping: 0.6 },
-      { tension: 500, damping: 0.6, y: -((height / 20) * 2 + 20) }
+      { y: 0, tension: 100, damping: 0.8 },
+      { tension: 100, damping: 0.8 , y: -((height / 20) * 2 + 20) }
     ];
     this.deltaY = new Animated.Value(this.snapPoints[1].y);
     this.index = 1;
@@ -27,14 +31,26 @@ class CollapsibleExample extends Component {
     this.currentContentOffset = 0;
   }
 
+  componentDidMount () {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 1000);
+  }
+
   repareData() {
     let arr = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i <= 50; i++) {
       arr.push(i + '');
     }
     return arr;
   }
 
+  handleRefresh = () => {
+    this.setState({ refreshing: true });
+    setTimeout(() => {
+      this.setState({ refreshing: false });
+    }, 1500);
+  }
 
   render() {
     return (
@@ -67,6 +83,8 @@ class CollapsibleExample extends Component {
           <View style={styles.content}>
             <FlatList
               data={this.data}
+              refreshing={this.state.refreshing}
+              onRefresh={() => this.handleRefresh()}
               onScrollBeginDrag={event =>
                 (this.currentContentOffset = event.nativeEvent.contentOffset.y)
               }
@@ -81,9 +99,9 @@ class CollapsibleExample extends Component {
               }}
               contentContainerStyle={{ paddingBottom: 80 }}
               renderItem={({ item }) => (
-                <View style={styles.listItemContainer}>
-                  <Text style={{ color: 'white' }}>{item}</Text>
-                </View>
+                  <TouchableOpacity style={styles.listItemContainer}>
+                    <Text style={{ color: 'white' }}>{item}</Text>
+                  </TouchableOpacity>
               )}
               keyExtractor={item => item}
             />
