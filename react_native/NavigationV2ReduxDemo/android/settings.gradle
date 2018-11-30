@@ -1,0 +1,3 @@
+rootProject.name = 'NavigationV2ReduxDemo'
+
+include ':app'
