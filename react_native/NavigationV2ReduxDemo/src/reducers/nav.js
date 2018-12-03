@@ -4,6 +4,7 @@ import AppNavigator from '../navigator'
 const initialState = AppNavigator.router.getStateForAction(NavigationActions.navigate({ routeName: 'MainDrawerNav' }))
 
 const navReducer = (state = initialState, action) => {
+  console.log(action);
   const nextState = AppNavigator.router.getStateForAction(action, state);
 
   // Simply return the original `state` if `nextState` is null or undefined.
