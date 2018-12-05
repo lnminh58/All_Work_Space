@@ -1,0 +1,6 @@
+h1 {
+  font-size: 50pt;
+  text-shadow: 4px 5px 3px rgba(0, 0, 0, 0.3);
+  color: darkslategray;
+  text-transform: uppercase
+}

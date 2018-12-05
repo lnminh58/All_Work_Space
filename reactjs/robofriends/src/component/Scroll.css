@@ -1,0 +1,9 @@
+.scroll {
+  overflow: auto;
+  height: 75vh;
+  /* margin: 0 50px */
+}
+
+.scroll::-webkit-scrollbar { 
+  display: none; 
+}
