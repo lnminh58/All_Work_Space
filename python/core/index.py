@@ -134,3 +134,5 @@ func
 
 def greeting():
   print('hello')
+
+greeting()
