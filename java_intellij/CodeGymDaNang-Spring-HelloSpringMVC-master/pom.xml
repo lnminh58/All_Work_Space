@@ -8,7 +8,7 @@
 	<name>spring_hellospringmvc Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<spring.version>5.0.2.RELEASE</spring.version>
+		<spring.version>5.2.20.RELEASE</spring.version>
 		<tiles.version>3.0.5</tiles.version>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
