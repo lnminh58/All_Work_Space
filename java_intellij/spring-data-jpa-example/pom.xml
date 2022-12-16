@@ -16,7 +16,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>4.12</junit.version>
-        <springframework.version>4.1.4.RELEASE</springframework.version>
+        <springframework.version>5.2.20.RELEASE</springframework.version>
         <hibernate.version>4.0.1.Final</hibernate.version>
         <hibernate.validation.version>4.2.0.Final</hibernate.validation.version>
         <spring.data.version>1.5.1.RELEASE</spring.data.version>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>4.1.4.RELEASE</version>
+            <version>5.2.20.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
